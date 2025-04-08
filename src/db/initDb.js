@@ -1,12 +1,13 @@
-import getPool from "./getPool.js";
+/* eslint-disable no-undef */
+import getPool from './getPool.js';
 
 try {
   let pool = await getPool();
 
-  console.log("Borrando tablas...");
+  console.log('Borrando tablas...');
   await pool.query(`DROP TABLE IF EXISTS product, company, category, user;`);
 
-  console.log("Creando tablas...");
+  console.log('Creando tablas...');
 
   await pool.query(`
       CREATE TABLE user(
@@ -73,9 +74,9 @@ try {
     )
     `);
 
-  console.log("Tablas creadas");
+  console.log('Tablas creadas');
 
-  console.log("Introduciendo datos");
+  console.log('Introduciendo datos');
 
   await pool.query(`
       INSERT INTO user (username, email, password, role) 
@@ -87,10 +88,10 @@ try {
       VALUES ("Programming & Tech"), ("Graphics & Design"), ("Marketing"), ("Copywritting"), ("AI services");
       `);
 
-  console.log("Datos introducidos");
+  console.log('Datos introducidos');
 
   process.exit();
 } catch (e) {
-  console.error("Error al crear las tablas:", e);
+  console.error('Error al crear las tablas:', e);
   process.exit(1);
 }
