@@ -26,7 +26,7 @@ const newUserController = async (req, res, next) => {
     const pool = await getPool();
 
     // Obtenemos el listado de usuarios con el nombre de usuario recibido.
-    let [users] = await pool.query(`SELECT id FROM users WHERE username = ?`, [
+    let [users] = await pool.query(`SELECT id FROM user WHERE username = ?`, [
       username,
     ]);
 
@@ -36,7 +36,7 @@ const newUserController = async (req, res, next) => {
     }
 
     // Obtenemos el listado de usuarios con el email de usuario recibido.
-    [users] = await pool.query(`SELECT id FROM users WHERE email = ?`, [email]);
+    [users] = await pool.query(`SELECT id FROM user WHERE email = ?`, [email]);
 
     // Si existe algún usuario con ese email lanzamos un error.
     if (users.length > 0) {
@@ -51,10 +51,10 @@ const newUserController = async (req, res, next) => {
 
     // Insertamos el usuario.
     await pool.query(
-      `INSERT INTO users(username, email, password, isProvider, isAdmin, registrationCode) VALUES(?, ?, ?, ?, ?)`,
-      [username, email, hashedPass, false, false, registrationCode],
+      `INSERT INTO user(username, email, password) VALUES(?, ?, ?)`,
+      [username, email, hashedPass],
     );
-
+    //hay que añadir el registrationCode a la base de datos, al insert into , ?, y registrationCode en el array.
     // Asunto del email de verificación.
     const emailSubject = 'Activa tu usuario en Find:)';
 

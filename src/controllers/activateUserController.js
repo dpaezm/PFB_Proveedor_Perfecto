@@ -15,7 +15,7 @@ const activateUserController = async (req, res, next) => {
 
     // Obtenemos al usuario con el código de registro recibido.
     const [users] = await pool.query(
-      `SELECT id FROM users WHERE registrationCode = ?`,
+      `SELECT id FROM user WHERE registrationCode = ?`,
       [registrationCode],
     );
 
@@ -26,7 +26,7 @@ const activateUserController = async (req, res, next) => {
 
     // Activamos el usuario.
     await pool.query(
-      `UPDATE users SET registrationCode = NULL, active = true WHERE registrationCode = ?`,
+      `UPDATE user SET registrationCode = NULL, active = true WHERE registrationCode = ?`,
       [registrationCode],
     );
 
