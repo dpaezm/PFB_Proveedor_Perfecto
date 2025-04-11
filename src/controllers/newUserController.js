@@ -3,13 +3,13 @@ import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 
 // Importamos la función que retorna una conexión con la base de datos.
-import getPool from '../../db/getPool.js';
+import getPool from '../db/getPool.js';
 
 // Importamos la función que envía un email.
-import sendMailUtil from '../../utils/sendMailUtil.js';
+import sendMailUtil from '../utils/sendMailUtil.js';
 
 // Importamos la función que genera un error.
-import generateError from '../../utils/helpers.js';
+import generateError from '../utils/helpers.js';
 
 // Función controladora que permite crear un usuario.
 const newUserController = async (req, res, next) => {

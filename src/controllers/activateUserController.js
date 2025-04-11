@@ -1,8 +1,8 @@
 // Importamos la función que retorna una conexión con la base de datos.
-import getPool from '../../db/getPool.js';
+import getPool from '../db/getPool.js';
 
 // Importamos la función que genera un error.
-import generateError from '../../utils/helpers.js';
+import generateError from '../utils/helpers.js';
 
 // Función controladora que activa un usuario.
 const activateUserController = async (req, res, next) => {
