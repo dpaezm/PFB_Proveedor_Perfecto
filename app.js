@@ -1,16 +1,19 @@
-import express from "express";
-import fileUpload from "express-fileupload";
+import express from 'express';
+import fileUpload from 'express-fileupload';
 
 //Añado las variable de entorno
-import "dotenv/config";
+import 'dotenv/config';
 
 const app = express();
+
+// Importamos las rutas.
+import userRoutes from './src/routes/userRoutes.js';
 
 //Importo funciones
 import {
   error404Controller,
   errorController,
-} from "./src/controllers/errorControllers.js";
+} from './src/controllers/errorControllers.js';
 
 //Middewares externos
 //Para poder usar el body en json
@@ -19,9 +22,11 @@ app.use(express.json());
 app.use(fileUpload());
 
 //Servimos la carpeta public de forma estática
-app.use("/media", express.static("public"));
+app.use('/media', express.static('public'));
 
 //Endpoints
+// Middleware que indica a Express dónde están las rutas.
+app.use('/api', userRoutes);
 
 //Middlewares de error
 app.use(error404Controller);
