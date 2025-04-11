@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import getPool from './getPool.js';
 
 try {
