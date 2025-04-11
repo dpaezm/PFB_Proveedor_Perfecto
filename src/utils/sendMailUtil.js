@@ -2,7 +2,7 @@
 import nodemailer from 'nodemailer';
 
 // Importamos la función que genera un error.
-//import generateErrorUtil from './generateErrorUtil.js';
+import generateError from './helpers.js';
 
 // Importas las variables de entorno necesarias.
 const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
@@ -30,9 +30,7 @@ const sendMailUtil = async (email, subject, body) => {
   } catch (err) {
     console.error(err);
 
-    const error = new Error('Error al enviar el mail');
-    error.httpStatus = 500;
-    throw error;
+    generateError('Error al enviar email', 500);
   }
 };
 
