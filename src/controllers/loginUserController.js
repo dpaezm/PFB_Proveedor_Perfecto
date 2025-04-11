@@ -24,7 +24,7 @@ const loginUserController = async (req, res, next) => {
 
     // Obtenemos el listado de usuarios con el email recibido.
     const [users] = await pool.query(
-      `SELECT id, password, role, active FROM users WHERE email = ?`,
+      `SELECT id, password, role, active FROM user WHERE email = ?`,
       email,
     );
 
