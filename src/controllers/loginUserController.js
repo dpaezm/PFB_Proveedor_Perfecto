@@ -3,10 +3,10 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 // Importamos la función que retorna una conexión con la base de datos.
-import getPool from '../../db/getPool.js';
+import getPool from '../db/getPool.js';
 
 // Importamos la función que genera un error.
-import generateError from '../../utils/helpers.js';
+import generateError from '../utils/helpers.js';
 
 // Función controladora que logea a un usuario retornando un token.
 const loginUserController = async (req, res, next) => {
