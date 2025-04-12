@@ -54,7 +54,9 @@ const newUserController = async (req, res, next) => {
       `INSERT INTO user(username, email, password) VALUES(?, ?, ?)`,
       [username, email, hashedPass],
     );
+
     //hay que añadir el registrationCode a la base de datos, al insert into , ?, y registrationCode en el array.
+
     // Asunto del email de verificación.
     const emailSubject = 'Activa tu usuario en Find:)';
 
@@ -62,7 +64,7 @@ const newUserController = async (req, res, next) => {
     const emailBody = `
             ¡Bienvenid@ ${username}!
 
-            Gracias por registrarte en Find:). Para activar tu cuenta, haz click en el siguiente enlace:
+            Gracias por registrarte en Find ;). Para activar tu cuenta, haz click en el siguiente enlace:
 
             <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
         `;

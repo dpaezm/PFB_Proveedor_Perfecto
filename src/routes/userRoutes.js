@@ -7,6 +7,8 @@ import {
   activateUserController,
   loginUserController,
   getPrivateUserInfoController,
+  sendRecoverPassController,
+  resetUserPassWithCodeController,
 } from '../controllers/index.js';
 
 // Importamos las funciones controladoras intermedias.
@@ -26,5 +28,14 @@ router.post('/users/login', loginUserController);
 
 // Middleware que retorna info privada de mi usuario.
 router.get('/users/me', authUserController, getPrivateUserInfoController);
+
+// Middleware que permite enviar un correo de recuperación de contraseña.
+router.put('/users/password/recover', sendRecoverPassController);
+
+// Middleware que permite resetear la contraseña con un código.
+router.put(
+  '/users/password/reset/:recoverPassCode',
+  resetUserPassWithCodeController,
+);
 
 export default router;
