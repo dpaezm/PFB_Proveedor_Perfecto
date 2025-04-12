@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import getPool from "./getPool.js";
 
 try {
@@ -26,25 +28,6 @@ try {
     `);
 
   await pool.query(`
-    CREATE TABLE company(
-    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    owner_id INT UNSIGNED NOT NULL,
-    companyname VARCHAR(20) NOT NULL UNIQUE,
-    email VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL, 
-    description TINYTEXT,
-    city VARCHAR(50) NOT NULL UNIQUE, 
-    phone VARCHAR(20), 
-    logo VARCHAR(20), 
-      -- Pendiente de resolver duda sobre imagenes en tablas
-    active BOOLEAN default false,
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP ON UPDATE NOW(), 
-    FOREIGN KEY (owner_id) REFERENCES user(id) ON DELETE CASCADE
-    )
-    `);
-
-  await pool.query(`
       CREATE TABLE category(
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
       categoryname VARCHAR(65) NOT NULL UNIQUE,
@@ -63,11 +46,10 @@ try {
     price DECIMAL(10, 2) NOT NULL, 
     photo VARCHAR(20), 
         -- Pendiente de resolver duda sobre imagenes en tablas
-    desription TINYTEXT,
+    description TINYTEXT,
     buy_date TIMESTAMP,
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP ON UPDATE NOW(),
-    FOREIGN KEY (owner_id) REFERENCES company(id) ON DELETE CASCADE,
     FOREIGN KEY (buyer_id) REFERENCES user(id) ON DELETE SET NULL,
     FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE SET NULL
     )

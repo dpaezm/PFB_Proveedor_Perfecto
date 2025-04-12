@@ -1,4 +1,4 @@
-export function generateError(msg, code) {
+export default function generateError(msg, code) {
   let error = new Error(msg);
   error.httpCode = code;
   return error;
