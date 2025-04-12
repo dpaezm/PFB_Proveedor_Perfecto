@@ -4,7 +4,10 @@ try {
   let pool = await getPool();
 
   console.log('Borrando tablas...');
-  await pool.query(`DROP TABLE IF EXISTS product, company, category, user;`);
+
+  await pool.query(
+    `DROP TABLE IF EXISTS company, contact, product, category, user;`,
+  );
 
   console.log('Creando tablas...');
 
@@ -16,55 +19,66 @@ try {
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(20), 
     avatar VARCHAR(20), 
-        -- Pendiente de resolver duda sobre imagenes en tablas
     active BOOLEAN default false,
-    role ENUM("admin", "owner", "buyer") NOT NULL, 
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP ON UPDATE NOW()
+    isadmin BOOLEAN default false, 
+    isprovider BOOLEAN default false, 
+    created_at TIMESTAMP DEFAULT NOW()
     )
     
     `);
 
   await pool.query(`
       CREATE TABLE category(
-      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-      categoryname VARCHAR(65) NOT NULL UNIQUE,
-      created_at TIMESTAMP DEFAULT NOW(),
-      updated_at TIMESTAMP ON UPDATE NOW()
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+      categoryname VARCHAR(65) NOT NULL UNIQUE, 
+      created_at TIMESTAMP DEFAULT NOW()
       )
       `);
 
   await pool.query(`
-    CREATE TABLE product(
-    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    owner_id INT UNSIGNED NOT NULL,
-    buyer_id INT UNSIGNED,
-    category_id INT UNSIGNED,
-    name VARCHAR(50) NOT NULL,
-    price DECIMAL(10, 2) NOT NULL, 
-    photo VARCHAR(20), 
-        -- Pendiente de resolver duda sobre imagenes en tablas
-    description TINYTEXT,
-    buy_date TIMESTAMP,
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP ON UPDATE NOW(),
-    FOREIGN KEY (buyer_id) REFERENCES user(id) ON DELETE SET NULL,
-    FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE SET NULL
-    )
+      CREATE TABLE product( 
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+      owner_id INT UNSIGNED,
+      category_id INT UNSIGNED,
+      product_name VARCHAR(50) NOT NULL,
+      prize DECIMAL(10, 2) NOT NULL, 
+      photo1 VARCHAR(20), 
+      photo2 VARCHAR(20), 
+      description TINYTEXT,
+      created_at TIMESTAMP DEFAULT NOW(),
+      FOREIGN KEY (owner_id) REFERENCES user(id) ON DELETE SET NULL,
+      FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE SET NULL
+      )
     `);
+
+  await pool.query(`
+      CREATE TABLE contact (
+      id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+      user_id INT UNSIGNED, 
+      product_id INT UNSIGNED, 
+      value VARCHAR(20), 
+      coment TINYTEXT, 
+      status ENUM("inicio", "tramitando", "cancelado", "finalizado"), 
+      rating ENUM("1", "2", "3", "4", "5"), 
+      created_at TIMESTAMP DEFAULT NOW(), 
+      modified_at TIMESTAMP DEFAULT NOW(), 
+      FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE SET NULL,
+      FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE SET NULL
+      )
+      `);
 
   console.log('Tablas creadas');
 
   console.log('Introduciendo datos');
 
   await pool.query(`
-      INSERT INTO user (username, email, password, role) 
-      VALUES ("admin1", "admin1@proveedor-perfecto.com", "1234", "admin")
+      INSERT INTO user (username, email, password, isadmin) 
+      VALUES ("admin1", "admin1@proveedor-perfecto.com", "1234", true)
       `);
 
   await pool.query(`
       INSERT INTO category (categoryname)
-      VALUES ("Programming & Tech"), ("Graphics & Design"), ("Marketing"), ("Copywritting"), ("AI services");
+      VALUES ("Programming & Tech"), ("Graphics & Design"), ("Marketing"), ("Copywritting"), ("AI services"), ("Finance"), ("Bussines") ;
       `);
 
   console.log('Datos introducidos');
