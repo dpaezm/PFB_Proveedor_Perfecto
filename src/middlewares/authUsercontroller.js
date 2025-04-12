@@ -11,27 +11,33 @@ const authUserController = async (req, res, next) => {
     // Obtenemos el token de la cabecera de la petición.
     const { authorization } = req.headers;
 
-    // Si falta el token lanzamos un error.
     if (!authorization) {
-      generateError('Falta la cabecera de autorización', 401);
+      generateError('Token no válido o no enviado', 401);
     }
+
+    let [protocol, token] = authorization.split(' ');
+
+    if (protocol !== 'Bearer' || !token) {
+      generateError('Token no válido o no enviado', 401);
+    }
+    console.log(authorization);
+    console.log(token);
+
+    let tokenInfo;
 
     try {
-      // Desencriptamos el token.
-      const tokenInfo = jwt.verify(authorization, process.env.SECRET);
-
-      // Añadimos al objeto request una propiedad inventada por nosotros para
-      // almacenar la info del usuario.
-      req.user = tokenInfo;
-
-      // Pasamos el control al siguiente middleware. Esto hará que el siguiente
-      // middleware tenga acceso a "req.user.id" y "req.user.role".
-      next();
+      tokenInfo = jwt.verify(token, process.env.SECRET);
     } catch (err) {
-      console.error(err);
-
-      generateError('Token inválido', 401);
+      console.log(err);
+      generateError('Credenciales inválidas', 401);
     }
+
+    // Si hemos llegado hasta aquí quiere decir que el token ya se ha desencriptado.
+    // Creamos la propiedad "user" en el objeto "request" (es una propiedad inventada).
+    req.user = tokenInfo;
+
+    // Pasamos el control a la siguiente función controladora.
+    next();
   } catch (err) {
     next(err);
   }

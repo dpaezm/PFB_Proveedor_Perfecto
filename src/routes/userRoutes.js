@@ -6,6 +6,7 @@ import {
   newUserController,
   activateUserController,
   loginUserController,
+  getPrivateUserInfoController,
 } from '../controllers/index.js';
 
 // Importamos las funciones controladoras intermedias.
@@ -22,5 +23,8 @@ router.put('/users/validate/:registrationCode', activateUserController);
 
 // Middleware que logea a un usuario existente.
 router.post('/users/login', loginUserController);
+
+// Middleware que retorna info privada de mi usuario.
+router.get('/users/me', authUserController, getPrivateUserInfoController);
 
 export default router;
