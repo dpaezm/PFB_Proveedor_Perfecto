@@ -8,19 +8,18 @@ import 'dotenv/config';
 const app = express();
 
 // Importamos las rutas.
-import userRoutes from './src/routes/userRoutes.js';
+import Routes from './src/routes/Routes.js';
 
 //Importo funciones
 import {
   error404Controller,
   errorController,
 } from './src/controllers/errorControllers.js';
-} from "./src/controllers/errorControllers.js";
 
-import newProductController from "./src/controllers/productControllers.js";
-import categoryListController from "./src/controllers/categoryListControllers.js";
-import productListController from "./src/controllers/productListControllers.js";
-import getProductByIdController from "./src/controllers/productByIdControllers.js";
+import newProductController from './src/controllers/productControllers.js';
+import categoryListController from './src/controllers/categoryListControllers.js';
+import productListController from './src/controllers/productListControllers.js';
+import getProductByIdController from './src/controllers/productByIdControllers.js';
 
 //Middewares externos
 //Para poder usar el body en json
@@ -34,7 +33,7 @@ app.use('/media', express.static('public'));
 
 //Endpoints
 // Middleware que indica a Express dónde están las rutas.
-app.use('/api', userRoutes);
+app.use('/api', Routes);
 
 //Middlewares de error
 app.use(error404Controller);
