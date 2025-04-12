@@ -8,7 +8,7 @@ export default async function getProductListModel() {
   //selecciono los productos
   const [productList] = await connection.query(
     `
-      SELECT name, price FROM product
+      SELECT product_name, prize FROM product
     `
   );
 

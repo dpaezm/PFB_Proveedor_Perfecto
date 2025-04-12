@@ -4,26 +4,25 @@ import generateError from "../utils/helpers.js";
 export default async function newProductController(req, res, next) {
   console.log("creando producto");
   try {
-    const { owner_id, buyer_id, category_id, name, price, description } =
+    const { owner_id, category_id, product_name, prize, description } =
       req.body;
 
     // Esto debería ser sustituido por joi
-    if (!name || !price) {
+    if (!product_name || !prize) {
       throw generateError("Debes enviar un nombre de producto y precio", 400);
     }
 
-    const id = await createProductModel(
+    const productId = await createProductModel(
       owner_id,
-      buyer_id,
       category_id,
-      name,
-      price,
+      product_name,
+      prize,
       description
     );
 
     res.send({
       status: "ok",
-      message: `product created with id: ${id}`,
+      message: `product created with id: ${productId}`,
     });
   } catch (error) {
     next(error);

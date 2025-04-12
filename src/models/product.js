@@ -5,28 +5,25 @@ import getPool from "../db/getPool.js";
 // Crea un producto en la base de datos y devuelve su id
 export default async function createProductModel(
   owner_id,
-  buyer_id,
   category_id,
-  name,
-  price,
-
+  product_name,
+  prize,
   description
 ) {
-  let connection;
-
-  connection = await getPool();
+  let pool = await getPool();
 
   //Creo el producto
-  const [newProduct] = await connection.query(
+  const [newProduct] = await pool.query(
     `
-      INSERT INTO product (owner_id,
-  buyer_id,
-  category_id,
-  name,
- price,
-   description) VALUES(?, ?, ?, ?, ?, ?)
+      INSERT INTO product (
+      owner_id,
+      category_id,
+      product_name,
+      prize,
+      description
+      ) VALUES(?, ?, ?, ?, ?)
     `,
-    [owner_id, buyer_id, category_id, name, price, description]
+    [owner_id, category_id, product_name, prize, description]
   );
 
   //Devolver la id

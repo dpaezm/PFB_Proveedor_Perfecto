@@ -2,6 +2,10 @@
 
 Proyecto final de Bootcamp
 
+## Pendiente de redactar:
+
+- Instalar nodemon, morgan, express
+
 ## Instalación del proyecto
 
 1. Instalar las dependencias necesarias con el comando `npm install` o `npm i`.
@@ -10,7 +14,7 @@ Proyecto final de Bootcamp
 
 3. Renombrar el fichero `.env.example` a `.env` y cubrir los campos. Es importante utilizar como nombre de la base de datos el mismo que ha sido utilizado en el paso 2.
 
-4. Ejecutar el comando `node initDB.js`.
+4. Ejecutar el comando `node src/db/initDB.js`.
 
 ### Configuración Eslint
 
