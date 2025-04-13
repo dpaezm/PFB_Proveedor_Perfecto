@@ -3,5 +3,3 @@ export default function generateError(msg, code) {
   error.httpCode = code;
   return error;
 }
-
-export default generateError;
