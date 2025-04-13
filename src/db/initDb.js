@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import getPool from './getPool.js';
 
 try {
@@ -5,9 +6,7 @@ try {
 
   console.log('Borrando tablas...');
 
-  await pool.query(
-    `DROP TABLE IF EXISTS company, contact, product, category, user;`,
-  );
+  await pool.query(`DROP TABLE IF EXISTS contact, product, category, user;`);
 
   console.log('Creando tablas...');
 
@@ -22,6 +21,8 @@ try {
     active BOOLEAN default false,
     isadmin BOOLEAN default false, 
     isprovider BOOLEAN default false, 
+    registrationCode VARCHAR(10), 
+    recoverPassCode VARCHAR(10), 
     created_at TIMESTAMP DEFAULT NOW()
     )
     
@@ -41,7 +42,7 @@ try {
       owner_id INT UNSIGNED,
       category_id INT UNSIGNED,
       product_name VARCHAR(50) NOT NULL,
-      prize DECIMAL(10, 2) NOT NULL, 
+      price DECIMAL(10, 2) NOT NULL, 
       photo1 VARCHAR(20), 
       photo2 VARCHAR(20), 
       description TINYTEXT,
@@ -57,7 +58,7 @@ try {
       user_id INT UNSIGNED, 
       product_id INT UNSIGNED, 
       value VARCHAR(20), 
-      coment TINYTEXT, 
+      comment TINYTEXT, 
       status ENUM("inicio", "tramitando", "cancelado", "finalizado"), 
       rating ENUM("1", "2", "3", "4", "5"), 
       created_at TIMESTAMP DEFAULT NOW(), 
@@ -71,10 +72,15 @@ try {
 
   console.log('Introduciendo datos');
 
-  await pool.query(`
+  const hashedPassword = await bcrypt.hash('1234', 10);
+
+  await pool.query(
+    `
       INSERT INTO user (username, email, password, isadmin) 
-      VALUES ("admin1", "admin1@proveedor-perfecto.com", "1234", true)
-      `);
+      VALUES (?, ?, ?, ?)
+      `,
+    ['admin1', 'admin1@proveedor-perfecto.com', hashedPassword, true],
+  );
 
   await pool.query(`
       INSERT INTO category (categoryname)

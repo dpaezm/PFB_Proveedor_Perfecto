@@ -1,4 +1,4 @@
-import getPool from "../db/getPool.js";
+import getPool from '../db/getPool.js';
 
 export default async function getProductListModel() {
   let connection;
@@ -8,8 +8,8 @@ export default async function getProductListModel() {
   //selecciono los productos
   const [productList] = await connection.query(
     `
-      SELECT product_name, prize FROM product
-    `
+      SELECT product_name, price FROM product
+    `,
   );
 
   //Devolver la lista
