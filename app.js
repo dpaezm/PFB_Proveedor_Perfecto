@@ -8,7 +8,7 @@ import 'dotenv/config';
 const app = express();
 
 // Importamos las rutas.
-import Routes from './src/routes/Routes.js';
+import servicesRoutes from './src/routes/servicesRoutes.js';
 import contactRoutes from './src/routes/contactRoutes.js';
 import usersRoutes from './src/routes/usersRoutes.js';
 
@@ -40,7 +40,7 @@ app.get('/products', productListController);
 app.get('/category', categoryListController);
 app.get('/products/:id', getProductByIdController);
 
-app.use(Routes);
+app.use(servicesRoutes);
 app.use(contactRoutes);
 app.use(usersRoutes);
 

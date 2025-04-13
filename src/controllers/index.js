@@ -1,10 +1,10 @@
 // Importamos las funciones controladoras de los usuarios.
-import newUserController from './newUserController.js';
-import activateUserController from './activateUserController.js';
-import loginUserController from './loginUserController.js';
-import getPrivateUserInfoController from './getPrivateUserInfoController.js';
-import sendRecoverPassController from './sendRecoverPassController.js';
-import resetUserPassWithCodeController from './resetUserPassWithCodeController.js';
+import newUserController from './userControllers/newUserController.js';
+import activateUserController from './userControllers/activateUserController.js';
+import loginUserController from './userControllers/loginUserController.js';
+import getPrivateUserInfoController from './userControllers/getPrivateUserInfoController.js';
+import sendRecoverPassController from './userControllers/sendRecoverPassController.js';
+import resetUserPassWithCodeController from './userControllers/resetUserPassWithCodeController.js';
 import categoryListController from './categoryListControllers.js';
 import productListController from './productListControllers.js';
 import getProductByIdController from './productByIdControllers.js';

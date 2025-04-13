@@ -2,10 +2,10 @@
 import bcrypt from 'bcrypt';
 
 // Importamos la función que retorna una conexión con la base de datos.
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 
 // Importamos la función que genera un error.
-import generateError from '../utils/helpers.js';
+import generateError from '../../utils/helpers.js';
 
 // Función controladora que permite resetear la contraseña con un código de recuperación.
 const resetUserPassWithCodeController = async (req, res, next) => {
