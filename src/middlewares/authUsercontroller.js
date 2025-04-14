@@ -1,4 +1,3 @@
-// Importamos las dependencias.
 import jwt from 'jsonwebtoken';
 
 // Importamos la función que genera un error.

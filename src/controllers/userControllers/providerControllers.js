@@ -19,6 +19,7 @@ export async function getProvidersController(req, res, next) {
 export async function getProviderDetailController(req, res, next) {
   try {
     const providerId = req.params.providerId;
+    console.log(providerId);
 
     const providerDetail = await getProviderDetail(providerId);
 
