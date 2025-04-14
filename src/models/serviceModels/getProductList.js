@@ -1,4 +1,4 @@
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 
 export default async function getProductListModel() {
   let connection;

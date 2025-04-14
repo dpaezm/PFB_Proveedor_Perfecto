@@ -1,4 +1,4 @@
-import getProductByIdModel from "../models/getProductByIdModel.js";
+import getProductByIdModel from '../../models/serviceModels/getProductByIdModel.js';
 
 export default async function getProductByIdController(req, res, next) {
   try {
@@ -6,7 +6,7 @@ export default async function getProductByIdController(req, res, next) {
     const product = await getProductByIdModel(id);
 
     res.send({
-      status: "ok",
+      status: 'ok',
       data: product,
     });
   } catch (error) {

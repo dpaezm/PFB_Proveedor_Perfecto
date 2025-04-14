@@ -1,6 +1,6 @@
-import generateError from "../utils/helpers.js";
-import getPool from "../db/getPool.js";
-import bcrypt from "bcryptjs";
+import generateError from '../../utils/helpers.js';
+import getPool from '../../db/getPool.js';
+import bcrypt from 'bcryptjs';
 
 // Crea una compañia en la base de datos y devuelve su id
 export default async function createCompanyModel(
@@ -10,7 +10,7 @@ export default async function createCompanyModel(
   password,
   description,
   city,
-  phone
+  phone,
 ) {
   let connection;
 
@@ -20,13 +20,13 @@ export default async function createCompanyModel(
     `
       SELECT id FROM company WHERE email = ?
     `,
-    [email]
+    [email],
   );
 
   if (user.length > 0) {
     throw generateError(
-      "Ya existe una compañia en la base de datos con ese email",
-      409
+      'Ya existe una compañia en la base de datos con ese email',
+      409,
     );
   }
 
@@ -38,7 +38,7 @@ export default async function createCompanyModel(
     `
       INSERT INTO company (owner_id, companyname, email, password, description, city, phone) VALUES(?, ?, ?, ?, ?, ?, ?)
     `,
-    [owner_id, companyname, email, passwordHash, description, city, phone]
+    [owner_id, companyname, email, passwordHash, description, city, phone],
   );
 
   //Devolver la id

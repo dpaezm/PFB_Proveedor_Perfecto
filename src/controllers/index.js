@@ -5,11 +5,11 @@ import loginUserController from './userControllers/loginUserController.js';
 import getPrivateUserInfoController from './userControllers/getPrivateUserInfoController.js';
 import sendRecoverPassController from './userControllers/sendRecoverPassController.js';
 import resetUserPassWithCodeController from './userControllers/resetUserPassWithCodeController.js';
-import categoryListController from './categoryListControllers.js';
-import productListController from './productListControllers.js';
-import getProductByIdController from './productByIdControllers.js';
-import newProductController from './productControllers.js';
-import newCompanyController from './companyControllers.js';
+import categoryListController from './serviceControllers/categoryListControllers.js';
+import productListController from './serviceControllers/productListControllers.js';
+import getProductByIdController from './serviceControllers/productByIdControllers.js';
+import newProductController from './serviceControllers/productControllers.js';
+import newCompanyController from './serviceControllers/companyControllers.js';
 
 export {
   newUserController,

@@ -1,15 +1,15 @@
-import createCompany from "../models/company.js";
-import generateError from "../utils/helpers.js";
+import createCompany from '../../models/serviceModels/company.js';
+import generateError from '../../utils/helpers.js';
 
 export default async function newCompanyController(req, res, next) {
-  console.log("creando compañia");
+  console.log('creando compañia');
   try {
     const { owner_id, companyname, email, password, description, city, phone } =
       req.body;
 
     // Esto debería ser sustituido por joi
     if (!email || !password) {
-      throw generateError("Debes enviar un email y una password", 400);
+      throw generateError('Debes enviar un email y una password', 400);
     }
 
     const id = await createCompany(
@@ -19,11 +19,11 @@ export default async function newCompanyController(req, res, next) {
       password,
       description,
       city,
-      phone
+      phone,
     );
 
     res.send({
-      status: "ok",
+      status: 'ok',
       message: `company created with id: ${id}`,
     });
   } catch (error) {

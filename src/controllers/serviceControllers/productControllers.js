@@ -1,5 +1,5 @@
-import createProductModel from '../models/product.js';
-import generateError from '../utils/helpers.js';
+import createProductModel from '../../models/serviceModels/product.js';
+import generateError from '../../utils/helpers.js';
 
 export default async function newProductController(req, res, next) {
   console.log('creando producto');
