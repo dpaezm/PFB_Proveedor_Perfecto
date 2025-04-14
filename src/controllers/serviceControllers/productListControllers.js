@@ -1,4 +1,4 @@
-import getProductListModel from '../models/getProductList.js';
+import getProductListModel from '../../models/serviceModels/getProductList.js';
 
 export default async function productListController(req, res, next) {
   try {

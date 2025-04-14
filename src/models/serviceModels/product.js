@@ -1,5 +1,5 @@
 //import generateError from "../utils/helpers.js";
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 //import bcrypt from "bcryptjs";
 
 // Crea un producto en la base de datos y devuelve su id

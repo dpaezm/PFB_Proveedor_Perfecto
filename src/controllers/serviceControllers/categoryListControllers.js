@@ -1,11 +1,11 @@
-import getCategoryListModel from "../models/getCategoryList.js";
+import getCategoryListModel from '../../models/serviceModels/getCategoryList.js';
 
 export default async function categoryListController(req, res, next) {
   try {
     const categoryList = await getCategoryListModel();
 
     res.send({
-      status: "ok",
+      status: 'ok',
       data: categoryList,
     });
   } catch (error) {

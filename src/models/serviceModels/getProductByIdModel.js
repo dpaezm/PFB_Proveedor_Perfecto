@@ -1,5 +1,5 @@
-import getPool from "../db/getPool.js";
-import generateError from "../utils/helpers.js";
+import getPool from '../../db/getPool.js';
+import generateError from '../../utils/helpers.js';
 
 export default async function getProductByIdModel(id) {
   let connection;
@@ -11,7 +11,7 @@ export default async function getProductByIdModel(id) {
     `
     SELECT * FROM product WHERE id = ?
     `,
-    [id]
+    [id],
   );
 
   if (product.length === 0) {
