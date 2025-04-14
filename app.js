@@ -1,7 +1,6 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
-
 //Añado las variable de entorno
 import 'dotenv/config';
 
