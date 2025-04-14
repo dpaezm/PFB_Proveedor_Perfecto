@@ -18,8 +18,8 @@ export async function getProviderDetail(providerId) {
     `
         SELECT u.id, u.username, u.email, u.phone, u.avatar, p.product_name, p.price, p.description, c.rating, c.comment 
         FROM user u 
-        JOIN product p ON u.id = p.owner_id
-        JOIN contact c ON u.id = c.user_id 
+        LEFT JOIN product p ON u.id = p.owner_id
+        LEFT JOIN contact c ON u.id = c.user_id 
         WHERE p.owner_id = ?
         `,
     [providerId],
