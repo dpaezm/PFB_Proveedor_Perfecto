@@ -18,11 +18,6 @@ import {
   errorController,
 } from './src/controllers/errorControllers.js';
 
-import newProductController from './src/controllers/productControllers.js';
-import categoryListController from './src/controllers/categoryListControllers.js';
-import productListController from './src/controllers/productListControllers.js';
-import getProductByIdController from './src/controllers/productByIdControllers.js';
-
 //Middewares externos
 //Para poder usar el body en json
 app.use(express.json());
@@ -33,13 +28,7 @@ app.use(morgan('dev'));
 //Servimos la carpeta public de forma estática
 app.use('/media', express.static('public'));
 
-//Endpoints
-
-app.post('/products', newProductController);
-app.get('/products', productListController);
-app.get('/category', categoryListController);
-app.get('/products/:id', getProductByIdController);
-
+//Endpoints a utilizar con las rutas
 app.use(servicesRoutes);
 app.use(contactRoutes);
 app.use(usersRoutes);
