@@ -1,6 +1,7 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
+import cors from 'cors';
 
 //Añado las variable de entorno
 import 'dotenv/config';
@@ -27,6 +28,10 @@ app.use(fileUpload());
 app.use(morgan('dev'));
 //Servimos la carpeta public de forma estática
 app.use('/media', express.static('public'));
+// Middleware que evita que las CORS interfieran a la hora de conectar el frontend con
+// el backend.
+app.use(cors())
+
 
 //Endpoints a utilizar con las rutas
 app.use(servicesRoutes);

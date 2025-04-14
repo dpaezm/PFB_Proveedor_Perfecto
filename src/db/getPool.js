@@ -7,6 +7,7 @@ import {
   MYSQL_DATABASE,
 } from "../../envConfig.js";
 
+
 let pool;
 
 async function getPool() {
