@@ -20,6 +20,7 @@ import {
 } from './src/controllers/errorControllers/errorControllers.js';
 
 //Middewares externos
+app.use(cors())
 //Para poder usar el body en json
 app.use(express.json());
 //Para poder usar el body en form-data
@@ -30,7 +31,7 @@ app.use(morgan('dev'));
 app.use('/media', express.static('public'));
 // Middleware que evita que las CORS interfieran a la hora de conectar el frontend con
 // el backend.
-app.use(cors())
+
 
 
 //Endpoints a utilizar con las rutas
