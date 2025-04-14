@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "initdb": "node ./src/db/initDb.js",
-    "dev": "nodemon ./app.js",
+    "dev": "nodemon ./app.js", 
     "start": "node ./app.js"
   },
   "keywords": [],
