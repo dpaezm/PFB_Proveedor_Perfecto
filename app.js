@@ -28,7 +28,7 @@ app.use(morgan('dev'));
 //Servimos la carpeta public de forma estática
 app.use('/media', express.static('public'));
 
-//Endpoints
+//Endpoints a utilizar con las rutas
 app.use(servicesRoutes);
 app.use(contactRoutes);
 app.use(usersRoutes);
