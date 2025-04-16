@@ -1,3 +1,3 @@
 // Importamos las funciones controladoras intermedias.
-import authUserController from './authUserController.js';
+import authUserController from './authUserController_.js';
 export { authUserController };
