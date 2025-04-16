@@ -4,8 +4,7 @@ import generateError from '../../utils/helpers.js';
 export async function newRatingController(req, res, next) {
   try {
     const { requestId } = req.params;
-    const userId = 1;
-    // const userId = req.user.id;
+    const userId = req.user.id;
     const { comment, rating } = req.body;
 
     if (!comment) {
