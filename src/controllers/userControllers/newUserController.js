@@ -8,7 +8,7 @@ import checkUserExistsModel from '../../models/userModels/checkUserExistsModel.j
 
 const newUserController = async (req, res, next) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, isProvider = false } = req.body;
     // pendiente de ver como se envia el isProvider
 
     if (!username || !email || !password) {
@@ -28,7 +28,13 @@ const newUserController = async (req, res, next) => {
     const registrationCode = crypto.randomBytes(15).toString('hex');
     const hashedPass = await bcrypt.hash(password, 10);
 
-    await createNewUserModel({ username, email, hashedPass, registrationCode });
+    await createNewUserModel({
+      username,
+      email,
+      hashedPass,
+      isProvider,
+      registrationCode,
+    });
 
     if (!isProvider) {
       const emailSubject = 'Activa tu usuario en Find:)';
