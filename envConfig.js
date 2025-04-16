@@ -1,6 +1,5 @@
-import 'dotenv/config';
+// import 'dotenv/config';
 
-// Para hacer el deploy en railway. Despues usar loadEnvfile
 // process.loadEnvFile();
 
 export const {
