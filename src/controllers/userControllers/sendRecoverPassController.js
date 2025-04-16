@@ -16,7 +16,7 @@ const sendRecoverPassController = async (req, res, next) => {
     const user = await getUserByEmailModel(email);
 
     if (user) {
-      const recoverPassCode = crypto.randomBytes(15).toString('hex');
+      const recoverPassCode = crypto.randomBytes(5).toString('hex');
 
       await saveRecoverPassCodeModel(email, recoverPassCode);
 
