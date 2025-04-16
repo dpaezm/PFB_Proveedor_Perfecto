@@ -28,7 +28,6 @@ const loginUserController = async (req, res, next) => {
 
     const tokenInfo = {
       id: user.id,
-      role: user.role,
     };
 
     const token = jwt.sign(tokenInfo, process.env.SECRET, {
