@@ -1,10 +1,14 @@
-process.loadEnvFile();
+import 'dotenv/config';
+
+// Para hacer el deploy en railway. Despues usar loadEnvfile
+// process.loadEnvFile();
 
 export const {
   MYSQL_HOST,
   MYSQL_USER,
   MYSQL_PASSWORD,
   MYSQL_DATABASE,
+  MYSQL_PORT,
   API_PORT,
   JWT_SECRET,
   UPLOADS_DIR,

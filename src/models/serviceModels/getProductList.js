@@ -1,14 +1,16 @@
 import getPool from '../../db/getPool.js';
 
 export default async function getProductListModel() {
-  let connection;
+  let pool;
 
-  connection = await getPool();
+  pool = await getPool();
 
   //selecciono los productos
-  const [productList] = await connection.query(
+  const [productList] = await pool.query(
     `
-      SELECT product_name, price FROM product
+      SELECT P.id, P.product_name, P.price, P.photo1, P.description, C.categoryname, U.username AS provider FROM product P
+      LEFT JOIN user U ON U.id = P.owner_id
+      LEFT JOIN category C ON c.id = p.category_id
     `,
   );
 
