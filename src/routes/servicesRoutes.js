@@ -7,11 +7,10 @@ import {
   productListController,
   getProductByIdController,
   newProductController,
+  authUserController,
 } from '../controllers/index.js';
 
 const router = express.Router();
-// Importamos las funciones controladoras intermedias.
-import { authUserController } from '../middlewares/index.js';
 
 // Middleware que lista todas las categorías.
 router.get('/categories', categoryListController);

@@ -9,6 +9,16 @@ import categoryListController from './serviceControllers/categoryListControllers
 import productListController from './serviceControllers/productListControllers.js';
 import getProductByIdController from './serviceControllers/productByIdControllers.js';
 import newProductController from './serviceControllers/productControllers.js';
+import {
+  getRequestsController,
+  newContactRequestController,
+} from './contactControllers/contactControllers.js';
+import newRatingController from './contactControllers/ratingControllers.js';
+import authUserController from '../middlewares/authUserController_.js';
+import {
+  getProviderDetailController,
+  getProvidersController,
+} from './userControllers/providerControllers.js';
 
 export {
   newUserController,
@@ -21,4 +31,10 @@ export {
   productListController,
   getProductByIdController,
   newProductController,
+  getRequestsController,
+  newContactRequestController,
+  newRatingController,
+  authUserController,
+  getProviderDetailController,
+  getProvidersController,
 };
