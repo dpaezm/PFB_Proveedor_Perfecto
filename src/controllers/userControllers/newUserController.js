@@ -9,6 +9,7 @@ import checkUserExistsModel from '../../models/userModels/checkUserExistsModel.j
 const newUserController = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
+    // pendiente de ver como se envia el isProvider
 
     if (!username || !email || !password) {
       throw generateError('Faltan campos', 400);
@@ -29,14 +30,24 @@ const newUserController = async (req, res, next) => {
 
     await createNewUserModel({ username, email, hashedPass, registrationCode });
 
-    const emailSubject = 'Activa tu usuario en Find:)';
-    const emailBody = `
-      ¡Bienvenid@ ${username}!
-      Gracias por registrarte en Find ;). Para activar tu cuenta, haz click en el siguiente enlace:
-      <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
-    `;
+    if (!isProvider) {
+      const emailSubject = 'Activa tu usuario en Find:)';
+      const emailBody = `
+        ¡Bienvenid@ ${username}!
+        Gracias por registrarte en Find ;). Para activar tu cuenta, haz click en el siguiente enlace:
+        <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
+      `;
+      await sendMailUtil(email, emailSubject, emailBody);
+    } else {
+      const emailSubject = 'Confirma la solicitud de alta de proveedor';
+      const emailBody = `
+        El proveedor ${username} acaba de registrarse. 
+        Confirma el alta de su usuario como proveedor en el siguiente enlace: 
 
-    await sendMailUtil(email, emailSubject, emailBody);
+        <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
+      `;
+      await sendMailUtil('admin1-find@yopmail.com', emailSubject, emailBody);
+    }
 
     res.status(201).send({
       status: 'ok',
