@@ -9,7 +9,6 @@ import categoryListController from './serviceControllers/categoryListControllers
 import productListController from './serviceControllers/productListControllers.js';
 import getProductByIdController from './serviceControllers/productByIdControllers.js';
 import newProductController from './serviceControllers/productControllers.js';
-import newCompanyController from './serviceControllers/companyControllers.js';
 
 export {
   newUserController,
@@ -22,5 +21,4 @@ export {
   productListController,
   getProductByIdController,
   newProductController,
-  newCompanyController,
 };

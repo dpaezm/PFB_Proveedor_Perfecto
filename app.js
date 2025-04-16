@@ -16,7 +16,7 @@ import usersRoutes from './src/routes/usersRoutes.js';
 import {
   error404Controller,
   errorController,
-} from './src/controllers/errorControllers/errorControllers.js';
+} from './src/controllers/errorControllers.js';
 
 //Middewares externos
 //Para poder usar el body en json

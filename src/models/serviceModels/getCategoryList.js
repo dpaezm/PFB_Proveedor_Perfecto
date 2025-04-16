@@ -1,12 +1,12 @@
 import getPool from '../../db/getPool.js';
 
 export default async function getCategoryListModel() {
-  let connection;
+  let pool;
 
-  connection = await getPool();
+  pool = await getPool();
 
   //selecciono los nombres de las categorías
-  const [categoryList] = await connection.query(
+  const [categoryList] = await pool.query(
     `
       SELECT categoryname FROM category
     `,

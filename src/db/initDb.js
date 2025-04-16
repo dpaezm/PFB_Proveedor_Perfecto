@@ -21,7 +21,7 @@ try {
     active BOOLEAN default false,
     isadmin BOOLEAN default false, 
     isprovider BOOLEAN default false, 
-    registrationCode VARCHAR(10), 
+    registrationCode VARCHAR(100), 
     recoverPassCode VARCHAR(10), 
     created_at TIMESTAMP DEFAULT NOW()
     )

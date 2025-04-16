@@ -7,7 +7,6 @@ import {
   productListController,
   getProductByIdController,
   newProductController,
-  newCompanyController,
 } from '../controllers/index.js';
 
 const router = express.Router();
@@ -22,7 +21,5 @@ router.get('/products', productListController);
 router.get('/products/:id', getProductByIdController);
 // Middleware que permite crear un nuevo producto.
 router.post('/products', authUserController, newProductController);
-// Middleware que permite crear una nueva empresa.
-router.post('/companies', authUserController, newCompanyController);
 
 export default router;
