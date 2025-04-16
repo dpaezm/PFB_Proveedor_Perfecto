@@ -10,6 +10,8 @@ export async function createRating(requestId, userId, comment, rating) {
     [requestId],
   );
 
+  console.log(compra);
+
   if (compra.length === 0)
     throw generateError('Transacción no encontrada', 404);
 
