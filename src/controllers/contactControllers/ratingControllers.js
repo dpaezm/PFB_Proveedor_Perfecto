@@ -1,7 +1,7 @@
 import { createRating } from '../../models/contactModels/ratingModels.js';
 import generateError from '../../utils/helpers.js';
 
-export async function newRatingController(req, res, next) {
+export default async function newRatingController(req, res, next) {
   try {
     const { requestId } = req.params;
     //const userId = 1;

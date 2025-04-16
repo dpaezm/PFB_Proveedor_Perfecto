@@ -1,8 +1,4 @@
 import express from 'express';
-import {
-  getProviderDetailController,
-  getProvidersController,
-} from '../controllers/userControllers/providerControllers.js';
 
 import {
   getPrivateUserInfoController,
@@ -11,12 +7,12 @@ import {
   newUserController,
   sendRecoverPassController,
   resetUserPassWithCodeController,
+  getProviderDetailController,
+  getProvidersController,
+  authUserController,
 } from '../controllers/index.js';
 
 const router = express.Router();
-
-// Importamos las funciones controladoras intermedias.
-import { authUserController } from '../middlewares/index.js';
 
 // Middleware que registra un nuevo usuario.
 router.post('/users/register', newUserController);

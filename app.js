@@ -11,11 +11,11 @@ import servicesRoutes from './src/routes/servicesRoutes.js';
 import contactRoutes from './src/routes/contactRoutes.js';
 import usersRoutes from './src/routes/usersRoutes.js';
 
-//Importo funciones
+//Importo funciones de error
 import {
   error404Controller,
   errorController,
-} from './src/controllers/errorControllers.js';
+} from './src/controllers/errorControllers/errorControllers.js';
 
 //Middewares externos
 //Para poder usar el body en json

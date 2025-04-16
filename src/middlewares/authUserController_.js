@@ -16,6 +16,10 @@ const authUserController = async (req, res, next) => {
 
     let [protocol, token] = authorization.split(' ');
 
+    /*     if (!token) {
+      generateError('No se envía token');
+    } */
+
     if (protocol !== 'Bearer' || !token) {
       generateError('Token no válido o no enviado', 401);
     }

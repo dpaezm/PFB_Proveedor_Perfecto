@@ -1,13 +1,15 @@
 import express from 'express';
+
 import {
+  authUserController,
   getRequestsController,
   newContactRequestController,
-} from '../controllers/contactControllers/contactControllers.js';
-import { newRatingController } from '../controllers/contactControllers/ratingControllers.js';
+  newRatingController,
+} from '../controllers/index.js';
 
 const router = express.Router();
 
-router.post('/contactrequest', newContactRequestController);
+router.post('/contactrequest', authUserController, newContactRequestController);
 router.get('/contactrequest/:providerId', getRequestsController);
 // En esta app.get("/contactrequest" falta el auth
 
