@@ -3,6 +3,8 @@ import crypto from 'crypto';
 import sendMailUtil from '../../utils/sendMailUtil.js';
 import generateError from '../../utils/helpers.js';
 
+import { SMTP_USER } from '../../../envConfig.js';
+
 import createNewUserModel from '../../models/userModels/createNewUserModel.js';
 import checkUserExistsModel from '../../models/userModels/checkUserExistsModel.js';
 
@@ -52,7 +54,7 @@ const newUserController = async (req, res, next) => {
 
         <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
       `;
-      await sendMailUtil('admin1-find@yopmail.com', emailSubject, emailBody);
+      await sendMailUtil(SMTP_USER, emailSubject, emailBody);
     }
 
     res.status(201).send({

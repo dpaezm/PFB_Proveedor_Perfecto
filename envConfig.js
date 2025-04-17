@@ -1,4 +1,4 @@
-// import 'dotenv/config';
+//import 'dotenv/config';
 
 process.loadEnvFile();
 
@@ -15,6 +15,6 @@ export const {
   SMTP_USER,
   SMTP_PASSWORD,
   SMTP_PORT,
-
+  SMTP_MAIL,
   SERVER_URL,
 } = process.env;

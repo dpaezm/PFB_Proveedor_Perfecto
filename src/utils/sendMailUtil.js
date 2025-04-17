@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 import generateError from './helpers.js';
 
 // Importas las variables de entorno necesarias.
-const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_MAIL } = process.env;
 
 // Creamos un transporte (una conexión) para poder enviar el email.
 const transport = nodemailer.createTransport({
@@ -23,7 +23,7 @@ const sendMailUtil = async (email, subject, body) => {
   try {
     // Enviamos el email.
     await transport.sendMail({
-      from: 'tricioescalona@gmail.com',
+      from: SMTP_MAIL,
       to: email,
       subject,
       text: body,
