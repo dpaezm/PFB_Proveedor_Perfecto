@@ -1,6 +1,6 @@
 // import 'dotenv/config';
 
-// process.loadEnvFile();
+process.loadEnvFile();
 
 export const {
   MYSQL_HOST,
