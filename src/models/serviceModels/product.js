@@ -9,10 +9,11 @@ export default async function createProductModel(
   product_name,
   price,
   description,
+  photoName,
 ) {
   let pool = await getPool();
 
-  //Creo el producto
+  //Creo el producto sin fotos
   const [newProduct] = await pool.query(
     `
       INSERT INTO product (
@@ -20,10 +21,10 @@ export default async function createProductModel(
       category_id,
       product_name,
       price,
-      description
-      ) VALUES(?, ?, ?, ?, ?)
+      description, photo1
+      ) VALUES(?, ?, ?, ?, ?, ?)
     `,
-    [owner_id, category_id, product_name, price, description],
+    [owner_id, category_id, product_name, price, description, photoName],
   );
 
   //Devolver la id

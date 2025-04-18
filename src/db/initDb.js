@@ -43,7 +43,7 @@ try {
       category_id INT UNSIGNED,
       product_name VARCHAR(50) NOT NULL,
       price DECIMAL(10, 2) NOT NULL, 
-      photo1 VARCHAR(20), 
+      photo1 VARCHAR(50), 
       photo2 VARCHAR(20), 
       description TINYTEXT,
       created_at TIMESTAMP DEFAULT NOW(),
@@ -142,7 +142,7 @@ try {
       `);
 
   await pool.query(
-    `INSERT INTO product (owner_id, category_id, product_name, price, description) VALUES ?`,
+    `INSERT INTO product (owner_id, category_id, product_name, price, description, photo1) VALUES ?`,
     [
       [
         [
@@ -151,6 +151,7 @@ try {
           'Desarrollo SaaS',
           999,
           'Desarrollaremos tu propio SaaS a medida',
+          null,
         ],
         [
           4,
@@ -158,6 +159,7 @@ try {
           'Bussines plan',
           650,
           'Te ayudaremos a crear un plan de negocio',
+          null,
         ],
         [
           5,
@@ -165,9 +167,17 @@ try {
           'Gestión de Social Media',
           750,
           'Contrátanos si necesitas un Community Manager',
+          '',
         ],
-        [5, 3, 'Social Media Ads', 450, 'Configuramos tus anuncios a medida'],
-        [6, 6, 'Dirección financiera', 1500, 'Te ayudo a encontrar tu CFO'],
+        [
+          5,
+          3,
+          'Social Media Ads',
+          450,
+          'Configuramos tus anuncios a medida',
+          '',
+        ],
+        [6, 6, 'Dirección financiera', 1500, 'Te ayudo a encontrar tu CFO', ''],
       ],
     ],
   );
