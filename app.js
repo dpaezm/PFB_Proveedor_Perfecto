@@ -16,6 +16,7 @@ import {
   error404Controller,
   errorController,
 } from './src/controllers/errorControllers/errorControllers.js';
+import { UPLOADS_DIR } from './envConfig.js';
 
 //Middewares externos
 //Para poder usar el body en json
@@ -24,8 +25,8 @@ app.use(express.json());
 app.use(fileUpload());
 // Middleware que muestra por consola info sobre la petición entrante.
 app.use(morgan('dev'));
-//Servimos la carpeta public de forma estática
-app.use('/media', express.static('public'));
+// Middleware que indica a Express cuál es el directorio de ficheros estáticos.
+app.use(express.static(UPLOADS_DIR));
 
 //Endpoints a utilizar con las rutas
 app.use(servicesRoutes);
