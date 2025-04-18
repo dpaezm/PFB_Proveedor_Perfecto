@@ -9,6 +9,7 @@ import categoryListController from './serviceControllers/categoryListControllers
 import productListController from './serviceControllers/productListControllers.js';
 import getProductByIdController from './serviceControllers/productByIdControllers.js';
 import newProductController from './serviceControllers/productControllers.js';
+import editUserInfoController from './userControllers/editUserInfoController.js';
 import {
   getRequestsController,
   newContactRequestController,
@@ -37,4 +38,5 @@ export {
   authUserController,
   getProviderDetailController,
   getProvidersController,
+  editUserInfoController,
 };
