@@ -11,6 +11,7 @@ import {
   getProvidersController,
   authUserController,
 } from '../controllers/index.js';
+import editUserInfoController from '../controllers/userControllers/editUserInfoController.js';
 
 const router = express.Router();
 
@@ -25,6 +26,9 @@ router.post('/users/login', loginUserController);
 
 // Middleware que retorna info privada de mi usuario.
 router.get('/users/me', authUserController, getPrivateUserInfoController);
+
+// Middleware que permite editar la información de un usuario.
+router.put('/users/me/edit', authUserController, editUserInfoController);
 
 // Middleware que permite enviar un correo de recuperación de contraseña.
 router.put('/users/password/recover', sendRecoverPassController);
