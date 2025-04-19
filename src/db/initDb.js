@@ -13,11 +13,14 @@ try {
   await pool.query(`
       CREATE TABLE user(
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(27) NOT NULL UNIQUE,
+    username VARCHAR(27) NOT NULL UNIQUE, 
+    realname VARCHAR(27), 
+    city VARCHAR (27), 
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(20), 
     avatar VARCHAR(20), 
+    description TINYTEXT,
     active BOOLEAN default false,
     isadmin BOOLEAN default false, 
     isprovider BOOLEAN default false, 
@@ -32,6 +35,7 @@ try {
       CREATE TABLE category(
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
       categoryname VARCHAR(65) NOT NULL UNIQUE, 
+      photo1 VARCHAR(20), 
       created_at TIMESTAMP DEFAULT NOW()
       )
       `);
@@ -59,6 +63,7 @@ try {
       product_id INT UNSIGNED, 
       value VARCHAR(20), 
       comment TINYTEXT, 
+      answer TINYTEXT, 
       status ENUM("inicio", "tramitando", "cancelado", "finalizado"), 
       rating ENUM("1", "2", "3", "4", "5"), 
       created_at TIMESTAMP DEFAULT NOW(), 
