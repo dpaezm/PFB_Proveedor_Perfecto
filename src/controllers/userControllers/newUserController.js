@@ -52,7 +52,7 @@ const newUserController = async (req, res, next) => {
         El proveedor ${username} acaba de registrarse. 
         Confirma el alta de su usuario como proveedor en el siguiente enlace: 
 
-        <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">¡Activa tu usuario!</a>
+        <a href="${process.env.CLIENT_URL}/users/validate/${registrationCode}">Confirma la solicitud de proveedor</a>
       `;
       await sendMailUtil(SMTP_USER, emailSubject, emailBody);
     }

@@ -6,6 +6,7 @@ const getPrivateUserInfoModel = async (userId) => {
   const [users] = await pool.query(
     `SELECT id, username, email, avatar FROM user WHERE id = ?`,
     [userId],
+    //FALTA HACER LA MEDIA DE VALORACIONES DE PRODUCTOS, LOS PRODUCTOS
   );
 
   return users[0]; // puede ser undefined si no hay resultados
