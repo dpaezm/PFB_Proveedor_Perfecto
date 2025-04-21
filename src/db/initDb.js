@@ -14,7 +14,7 @@ try {
       CREATE TABLE user(
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(27) NOT NULL UNIQUE, 
-    realname VARCHAR(27), 
+    name VARCHAR(27), 
     city VARCHAR (27), 
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
@@ -65,7 +65,7 @@ try {
       comment TINYTEXT, 
       answer TINYTEXT, 
       status ENUM("inicio", "tramitando", "cancelado", "finalizado"), 
-      rating ENUM("1", "2", "3", "4", "5"), 
+      rating TINYINT, 
       created_at TIMESTAMP DEFAULT NOW(), 
       modified_at TIMESTAMP DEFAULT NOW(), 
       FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE SET NULL,
@@ -81,13 +81,15 @@ try {
 
   await pool.query(
     `
-  INSERT INTO user (username, email, password, active, isadmin, isprovider)
+  INSERT INTO user (username, name, city, email, password, active, isadmin, isprovider)
   VALUES ?
   `,
     [
       [
         [
           'admin1',
+          'Andrés Sanchez',
+          'Málaga',
           'admin1@proveedor-perfecto.com',
           hashedPassword,
           true,
@@ -96,6 +98,8 @@ try {
         ],
         [
           'admin2',
+          'Patricio Escalona',
+          'Málaga',
           'admin2@proveedor-perfecto.com',
           hashedPassword,
           true,
@@ -104,6 +108,8 @@ try {
         ],
         [
           'admin3',
+          'Diego Páez',
+          'A Coruña',
           'admin3@proveedor-perfecto.com',
           hashedPassword,
           true,
@@ -112,6 +118,8 @@ try {
         ],
         [
           'Provider1',
+          'Owen B.',
+          'Mexico DF',
           'provider1@provider.com',
           hashedPassword,
           true,
@@ -120,6 +128,8 @@ try {
         ],
         [
           'Provider2',
+          'Sam Francisco',
+          'Portland',
           'provider2@provider.com',
           hashedPassword,
           true,
@@ -128,15 +138,44 @@ try {
         ],
         [
           'Provider3',
+          'Sarah Wind',
+          'London',
           'provider3@provider.com',
           hashedPassword,
           true,
           false,
           true,
         ],
-        ['Buyer1', 'buyer1@buyer.com', hashedPassword, true, false, false],
-        ['Buyer2', 'buyer2@buyer.com', hashedPassword, true, false, false],
-        ['Buyer3', 'buyer3@buyer.com', hashedPassword, true, false, false],
+        [
+          'Buyer1',
+          'Pedro R.',
+          'Madrid',
+          'buyer1@buyer.com',
+          hashedPassword,
+          true,
+          false,
+          false,
+        ],
+        [
+          'Buyer2',
+          'Ben Aflek',
+          'Roterdam',
+          'buyer2@buyer.com',
+          hashedPassword,
+          true,
+          false,
+          false,
+        ],
+        [
+          'Buyer3',
+          'Neil Factor',
+          'Factory city',
+          'buyer3@buyer.com',
+          hashedPassword,
+          true,
+          false,
+          false,
+        ],
       ],
     ],
   );
