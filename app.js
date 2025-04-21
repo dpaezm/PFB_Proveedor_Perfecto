@@ -1,6 +1,9 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
+
+import cors from 'cors';
+
 //Añado las variable de entorno
 import 'dotenv/config';
 
@@ -19,14 +22,21 @@ import {
 import { UPLOADS_DIR } from './envConfig.js';
 
 //Middewares externos
+app.use(cors())
 //Para poder usar el body en json
 app.use(express.json());
 //Para poder usar el body en form-data
 app.use(fileUpload());
 // Middleware que muestra por consola info sobre la petición entrante.
 app.use(morgan('dev'));
+
 // Middleware que indica a Express cuál es el directorio de ficheros estáticos.
 app.use(express.static(UPLOADS_DIR));
+
+//Servimos la carpeta public de forma estática
+
+// Middleware que evita que las CORS interfieran a la hora de conectar el frontend con
+// el ba
 
 //Endpoints a utilizar con las rutas
 app.use(servicesRoutes);

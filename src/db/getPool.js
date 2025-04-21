@@ -8,6 +8,7 @@ import {
   MYSQL_PORT,
 } from '../../envConfig.js';
 
+
 let pool;
 
 async function getPool() {
