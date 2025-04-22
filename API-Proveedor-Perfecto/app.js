@@ -1,6 +1,7 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
+import cors from 'cors';
 //Añado las variable de entorno
 import 'dotenv/config';
 
@@ -27,6 +28,7 @@ app.use(fileUpload());
 app.use(morgan('dev'));
 // Middleware que indica a Express cuál es el directorio de ficheros estáticos.
 app.use(express.static(UPLOADS_DIR));
+app.use(cors(/* { origin: FRONT_URL } */));
 
 //Endpoints a utilizar con las rutas
 app.use(servicesRoutes);
