@@ -5,7 +5,7 @@ import getPool from '../../db/getPool.js';
 import savePhotoUtil from '../../utils/savePhotoUtil.js';
 
 // Importamos la función que genera un error.
-import generateError from '../utils/helpers.js';
+import generateError from '../../utils/helpers.js';
 
 // Función controladora que agrega una foto a un producto.
 const addPhotoController = async (req, res, next) => {
