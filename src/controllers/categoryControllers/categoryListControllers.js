@@ -1,4 +1,4 @@
-import getCategoryListModel from '../../models/serviceModels/getCategoryList.js';
+import getCategoryListModel from '../../models/categoryModels/getCategoryList.js';
 
 export default async function categoryListController(req, res, next) {
   try {
