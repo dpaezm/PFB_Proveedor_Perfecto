@@ -2,8 +2,13 @@ import getPool from '../../db/getPool.js';
 
 const createNewUserModel = async ({
   username,
+  name,
+  city,
   email,
   hashedPass,
+  phone,
+  avatar,
+  description,
   isProvider,
   registrationCode,
 }) => {
@@ -11,8 +16,19 @@ const createNewUserModel = async ({
 
   // Insertamos el usuario con el registrationCode incluido
   await pool.query(
-    `INSERT INTO user (username, email, password, isProvider, registrationCode) VALUES (?, ?, ?, ?, ?)`,
-    [username, email, hashedPass, isProvider, registrationCode],
+    `INSERT INTO user (username, name, city, email, password, phone, avatar, description, isProvider, registrationCode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      username,
+      name,
+      city,
+      email,
+      hashedPass,
+      phone,
+      avatar,
+      description,
+      isProvider,
+      registrationCode,
+    ],
   );
 };
 
