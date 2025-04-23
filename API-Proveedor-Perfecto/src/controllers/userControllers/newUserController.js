@@ -10,7 +10,17 @@ import checkUserExistsModel from './../../models/userModels/checkUserExistsModel
 
 const newUserController = async (req, res, next) => {
   try {
-    const { username, email, password, isProvider = false } = req.body;
+    const {
+      username,
+      name,
+      city,
+      email,
+      password,
+      phone,
+      avatar,
+      description,
+      isProvider = false,
+    } = req.body;
     // pendiente de ver como se envia el isProvider
 
     if (!username || !email || !password) {
@@ -32,8 +42,13 @@ const newUserController = async (req, res, next) => {
 
     await createNewUserModel({
       username,
+      name,
+      city,
       email,
       hashedPass,
+      phone,
+      avatar,
+      description,
       isProvider,
       registrationCode,
     });

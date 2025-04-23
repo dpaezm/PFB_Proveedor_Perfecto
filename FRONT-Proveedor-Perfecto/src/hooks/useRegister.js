@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { registerService } from "../services/userServices";
+import { useNavigate } from "react-router-dom";
 
 export default function useRegister() {
   let initialState = {
@@ -9,6 +10,10 @@ export default function useRegister() {
     password: "",
     passwordRepeat: "",
     city: "",
+    avatar: "",
+    name: "",
+    description: "",
+    phone: "",
   };
 
   const [formState, setFormState] = useState(initialState);
@@ -18,7 +23,7 @@ export default function useRegister() {
     setError("");
     setFormState({ ...formState, [name]: value });
   }
-
+  let navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
@@ -34,6 +39,8 @@ export default function useRegister() {
     } catch (e) {
       setError(e.message);
     }
+
+    navigate("/login");
   }
   return { error, handleChange, formState, handleSubmit };
 }
