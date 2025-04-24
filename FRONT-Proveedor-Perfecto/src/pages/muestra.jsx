@@ -33,7 +33,7 @@ function Muestra() {
       </p>
 
       {/* Botón sin componente */}
-      <button className="bg-amarillo hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+      <button className="bg-gris1 hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
         ¡Botón sin componente!
       </button>
 
@@ -41,7 +41,9 @@ function Muestra() {
       <Button>¡Botón desde componente!</Button>
 
       {/* Botón alternativo (diferente tamaño) */}
-      <Button size="text-xl">¡Soy más grande!</Button>
+      <Button color="rojo" size="text-xl">
+        ¡Soy más grande!
+      </Button>
     </div>
   );
 }

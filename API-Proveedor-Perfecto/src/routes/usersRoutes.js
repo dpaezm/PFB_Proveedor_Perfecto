@@ -20,7 +20,7 @@ const router = express.Router();
 router.post('/users/register', newUserController);
 
 // Middleware que valida a un usuario.
-router.put('/users/validate/:registrationCode', activateUserController);
+router.get('/users/validate/:registrationCode', activateUserController);
 
 // Middleware que logea a un usuario existente.
 router.post('/users/login', loginUserController);
