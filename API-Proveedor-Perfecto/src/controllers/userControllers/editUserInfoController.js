@@ -2,18 +2,17 @@ import updateUserInfoModel from '../../models/userModels/updateInfoModel.js';
 import generateError from '../../utils/helpers.js';
 import checkUserExistsModel from '../../models/userModels/checkUserExistsModel.js';
 
-// No cambiar username y email, que queden estáticos.
+// No cambiar email, que quede estático.
 const editUserInfoController = async (req, res, next) => {
   try {
-    const { username, name, city, email, phone, avatar, description } =
-      req.body;
+    const { username, name, city, phone, avatar, description } = req.body;
     const userId = req.user.id; //obtenermos el id desde el authUserController
 
-    if (!username || !email) {
-      throw generateError('Faltan campos para actualizar', 400);
-    }
+    // if (!username || !email) {
+    //   throw generateError('Faltan campos para actualizar', 400);
+    // }
 
-    const conflictField = await checkUserExistsModel({ username, email });
+    const conflictField = await checkUserExistsModel({ username });
 
     if (conflictField === 'username') {
       throw generateError('Nombre de usuario no disponible', 409);
@@ -27,7 +26,6 @@ const editUserInfoController = async (req, res, next) => {
       username,
       name,
       city,
-      email,
       phone,
       avatar,
       description,
