@@ -7,6 +7,7 @@ import { SMTP_USER } from './../../../envConfig.js';
 
 import createNewUserModel from './../../models/userModels/createNewUserModel.js';
 import checkUserExistsModel from './../../models/userModels/checkUserExistsModel.js';
+import savePhotoUtil from '../../utils/savePhotoUtil.js';
 
 const newUserController = async (req, res, next) => {
   try {
@@ -17,11 +18,13 @@ const newUserController = async (req, res, next) => {
       email,
       password,
       phone,
-      avatar,
       description,
       isProvider = false,
     } = req.body;
     // pendiente de ver como se envia el isProvider
+
+    const { avatar } = req.files;
+    const photoName = await savePhotoUtil(avatar, 100);
 
     if (!username || !email || !password) {
       throw generateError('Faltan campos', 400);
@@ -47,7 +50,7 @@ const newUserController = async (req, res, next) => {
       email,
       hashedPass,
       phone,
-      avatar,
+      photoName,
       description,
       isProvider,
       registrationCode,

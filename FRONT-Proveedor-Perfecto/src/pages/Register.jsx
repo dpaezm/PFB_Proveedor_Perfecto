@@ -1,21 +1,22 @@
+import Input from "../components/Input";
 import useRegister from "../hooks/useRegister";
 
 export default function Register() {
   const { error, handleChange, formState, handleSubmit } = useRegister();
   return (
-    <main>
-      <h2 className="text-cta md:text-[36px] text-amarillo font-bold text-center">
+    <main className="p-5">
+      <h2 className=" p-2 text-cta md:text-[36px] text-amarillo font-bold text-center">
         Registro
       </h2>
       {error && <p className="error">{error}</p>}
       <form
-        className="text-normal text-gris1 font-normal text-center"
+        className=" p-5 border-solid border-2 rounded-md  text-normal text-gris1 font-normal text-center"
         onSubmit={handleSubmit}
       >
-        <ul>
-          <li>
+        <ul className="p-2 grid   ">
+          <li className="p-2">
             <label htmlFor="username">Nombre de Usuario: </label>
-            <input
+            <Input
               type="text"
               id="username"
               required
@@ -25,9 +26,9 @@ export default function Register() {
             />
           </li>
 
-          <li>
+          <li className="p-2">
             <label htmlFor="name">Nombre completo: </label>
-            <input
+            <Input
               type="name"
               id="name"
               name="name"
@@ -35,9 +36,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="city">Ciudad: </label>
-            <input
+            <Input
               type="text"
               id="city"
               name="city"
@@ -45,9 +46,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="email">Email: </label>
-            <input
+            <Input
               type="email"
               id="email"
               name="email"
@@ -55,9 +56,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="password">Contraseña: </label>
-            <input
+            <Input
               type="password"
               required
               id="password"
@@ -66,9 +67,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="passwordRepeat">Repite contraseña: </label>
-            <input
+            <Input
               type="password"
               required
               id="passwordRepeat"
@@ -78,9 +79,9 @@ export default function Register() {
             />
           </li>
 
-          <li>
+          <li className="p-2">
             <label htmlFor="phone">Teléfono: </label>
-            <input
+            <Input
               type="tel"
               id="phone"
               name="phone"
@@ -88,9 +89,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="avatar">Avatar: </label>
-            <input
+            <Input
               type="file"
               id="avatar"
               name="avatar"
@@ -98,9 +99,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li>
+          <li className="p-2">
             <label htmlFor="description">Sobre mi: </label>
-            <input
+            <Input
               type="textarea"
               id="description"
               name="description"
@@ -109,7 +110,9 @@ export default function Register() {
             />
           </li>
         </ul>
-        <button>Enviar</button>
+        <button className="bg-gris1 hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+          Enviar
+        </button>
       </form>
     </main>
   );
