@@ -14,7 +14,7 @@ export default function Register() {
       >
         <ul>
           <li>
-            <label htmlFor="username">Nombre de Usuario</label>
+            <label htmlFor="username">Nombre de Usuario: </label>
             <input
               type="text"
               id="username"
@@ -24,8 +24,29 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
+
           <li>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="name">Nombre completo: </label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              value={formState.name}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label htmlFor="city">Ciudad: </label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={formState.city}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label htmlFor="email">Email: </label>
             <input
               type="email"
               id="email"
@@ -35,7 +56,7 @@ export default function Register() {
             />
           </li>
           <li>
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">Contraseña: </label>
             <input
               type="password"
               required
@@ -46,7 +67,7 @@ export default function Register() {
             />
           </li>
           <li>
-            <label htmlFor="passwordRepeat">Repite contraseña</label>
+            <label htmlFor="passwordRepeat">Repite contraseña: </label>
             <input
               type="password"
               required
@@ -56,13 +77,34 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
+
           <li>
-            <label htmlFor="city">Ciudad</label>
+            <label htmlFor="phone">Teléfono: </label>
             <input
-              type="text"
-              id="city"
-              name="city"
-              value={formState.city}
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formState.phone}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label htmlFor="avatar">Avatar: </label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              value={formState.avatar}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label htmlFor="description">Sobre mi: </label>
+            <input
+              type="textarea"
+              id="description"
+              name="description"
+              value={formState.description}
               onChange={handleChange}
             />
           </li>
