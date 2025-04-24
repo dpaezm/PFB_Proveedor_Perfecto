@@ -19,7 +19,7 @@ try {
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(20), 
-    avatar VARCHAR(20), 
+    avatar VARCHAR(50), 
     description TINYTEXT,
     active BOOLEAN default false,
     isadmin BOOLEAN default false, 

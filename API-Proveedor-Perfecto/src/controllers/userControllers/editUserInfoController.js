@@ -2,9 +2,11 @@ import updateUserInfoModel from '../../models/userModels/updateInfoModel.js';
 import generateError from '../../utils/helpers.js';
 import checkUserExistsModel from '../../models/userModels/checkUserExistsModel.js';
 
+// No cambiar username y email, que queden estáticos.
 const editUserInfoController = async (req, res, next) => {
   try {
-    const { username, email } = req.body;
+    const { username, name, city, email, phone, avatar, description } =
+      req.body;
     const userId = req.user.id; //obtenermos el id desde el authUserController
 
     if (!username || !email) {
@@ -21,7 +23,15 @@ const editUserInfoController = async (req, res, next) => {
       throw generateError('Email no disponible', 409);
     }
 
-    await updateUserInfoModel(userId, { username, email });
+    await updateUserInfoModel(userId, {
+      username,
+      name,
+      city,
+      email,
+      phone,
+      avatar,
+      description,
+    });
 
     res.send({
       status: 'ok',
