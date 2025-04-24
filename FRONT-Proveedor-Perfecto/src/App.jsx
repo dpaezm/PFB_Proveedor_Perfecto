@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Login from "./pages/login";
 import Muestra from "./pages/muestra";
@@ -13,6 +14,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="/muestra" element={<Muestra />} />
       </Routes>
+      <Footer />
     </>
   );
 }
