@@ -6,7 +6,9 @@ export default async function categoryListController(req, res, next) {
 
     res.send({
       status: 'ok',
-      data: categoryList,
+      data: {
+        entries: categoryList,
+      },
     });
   } catch (error) {
     next(error);

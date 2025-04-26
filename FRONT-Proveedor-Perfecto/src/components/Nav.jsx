@@ -1,15 +1,30 @@
 import { NavLink } from "react-router-dom";
 
 export default function Nav() {
+  const token = "";
+
   return (
     <nav>
       <menu className="flex place-content-center gap-3  ">
         <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
           <NavLink to={"/"}>Inicio</NavLink>
         </li>
-        <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
-          <NavLink to="/register">Registro</NavLink>
-        </li>
+        {!token ? (
+          <>
+            <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
+              <NavLink to="/login">Login</NavLink>
+            </li>
+            <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
+              <NavLink to="/register">Registro</NavLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
+              <NavLink to="/perfil">Perfil</NavLink>
+            </li>
+          </>
+        )}
         <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
           <NavLink to="/login">Login</NavLink>
         </li>

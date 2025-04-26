@@ -19,7 +19,7 @@ try {
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(20), 
-    avatar VARCHAR(50), 
+    avatar VARCHAR(80), 
     description TINYTEXT,
     active BOOLEAN default false,
     isadmin BOOLEAN default false, 
@@ -35,7 +35,7 @@ try {
       CREATE TABLE category(
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
       categoryname VARCHAR(65) NOT NULL UNIQUE, 
-      photo1 VARCHAR(20), 
+      photo1 VARCHAR(80), 
       created_at TIMESTAMP DEFAULT NOW()
       )
       `);
@@ -47,8 +47,8 @@ try {
       category_id INT UNSIGNED,
       product_name VARCHAR(50) NOT NULL,
       price DECIMAL(10, 2) NOT NULL, 
-      photo1 VARCHAR(50), 
-      photo2 VARCHAR(20), 
+      photo1 VARCHAR(80), 
+      photo2 VARCHAR(100), 
       description TINYTEXT,
       created_at TIMESTAMP DEFAULT NOW(),
       FOREIGN KEY (owner_id) REFERENCES user(id) ON DELETE SET NULL,
@@ -61,7 +61,7 @@ try {
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
       user_id INT UNSIGNED, 
       product_id INT UNSIGNED, 
-      value VARCHAR(20), 
+      value VARCHAR(80), 
       comment TINYTEXT, 
       answer TINYTEXT, 
       status ENUM("inicio", "tramitando", "cancelado", "finalizado"), 
