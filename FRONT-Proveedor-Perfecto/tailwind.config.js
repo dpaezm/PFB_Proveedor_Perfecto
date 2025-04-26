@@ -9,6 +9,8 @@ export default {
         gris1: "var(--color-gris1)",
         gris2: "var(--color-gris2)",
         gris3: "var(--color-gris3)",
+        negro: "var(--color-negro)",
+        blanco: "var(--color-blanco",
       },
       fontFamily: {
         poppins: "var(--font-poppins)",

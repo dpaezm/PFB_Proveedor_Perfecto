@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,4 +9,105 @@
   --color-gris3: #eaeaea;
   --color-amarillo: #ffc245;
   --color-amarillo2: #e6b028;
+  --color-negro: #000000;
+  --color-blanco: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --grosor-linea-a: 1.5px;
+  --grosor-linea-b: 1px;
+  --sombra: 0 2px 5px rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: start;
+}
+
+#root > * {
+  padding: 0 24px 0 24px;
+}
+
+li {
+  list-style: none;
+}
+
+/* PONGO LOS ESTILOS DE TEXTO EN CSS DE MANERA PROVISIONAL. (Diego) */
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 24px;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: start;
+  line-height: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: start;
+  width: 100%;
+}
+
+.txt-destacado {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: start;
+  line-height: 12px;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .txt-destacado {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .txt-destacado {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }

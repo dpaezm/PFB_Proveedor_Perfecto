@@ -12,15 +12,24 @@ import ContactRequests from "./pages/ContactRequests";
 import ProvidersList from "./pages/ProvidersList";
 import ProviderDetail from "./pages/ProviderDetail";
 import NotFound from "./pages/NotFound";
+
 import CreateProduct from "./pages/CreateProduct";
 
 function App() {
   return (
     <>
       <Header />
-      <Encuentra />
-      <CategoryList />
+
       <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Encuentra />
+              <CategoryList />
+            </>
+          }
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/muestra" element={<Muestra />} />
@@ -33,6 +42,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         {/*         <Route path="/categories" element={<CategoryList />} /> */}
+        <Route path="/categories" element={<CategoryList />} />
       </Routes>
       <Footer />
     </>

@@ -35,7 +35,7 @@ try {
       CREATE TABLE category(
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
       categoryname VARCHAR(65) NOT NULL UNIQUE, 
-      photo1 VARCHAR(80), 
+      photo1 VARCHAR(120), 
       created_at TIMESTAMP DEFAULT NOW()
       )
       `);
@@ -181,8 +181,8 @@ try {
   );
 
   await pool.query(`
-      INSERT INTO category (categoryname)
-      VALUES ("Programming & Tech"), ("Graphics & Design"), ("Marketing"), ("Copywritting"), ("AI services"), ("Finance"), ("Bussines") ;
+      INSERT INTO category (categoryname, photo1)
+      VALUES ("Programming & Tech", "/media/categories/Categoria_1.png"), ("Graphics & Design", "/media/categories/Categoria_2.png"), ("Marketing", "/media/categories/Categoria_3.png"), ("Copywritting", "/media/categories/Categoria_4.png"), ("AI services", "/media/categories/Categoria_5.png"), ("Finance", "/media/categories/Categoria_6.png"), ("Bussines", "/media/categories/Categoria_7.png") ;
       `);
 
   await pool.query(

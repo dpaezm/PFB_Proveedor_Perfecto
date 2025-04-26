@@ -8,13 +8,15 @@ export default function CategoryList() {
   return (
     <>
       <h2>Categorías Populares</h2>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.id}>
-            <Category category={category} />
-          </li>
-        ))}
-      </ul>
+      <section className="container-categories">
+        <ul className="section-categories">
+          {categories.map((category) => (
+            <li key={category.id} className="li-category">
+              <Category category={category} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
