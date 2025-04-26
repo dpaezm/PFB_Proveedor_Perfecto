@@ -4,9 +4,9 @@ export async function registerService(userData) {
   let res = await fetch(VITE_API_URL + "/users/register", {
     method: "POST",
     body: JSON.stringify(userData),
-    headers: {
+    /*  headers: {
       "Content-Type": "application/json",
-    },
+    }, */
   });
   console.log(res);
 

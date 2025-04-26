@@ -10,7 +10,7 @@ export default function useRegister() {
     password: "",
     passwordRepeat: "",
     city: "",
-    avatar: "",
+    avatar: null,
     name: "",
     description: "",
     phone: "",
@@ -23,16 +23,24 @@ export default function useRegister() {
     setError("");
     setFormState({ ...formState, [name]: value });
   }
+
+  function handleImageChange({ target: { name, files } }) {
+    let img = files[0];
+    setFormState({ ...formState, [name]: img });
+  }
   let navigate = useNavigate();
+
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
+
+    const formData = new FormData(e.target);
 
     try {
       if (formState.password !== formState.passwordRepeat) {
         throw new Error("Las contraseñas no coinciden");
       }
-      await registerService(formState);
+      await registerService(formData);
 
       console.log("usuario registrado correctamente");
       setFormState(initialState);
@@ -42,5 +50,5 @@ export default function useRegister() {
 
     navigate("/login");
   }
-  return { error, handleChange, formState, handleSubmit };
+  return { error, handleChange, handleImageChange, formState, handleSubmit };
 }

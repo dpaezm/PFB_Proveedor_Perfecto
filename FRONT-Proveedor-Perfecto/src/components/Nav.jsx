@@ -12,9 +12,6 @@ export default function Nav() {
         {!token ? (
           <>
             <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li className="text-destacado md:text-[14px] text-amarillo font-medium text-center">
               <NavLink to="/register">Registro</NavLink>
             </li>
           </>
