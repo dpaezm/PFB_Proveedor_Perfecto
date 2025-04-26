@@ -2,7 +2,8 @@ import Input from "../components/Input";
 import useRegister from "../hooks/useRegister";
 
 export default function Register() {
-  const { error, handleChange, formState, handleSubmit } = useRegister();
+  const { error, handleChange, handleImageChange, formState, handleSubmit } =
+    useRegister();
   return (
     <main className="p-5">
       <h2 className=" p-2 text-cta md:text-[36px] text-amarillo font-bold text-center">
@@ -95,8 +96,7 @@ export default function Register() {
               type="file"
               id="avatar"
               name="avatar"
-              value={formState.avatar}
-              onChange={handleChange}
+              onChange={handleImageChange}
             />
           </li>
           <li className="p-2">
