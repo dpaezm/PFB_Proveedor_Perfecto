@@ -33,6 +33,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/muestra" element={<Muestra />} />
+
         <Route path="/user-data" element={<UserData />} />
         <Route path="/create-product" element={<CreateProduct />} />
         <Route path="/product/:id" element={<ProductDetail />} />
@@ -42,6 +43,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         {/*         <Route path="/categories" element={<CategoryList />} /> */}
+
         <Route path="/categories" element={<CategoryList />} />
       </Routes>
       <Footer />
