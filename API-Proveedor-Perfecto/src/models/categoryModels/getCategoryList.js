@@ -8,7 +8,7 @@ export default async function getCategoryListModel() {
   //selecciono los nombres de las categorías
   const [categoryList] = await pool.query(
     `
-      SELECT categoryname, id, photo FROM category
+      SELECT categoryname, id, photo1 FROM category
     `,
   );
 
