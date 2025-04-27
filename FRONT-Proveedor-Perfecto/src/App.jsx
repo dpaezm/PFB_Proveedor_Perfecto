@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 
 import CreateProduct from "./pages/CreateProduct";
 import "react-toastify/dist/ReactToastify.css";
+import CategoryProducts from "./components/Category/CategoryProducts";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/categories" element={<CategoryList />} />
+        <Route path="/categories/:id" element={<CategoryProducts />} />
       </Routes>
       <Footer />
     </>
