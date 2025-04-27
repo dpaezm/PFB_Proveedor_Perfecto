@@ -22,32 +22,35 @@ function App() {
   return (
     <>
       <Header />
+      <main className="flex grow flex-col">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Encuentra />
+                <CategoryList />
+              </>
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/muestra" element={<Muestra />} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Encuentra />
-              <CategoryList />
-            </>
-          }
-        />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/muestra" element={<Muestra />} />
+          <Route path="/user-data" element={<UserData />} />
+          <Route path="/create-product" element={<CreateProduct />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/contact-requests" element={<ContactRequests />} />
+          <Route path="/providers" element={<ProvidersList />} />
+          <Route path="/provider/:id" element={<ProviderDetail />} />
+          <Route path="*" element={<NotFound />} />
 
-        <Route path="/user-data" element={<UserData />} />
-        <Route path="/create-product" element={<CreateProduct />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/contact-requests" element={<ContactRequests />} />
-        <Route path="/providers" element={<ProvidersList />} />
-        <Route path="/provider/:id" element={<ProviderDetail />} />
-        <Route path="*" element={<NotFound />} />
+          <Route path="/categories" element={<CategoryList />} />
+            <Route path="/categories/:id" element={<CategoryProducts />} />
+        </Routes>
+      </main>
 
-        <Route path="/categories" element={<CategoryList />} />
-        <Route path="/categories/:id" element={<CategoryProducts />} />
-      </Routes>
+
       <Footer />
       <ToastContainer position="bottom-right" />
     </>

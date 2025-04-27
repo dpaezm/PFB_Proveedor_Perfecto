@@ -11,12 +11,14 @@ export default function Register() {
       </h2>
       {error && <p className="error">{error}</p>}
       <form
-        className=" p-5 border-solid border-2 rounded-md  text-normal text-gris1 font-normal text-center"
+        className=" p-5 border-solid border-2 rounded-md  text-normal text-negro font-bold text-center bg-amarillo max-w-lg mx-auto"
         onSubmit={handleSubmit}
       >
-        <ul className="p-2 grid   ">
+        <ul className="  ">
           <li className="p-2">
-            <label htmlFor="username">Nombre de Usuario: </label>
+            <label className="block" htmlFor="username">
+              Nombre de Usuario:{" "}
+            </label>
             <Input
               type="text"
               id="username"
@@ -28,7 +30,9 @@ export default function Register() {
           </li>
 
           <li className="p-2">
-            <label htmlFor="name">Nombre completo: </label>
+            <label className="block" htmlFor="name">
+              Nombre completo:{" "}
+            </label>
             <Input
               type="name"
               id="name"
@@ -38,7 +42,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="city">Ciudad: </label>
+            <label className="block" htmlFor="city">
+              Ciudad:{" "}
+            </label>
             <Input
               type="text"
               id="city"
@@ -48,7 +54,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="email">Email: </label>
+            <label className="block" htmlFor="email">
+              Email:{" "}
+            </label>
             <Input
               type="email"
               id="email"
@@ -58,7 +66,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="password">Contraseña: </label>
+            <label className="block" htmlFor="password">
+              Contraseña:{" "}
+            </label>
             <Input
               type="password"
               required
@@ -69,7 +79,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="passwordRepeat">Repite contraseña: </label>
+            <label className="block" htmlFor="passwordRepeat">
+              Repite contraseña:{" "}
+            </label>
             <Input
               type="password"
               required
@@ -81,7 +93,9 @@ export default function Register() {
           </li>
 
           <li className="p-2">
-            <label htmlFor="phone">Teléfono: </label>
+            <label className="block" htmlFor="phone">
+              Teléfono:{" "}
+            </label>
             <Input
               type="tel"
               id="phone"
@@ -91,7 +105,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="avatar">Avatar: </label>
+            <label className="block" htmlFor="avatar">
+              Avatar:{" "}
+            </label>
             <Input
               type="file"
               id="avatar"
@@ -100,7 +116,9 @@ export default function Register() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="description">Sobre mi: </label>
+            <label className="block" htmlFor="description">
+              Sobre mi:{" "}
+            </label>
             <Input
               type="textarea"
               id="description"
@@ -110,7 +128,7 @@ export default function Register() {
             />
           </li>
         </ul>
-        <button className="bg-gris1 hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+        <button className="bg-black hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
           Enviar
         </button>
       </form>

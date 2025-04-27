@@ -4,18 +4,18 @@ import useLogin from "../hooks/useLogin";
 export default function Login() {
   const { error, formState, handleSubmit, handleChange } = useLogin();
   return (
-    <main className="p-5">
-      <h2 className="text-cta md:text-[36px] text-amarillo font-bold text-center">
-        Login
-      </h2>
+    <div className="">
+      <h2 className="text-cta md:text-[36px] text-amarillo font-bold">Login</h2>
       {error && <p className="error">{error}</p>}
       <form
-        className="p-5 border-solid border-2 rounded-md  text-normal text-gris1 font-normal text-center"
+        className=" p-5 border-solid border-2 rounded-md  text-normal text-negro font-bold text-center bg-amarillo w-full max-w-xs"
         onSubmit={handleSubmit}
       >
-        <ul className="p-2 flex-col ">
+        <ul className=" ">
           <li className="p-2">
-            <label htmlFor="email">Email: </label>
+            <label className="block text-sm font-bold mb-2" htmlFor="email">
+              Email:{" "}
+            </label>
             <Input
               type="email"
               required
@@ -26,8 +26,11 @@ export default function Login() {
             />
           </li>
           <li className="p-2">
-            <label htmlFor="password">Contraseña: </label>
+            <label className="block text-sm font-bold mb-2" htmlFor="password">
+              Contraseña:{" "}
+            </label>
             <Input
+              type="password"
               required
               id="password"
               name="password"
@@ -36,10 +39,10 @@ export default function Login() {
             />
           </li>
         </ul>
-        <button className="bg-gris1 hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+        <button className="bg-black hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
           Enviar
         </button>
       </form>
-    </main>
+    </div>
   );
 }
