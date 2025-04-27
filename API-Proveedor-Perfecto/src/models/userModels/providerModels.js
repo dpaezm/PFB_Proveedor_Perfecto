@@ -5,7 +5,24 @@ export async function getProviders() {
 
   let [providers] = await pool.query(
     `
-        SELECT username, email, phone, avatar FROM user WHERE isprovider = true
+        SELECT 
+  u.id,
+  u.username,
+  u.name,
+  u.city,
+  u.email,
+  u.phone,
+  u.avatar,
+  u.description, 
+  u.created_at, 
+  GROUP_CONCAT(DISTINCT c.categoryname) AS categories,
+  ROUND(AVG(co.rating), 1) AS avg_rating
+FROM user u
+LEFT JOIN product p ON u.id = p.owner_id
+LEFT JOIN category c ON p.category_id = c.id
+LEFT JOIN contact co ON p.id = co.product_id AND co.rating IS NOT NULL
+WHERE u.isprovider = true
+GROUP BY u.id
         `,
   );
   return providers;

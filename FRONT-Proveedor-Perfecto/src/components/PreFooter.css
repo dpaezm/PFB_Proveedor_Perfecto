@@ -1,5 +1,31 @@
 #titulos-prefooter {
   display: flex;
+
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 1rem 0 1rem 0;
+}
+
+#txt-prefooter {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 800px) {
+  #titulos-prefooter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #txt-prefooter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
 }

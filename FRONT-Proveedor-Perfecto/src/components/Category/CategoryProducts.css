@@ -1,0 +1,28 @@
+.list-products-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 2rem 0 2rem 0;
+}
+
+.li-product-category {
+  max-width: 300px;
+  justify-self: center;
+  margin-bottom: 2rem;
+}
+
+.container-products-category h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#home-icon {
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: transparent;
+}

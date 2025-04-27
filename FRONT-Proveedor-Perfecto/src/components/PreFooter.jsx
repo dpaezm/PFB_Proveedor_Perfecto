@@ -28,6 +28,32 @@ export default function PreFooter() {
             </li>
           ))}
         </ul>
+        <ul>
+          <li>
+            <p>Hazte proveedor de Find;)</p>
+            <p>Como funciona Find;)? </p>
+            <p>Manuales Find;)</p>
+            <p>Eventos Find;)</p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>Encuentra el proveedor perfecto</p>
+            <p>Servicio de atención al cliente </p>
+            <p>Preguntas frecuentes</p>
+            <p>Seguridad al comprador</p>
+            <p>Eventos</p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>Acerca de Find;)</p>
+            <p>Ayuda y soporte </p>
+            <p>Careers</p>
+            <p>Termino de servicio</p>
+            <p>Política</p>
+          </li>
+        </ul>
       </section>
     </>
   );

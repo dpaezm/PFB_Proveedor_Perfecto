@@ -1,9 +1,9 @@
+import { NavLink } from "react-router-dom";
 import useCategories from "../../hooks/useCategories.js";
 import Category from "./Category.jsx";
 
 export default function CategoryList() {
   const { categories } = useCategories();
-  console.log(categories);
 
   return (
     <>
@@ -12,7 +12,9 @@ export default function CategoryList() {
         <ul className="section-categories">
           {categories.map((category) => (
             <li key={category.id} className="li-category">
-              <Category category={category} />
+              <NavLink to={`/categories/${category.id}`}>
+                <Category category={category} />
+              </NavLink>
             </li>
           ))}
         </ul>
