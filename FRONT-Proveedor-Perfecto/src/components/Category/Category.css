@@ -1,18 +1,9 @@
-.container-categories {
-  display: flex;
-  justify-content: space-around;
-  /*   no está funcionando. Pendiente revisar para centrar
- */
-}
-
 .section-categories {
-  grid-area: "categories";
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
   margin-bottom: 10rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+  gap: 16px;
 }
 
 .li-category {
@@ -26,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  justify-self: center;
 }
 
 .img-category {

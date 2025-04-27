@@ -1,0 +1,39 @@
+.product-card {
+  width: 240px;
+}
+
+.product-photo img {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.provider-name-section {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.avatar-photo img {
+  width: 40px;
+}
+
+.add-by {
+  color: var(--color-gris2);
+}
+
+#rating-star {
+  display: flex;
+  align-items: center;
+}
+
+#star-icon {
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: transparent;
+}
