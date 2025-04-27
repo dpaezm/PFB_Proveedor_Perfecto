@@ -2,7 +2,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Nav from "./Nav";
-import Nav2 from "./Nav2";
+//import Nav2 from "./Nav2";
 import logo from "../assets/LOGO_find.png";
 
 import Button from "./Button";
@@ -10,7 +10,6 @@ import Button from "./Button";
 export default function Header() {
   return (
     <header>
-      <Nav2 />
       <Link to={"/"}>
         <button
           id="logo-icon"
