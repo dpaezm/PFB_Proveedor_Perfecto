@@ -13,6 +13,7 @@ import ProvidersList from "./pages/ProvidersList";
 import ProviderDetail from "./pages/ProviderDetail";
 import NotFound from "./pages/NotFound";
 import CreateProduct from "./pages/CreateProduct";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         {/*         <Route path="/categories" element={<CategoryList />} /> */}
       </Routes>
       <Footer />
+      <ToastContainer position="bottom-right" />
     </>
   );
 }

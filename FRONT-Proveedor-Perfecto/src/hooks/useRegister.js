@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { registerService } from "../services/userServices";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function useRegister() {
   let initialState = {
@@ -43,9 +44,11 @@ export default function useRegister() {
       await registerService(formData);
 
       console.log("usuario registrado correctamente");
+      toast.success("Revisa tu correo para activar tu cuenta");
       setFormState(initialState);
     } catch (e) {
       setError(e.message);
+      toast.error(e.message);
     }
 
     navigate("/login");

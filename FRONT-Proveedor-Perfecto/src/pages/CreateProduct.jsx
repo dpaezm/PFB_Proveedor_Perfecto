@@ -103,8 +103,6 @@ export default function CreateProduct() {
           Crear Producto
         </button>
       </form>
-
-      <ToastContainer position="bottom-right" />
     </main>
   );
 }

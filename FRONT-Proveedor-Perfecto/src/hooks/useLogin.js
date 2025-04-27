@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { loginService } from "../services/userServices";
+import { toast } from "react-toastify";
 
 export default function useLogin() {
   const { login } = useAuth();
@@ -27,8 +28,10 @@ export default function useLogin() {
       console.log(data.token);
       login(data.token);
       setFormState(initialState);
+      toast.success("¡Bienvenido de nuevo!");
     } catch (e) {
       setError(e.message);
+      toast.error(e.message);
     }
   }
   return { error, formState, handleSubmit, handleChange };
