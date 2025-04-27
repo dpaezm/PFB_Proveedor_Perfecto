@@ -42,8 +42,6 @@ function App() {
         <Route path="/provider/:id" element={<ProviderDetail />} />
         <Route path="*" element={<NotFound />} />
 
-        {/*         <Route path="/categories" element={<CategoryList />} /> */}
-
         <Route path="/categories" element={<CategoryList />} />
       </Routes>
       <Footer />
