@@ -21,6 +21,9 @@ import {
   getProvidersController,
 } from './userControllers/providerControllers.js';
 import updateUserPasswordController from './userControllers/updateUserPasswordController.js';
+import productByCategoryIdController from './serviceControllers/productByCategoryIdControllers.js';
+import productByUserIdController from './serviceControllers/productByUserIdControllers.js';
+import productBySearchController from './serviceControllers/productBySearchController.js';
 
 export {
   newUserController,
@@ -41,4 +44,7 @@ export {
   getProvidersController,
   editUserInfoController,
   updateUserPasswordController,
+  productByCategoryIdController,
+  productByUserIdController,
+  productBySearchController,
 };
