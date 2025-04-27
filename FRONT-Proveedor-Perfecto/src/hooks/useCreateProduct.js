@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useAuth } from "../context/authContext";
+const { VITE_API_URL } = import.meta.env;
 
 const useCreateProduct = () => {
+  const { token } = useAuth();
   const [formState, setFormState] = useState({
     product_name: "",
     price: "",
@@ -31,10 +34,10 @@ const useCreateProduct = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch(VITE_API_URL + "/products", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${token}`,
         },
         body: formData,
       });
