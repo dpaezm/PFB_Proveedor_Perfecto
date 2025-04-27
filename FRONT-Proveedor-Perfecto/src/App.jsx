@@ -13,6 +13,7 @@ import ProvidersList from "./pages/ProvidersList";
 import ProviderDetail from "./pages/ProviderDetail";
 import NotFound from "./pages/NotFound";
 import CreateProduct from "./pages/CreateProduct";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
