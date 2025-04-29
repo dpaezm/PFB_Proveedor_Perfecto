@@ -26,6 +26,7 @@ export default function useRegister() {
   }
 
   function handleImageChange({ target: { name, files } }) {
+    setError("");
     let img = files[0];
     setFormState({ ...formState, [name]: img });
   }
@@ -46,12 +47,11 @@ export default function useRegister() {
       console.log("usuario registrado correctamente");
       toast.success("Revisa tu correo para activar tu cuenta");
       setFormState(initialState);
+      navigate("/login");
     } catch (e) {
       setError(e.message);
       toast.error(e.message);
     }
-
-    navigate("/login");
   }
   return { error, handleChange, handleImageChange, formState, handleSubmit };
 }
