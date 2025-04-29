@@ -1,13 +1,14 @@
 const { VITE_API_URL } = import.meta.env;
 
-export async function registerService(userData) {
+export async function registerService(formData) {
   let res = await fetch(VITE_API_URL + "/users/register", {
     method: "POST",
-    body: JSON.stringify(userData),
+    body: formData,
     /*  headers: {
       "Content-Type": "application/json",
     }, */
   });
+  //console.log(formData);
   console.log(res);
 
   let json = await res.json();

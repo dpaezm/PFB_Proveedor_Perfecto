@@ -5,7 +5,7 @@ export default function Register() {
   const { error, handleChange, handleImageChange, formState, handleSubmit } =
     useRegister();
   return (
-    <main className="p-5">
+    <div className="">
       <h2 className=" p-2 text-cta md:text-[36px] text-amarillo font-bold text-center">
         Registro
       </h2>
@@ -132,6 +132,6 @@ export default function Register() {
           Enviar
         </button>
       </form>
-    </main>
+    </div>
   );
 }
