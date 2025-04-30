@@ -1,20 +1,28 @@
 import starIcon from "./../../assets/icons/star.png";
 import locationIcon from "./../../assets/icons/location.png";
+import "./Provider.css";
 const { VITE_API_URL } = import.meta.env;
 
 export default function Provider({ provider }) {
-  const { username, name, avatar, city, categories, avg_rating, created_at } = provider;
+  // console.log(provider);
+  const { username, name, avatar, city, categories, avg_rating, created_at, total_ratings } = provider;
+
+  const fecha = new Date(created_at);
+
+  const fechaFormateada = fecha.toLocaleDateString("es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 
   return (
     <article className="provider-card">
+      <p className="avatar-photo">{avatar && <img src={`${VITE_API_URL}${avatar}`} alt={name} width="12px" />}</p>
       <h3 className="provider-name-section">
-        <span className="avatar-photo">
-          {avatar && <img src={`${VITE_API_URL}${avatar}`} alt={name} width="12px" />}
-        </span>
         <span className="provider-name"> {name}</span>
-        <span className="txt-username">@{username}</span>
+        <span className="txt-secundary">@{username}</span>
       </h3>
-      <p className="fecha-alta">En la plataforma desde {created_at}</p>
+      <p className="fecha-alta">En la plataforma desde el {fechaFormateada}</p>
       <p className="provider-rating">
         {" "}
         <button
@@ -22,8 +30,9 @@ export default function Provider({ provider }) {
           style={{
             backgroundImage: `url(${starIcon})`,
           }}
-        />{" "}
+        />
         {avg_rating ? avg_rating : "Sin valoraciones"}
+        <span className="txt-secundary"> ({total_ratings})</span>
       </p>
       <p className="provider-city">
         <button
@@ -34,7 +43,7 @@ export default function Provider({ provider }) {
         />
         {city}
       </p>
-      <p className="provider-categories">{categories}</p>
+      <p className="txt-destacado">{categories}</p>
     </article>
   );
 }

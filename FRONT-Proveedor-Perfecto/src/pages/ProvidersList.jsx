@@ -8,7 +8,7 @@ export default function ProvidersList() {
   const { providers } = useProviders();
 
   return (
-    <>
+    <section className="container-providers-list">
       <h2>
         <NavLink to={"/"}>
           <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
@@ -24,6 +24,6 @@ export default function ProvidersList() {
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 }

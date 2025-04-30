@@ -45,14 +45,6 @@ header #logo-icon {
   height: 70px;
 }
 
-.boton {
-  display: flex;
-  font-size: 12px;
-  font-weight: 500;
-  align-items: center;
-  justify-content: center;
-}
-
 .boton-blanco {
 }
 
@@ -74,23 +66,8 @@ header #logo-icon {
     height: 70px;
   }
 
-  .boton {
-    font-size: 14px;
-    border: var(--grosor-linea-a) solid black;
-    width: 144px;
-    height: 40px;
-    border-radius: 12px;
-  }
-
   #b-login {
     display: flex;
-  }
-
-  .boton-blanco {
-  }
-
-  .boton-amarillo {
-    background-color: var(--color-amarillo);
   }
 }
 

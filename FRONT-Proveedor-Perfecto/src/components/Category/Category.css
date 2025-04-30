@@ -1,6 +1,5 @@
-.section-categories {
+.section-product-list {
   margin-bottom: 10rem;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
   gap: 16px;

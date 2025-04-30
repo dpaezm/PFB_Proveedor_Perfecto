@@ -9,7 +9,7 @@ export default function CategoryList() {
     <>
       <h2>Categorías Populares</h2>
       <section className="container-categories">
-        <ul className="section-categories">
+        <ul className="section-product-list">
           {categories.map((category) => (
             <li key={category.id} className="li-category">
               <NavLink to={`/categories/${category.id}`}>

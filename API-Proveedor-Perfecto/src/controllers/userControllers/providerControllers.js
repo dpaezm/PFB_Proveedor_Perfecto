@@ -25,7 +25,7 @@ export async function getProviderDetailController(req, res, next) {
 
     res.send({
       status: 'ok',
-      providerDetail,
+      data: providerDetail,
     });
   } catch (error) {
     next(error);

@@ -26,3 +26,17 @@
   cursor: pointer;
   color: transparent;
 }
+
+@media (min-width: 800px) {
+  #home-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
