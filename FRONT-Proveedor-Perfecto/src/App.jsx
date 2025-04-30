@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      {!noLayoutRoutes.includes(location.pathname) && <Header />}
-
+      {/* {!noLayoutRoutes.includes(location.pathname) && <Header />} */}
+      <Header />
       <main className="flex grow flex-col">
         <Routes>
           <Route
