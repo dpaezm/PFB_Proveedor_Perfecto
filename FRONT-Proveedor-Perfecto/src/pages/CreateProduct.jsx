@@ -3,13 +3,14 @@ import useCreateProduct from "../hooks/useCreateProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../index.css";
+import { NavLink } from "react-router-dom";
 
 export default function CreateProduct() {
   const { formState, error, handleSubmit, handleTextChange, handleFileChange } =
     useCreateProduct();
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-start">
+    <div className="w-screen h-80 flex flex-col items-center justify-start">
       <h2 className="font-bold">Crear Producto</h2>
       <section className=" flex justify-self-center w-60% md:px-16 lg:px-32 ">
         {error && <p className="text-red-500 font-bold text-center">{error}</p>}
@@ -105,6 +106,9 @@ export default function CreateProduct() {
           <button type="submit" className="boton boton-amarillo cursor-pointer">
             Crear producto
           </button>
+          <NavLink to={`/`} className="boton boton-atras">
+            Atrás
+          </NavLink>
         </form>
 
         <ToastContainer position="bottom-right" />
