@@ -5,6 +5,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../index.css";
 
+export default function Validation() {
+
   const Validation = () => {
     const [email, setEmail] = useState('');
     const { validate, loading, message } = useValidation();
@@ -48,5 +50,5 @@ import "../index.css";
     );
 };
 
+}
 
-export default Validation;

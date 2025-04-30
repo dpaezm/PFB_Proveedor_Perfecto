@@ -3,7 +3,7 @@ import { validateUser } from '../services/authService';
 import { useNavigate } from "react-router-dom";
 
 
-export default useValidation;
+export default function useValidation() {
 
 const useValidation = () => {
     
@@ -31,3 +31,4 @@ const useValidation = () => {
     return { validate, loading, message };
 };
 
+}
