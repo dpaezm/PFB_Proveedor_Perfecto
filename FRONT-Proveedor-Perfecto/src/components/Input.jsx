@@ -1,5 +1,5 @@
+import "../index.css";
+
 export default function Input({ ...props }) {
-  return (
-    <input className="border-solid border-2 rounded-md bg-white " {...props} />
-  );
+  return <input className="p-2 rounded-md border border-gris2" {...props} />;
 }
