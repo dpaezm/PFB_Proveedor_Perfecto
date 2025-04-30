@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import CategoryList from "./components/Category/CategoryList";
 import Header from "./components/Header";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Encuentra from "./components/Product/Encuentra";
 import Muestra from "./pages/muestra";
 import Register from "./pages/Register";

@@ -5,7 +5,7 @@ export default function Register() {
   const { error, handleChange, handleImageChange, formState, handleSubmit } =
     useRegister();
   return (
-    <div className="w-screen h-80 flex flex-col items-center justify-start">
+    <div className="w-screen  flex flex-grow flex-col items-center justify-start">
       <h2 className="text-cta md:text-[36px] text-negro font-bold">Registro</h2>
       {error && <p className="error">{error}</p>}
       <form
