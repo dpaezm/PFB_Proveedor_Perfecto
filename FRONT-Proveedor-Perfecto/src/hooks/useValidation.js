@@ -1,11 +1,16 @@
 import { useState } from 'react';
-import { validateUserEmail } from '../services/authService';
+import { validateUser } from '../services/authService';
+import { useNavigate } from "react-router-dom";
 
-const useUserValidation = () => {
+
+export default useValidation;
+
+const useValidation = () => {
+    
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
 
-    const validate = async (email) => {
+    const validate = async () => {
         setLoading(true);
         setMessage(''); 
 
@@ -26,4 +31,3 @@ const useUserValidation = () => {
     return { validate, loading, message };
 };
 
-export default useUserValidation;

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import useUserValidation from '../hooks/uservalidacion'; 
+import useUserValidation from '../hooks/usevalidacion'; 
 import { Link } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../index.css";
 
-const Validation = () => {
+  const Validation = () => {
     const [email, setEmail] = useState('');
-    const { validate, loading, message } = useUserValidation();
+    const { validate, loading, message } = useValidation();
 
     const handleChange = (event) => {
         setEmail(event.target.value);
@@ -12,38 +15,38 @@ const Validation = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        validate(email); 
+        validate('/users/validate/:registrationCode', activateUserController); 
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
-            <h1 className="text-cta md:text-[36px] text-amarillo font-bold text-center mb-4">
+        <div className="w-screen h-screen flex flex-col items-center justify-start">
+            <h1 className="font-bold">
                 Validación de Usuario
             </h1>
-            <form onSubmit={handleSubmit} className="mb-4">
+            <form onSubmit={handleSubmit} className="w-full max-h-screen flex-grow-1 md:w-20% mx-auto flex flex-col justify-self-center gap-6 md:gap-8 items-center max-w-[900px] ">
                 <div>
-                    <label htmlFor="email" className="block mb-2 text-lg text-gray-700">Correo Electrónico:</label>
+                    <label htmlFor="email" className="block mb-2">Correo Electrónico:</label>
                     <input
                         type="email"
                         id="email"
                         value={email}
                         onChange={handleChange}
                         required
-                        className="border border-gray-300 rounded-lg p-2"
+                        className="formulario"
                     />
                 </div>
                 <button
                     type="submit"
                     disabled={loading}
-                    className="mt-4 bg-amarillo text-white py-2 px-4 rounded-lg hover:bg-amarillo2 transition-colors"
-                >
+                    className="boton bg-amarillo cursor-pointer">
                     {loading ? 'Validando...' : 'Validar Usuario'}
-                </button>
+            </button>
             </form>
             {message && <p className="text-lg text-gray-700">{message}</p>}
             <Link to="/" className="text-blue-500 hover:underline">Volver a la Página Principal</Link>
         </div>
     );
 };
+
 
 export default Validation;
