@@ -5,132 +5,144 @@ export default function Register() {
   const { error, handleChange, handleImageChange, formState, handleSubmit } =
     useRegister();
   return (
-    <div className="">
-      <h2 className=" p-2 text-cta md:text-[36px] text-amarillo font-bold text-center">
-        Registro
-      </h2>
+    <div className="w-screen h-80 flex flex-col items-center justify-start">
+      <h2 className="text-cta md:text-[36px] text-negro font-bold">Registro</h2>
       {error && <p className="error">{error}</p>}
       <form
-        className=" p-5 border-solid border-2 rounded-md  text-normal text-negro font-bold text-center bg-amarillo max-w-lg mx-auto"
+        className=" w-full max-h-screen flex-grow-1 md:w-20% mx-auto flex flex-col justify-self-center gap-6 md:gap-8 items-center max-w-[900px] "
         onSubmit={handleSubmit}
       >
         <ul className="  ">
           <li className="p-2">
             <label className="block" htmlFor="username">
-              Nombre de Usuario:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="text"
               id="username"
               required
               name="username"
+              placeholder="Nombre de usuario"
               value={formState.username}
               onChange={handleChange}
             />
           </li>
-
           <li className="p-2">
             <label className="block" htmlFor="name">
-              Nombre completo:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco w-full"
               type="name"
               id="name"
               name="name"
+              placeholder="Nombre completo"
               value={formState.name}
               onChange={handleChange}
             />
           </li>
           <li className="p-2">
             <label className="block" htmlFor="city">
-              Ciudad:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="text"
               id="city"
               name="city"
+              placeholder="Ciudad"
               value={formState.city}
               onChange={handleChange}
             />
           </li>
           <li className="p-2">
             <label className="block" htmlFor="email">
-              Email:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="email"
               id="email"
               name="email"
+              required
+              placeholder="Email"
               value={formState.email}
               onChange={handleChange}
             />
           </li>
           <li className="p-2">
             <label className="block" htmlFor="password">
-              Contraseña:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="password"
               required
               id="password"
               name="password"
+              placeholder="Contraseña"
               value={formState.password}
               onChange={handleChange}
             />
           </li>
           <li className="p-2">
             <label className="block" htmlFor="passwordRepeat">
-              Repite contraseña:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="password"
               required
               id="passwordRepeat"
               name="passwordRepeat"
+              placeholder="Repite contraseña"
               value={formState.passwordRepeat}
               onChange={handleChange}
             />
           </li>
-
           <li className="p-2">
             <label className="block" htmlFor="phone">
-              Teléfono:{" "}
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
               type="tel"
               id="phone"
               name="phone"
+              placeholder="Teléfono"
               value={formState.phone}
               onChange={handleChange}
             />
           </li>
           <li className="p-2">
-            <label className="block" htmlFor="avatar">
-              Avatar:{" "}
+            <label className="block text-center" htmlFor="description">
+              {" "}
             </label>
             <Input
+              className="formulario bg-blanco"
+              type="textarea"
+              id="description"
+              name="description"
+              placeholder="Descríbete brevemente"
+              value={formState.description}
+              onChange={handleChange}
+            />
+          </li>{" "}
+          <li className="p-2">
+            <label className="block text-center" htmlFor="avatar">
+              Sube tu avatar:{" "}
+            </label>
+            <Input
+              className="formulario bg-blanco"
               type="file"
               id="avatar"
               name="avatar"
               onChange={handleImageChange}
             />
           </li>
-          <li className="p-2">
-            <label className="block" htmlFor="description">
-              Sobre mi:{" "}
-            </label>
-            <Input
-              type="textarea"
-              id="description"
-              name="description"
-              value={formState.description}
-              onChange={handleChange}
-            />
-          </li>
         </ul>
-        <button className="bg-black hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
-          Enviar
-        </button>
+        <button className="boton bg-amarillo cursor-pointer ">Registrar</button>
       </form>
     </div>
   );
