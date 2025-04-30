@@ -6,10 +6,13 @@ const { VITE_API_URL } = import.meta.env;
 export default function useProviderDetail() {
   const { id } = useParams();
   const [provider, setProvider] = useState(null);
+  const [error, setError] = useState(null);
 
   async function loadProviderDetail() {
     try {
-      let res = await fetch(`${VITE_API_URL}/providers/${id}`);
+      setError(null);
+      const res = await fetch(`${VITE_API_URL}/providers/${id}`);
+      if (!res.ok) throw new Error("Proveedor no encontrado");
 
       const { data } = await res.json();
       // console.log(data);
@@ -17,10 +20,11 @@ export default function useProviderDetail() {
     } catch (error) {
       console.error("Error cargando proveedor", error);
       setProvider(null);
+      setError(error.message);
     }
   }
   useEffect(() => {
     loadProviderDetail();
   }, [id]);
-  return { provider };
+  return { provider, error };
 }

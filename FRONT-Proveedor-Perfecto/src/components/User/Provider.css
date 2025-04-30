@@ -26,3 +26,7 @@ article.provider-card * {
   display: flex;
   align-items: center;
 }
+
+.li-products-provider {
+  width: 240px;
+}

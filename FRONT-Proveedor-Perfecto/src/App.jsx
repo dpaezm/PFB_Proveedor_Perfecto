@@ -46,7 +46,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/contact-requests" element={<ContactRequests />} />
           <Route path="/providers" element={<ProvidersList />} />
-          <Route path="/provider/:id" element={<ProviderDetail />} />
+          <Route path="/providers/:id" element={<ProviderDetail />} />
           <Route path="/categories" element={<CategoryList />} />
           <Route path="/categories/:id" element={<CategoryProducts />} />
           <Route path="*" element={<NotFound />} />

@@ -46,6 +46,10 @@ header > * {
   padding: 0 24px 0 24px;
 }
 
+footer > * {
+  padding: 0 24px 0 24px;
+}
+
 li {
   list-style: none;
 }
@@ -87,6 +91,29 @@ h3 {
   color: var(--color-gris1);
 }
 
+.boton {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-atras {
+  border: var(--grosor-linea-a) solid black;
+  width: 144px;
+  height: 40px;
+  border-radius: 12px;
+}
+
+.boton-contactar {
+  background-color: var(--color-amarillo);
+  border: var(--grosor-linea-a) solid black;
+  width: 144px;
+  height: 40px;
+  border-radius: 12px;
+}
+
 @media (min-width: 800px) {
   h1 {
     font-size: 32px;
@@ -106,6 +133,18 @@ h3 {
   .txt-destacado {
     font-size: 14px;
     line-height: 14px;
+  }
+
+  .boton {
+    font-size: 14px;
+    border: var(--grosor-linea-a) solid black;
+    width: 144px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .boton-amarillo {
+    background-color: var(--color-amarillo);
   }
 }
 

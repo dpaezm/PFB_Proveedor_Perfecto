@@ -6,9 +6,7 @@ export default function Login() {
   return (
     <div className=" flex flex-col flex-grow justify-center items-center">
       <h2 className="text-logo md:text-[32px] text-negro ">Login</h2>
-      <h3 className="flex flex-col  justify-center items-center">
-        Bienvenido de nuevo
-      </h3>
+      <h3 className="flex flex-col  justify-center items-center">Bienvenido de nuevo</h3>
 
       <div className="w-screen h-80 flex flex-col items-center">
         {error && <p className="error">{error}</p>}
@@ -34,10 +32,7 @@ export default function Login() {
             </li>
 
             <li className="p-2">
-              <label
-                className="block text-sm font-bold mb-2"
-                htmlFor="password"
-              >
+              <label className="block text-sm font-bold mb-2" htmlFor="password">
                 {" "}
               </label>
               <Input
@@ -52,18 +47,13 @@ export default function Login() {
               />
             </li>
             <li>
-              <a
-                href="https://www.google.es"
-                className="text-blue-600 underline"
-              >
+              <a href="https://www.google.es" className="text-blue-600 underline">
                 ¿Has olvidado tu contraseña?
               </a>
             </li>
           </ul>
 
-          <button className="boton bg-amarillo cursor-pointer justify-self-center  ">
-            Inicia sesión
-          </button>
+          <button className="boton bg-amarillo cursor-pointer justify-self-center  ">Inicia sesión</button>
         </form>
       </div>
     </div>

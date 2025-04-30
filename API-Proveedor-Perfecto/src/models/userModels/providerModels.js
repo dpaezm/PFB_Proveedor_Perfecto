@@ -131,5 +131,24 @@ export async function getProviderDetail(providerId) {
 
   provider.comments = comments;
 
+  const [products] = await pool.query(
+    `
+  SELECT 
+    p.id,
+    p.product_name,
+    p.price,
+    p.description,
+    p.photo1,
+    p.photo2,
+    c.categoryname
+  FROM product p
+  LEFT JOIN category c ON p.category_id = c.id
+  WHERE p.owner_id = ?
+  `,
+    [providerId],
+  );
+
+  provider.products = products;
+
   return provider;
 }
