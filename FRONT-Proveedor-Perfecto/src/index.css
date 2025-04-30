@@ -82,6 +82,11 @@ h3 {
   line-height: 12px;
 }
 
+.txt-secundary {
+  font-size: smaller;
+  color: var(--color-gris1);
+}
+
 @media (min-width: 800px) {
   h1 {
     font-size: 32px;

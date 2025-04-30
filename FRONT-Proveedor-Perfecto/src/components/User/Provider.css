@@ -1,0 +1,28 @@
+article.provider-card {
+  width: 368px;
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  grid-template-rows: repeat(6, 26px);
+}
+
+article.provider-card .avatar-photo {
+  grid-area: 1 / 1 / 6 / 2;
+  align-self: center;
+  justify-self: center;
+}
+
+article.provider-card .avatar-photo img {
+  height: 112px;
+  width: 112px;
+}
+
+article.provider-card .txt-secundary {
+  font-size: smaller;
+  color: var(--color-gris1);
+  margin-left: 0.2rem;
+}
+
+article.provider-card * {
+  display: flex;
+  align-items: center;
+}
