@@ -4,19 +4,23 @@ import useLogin from "../hooks/useLogin";
 export default function Login() {
   const { error, formState, handleSubmit, handleChange } = useLogin();
   return (
-    <div className="">
-      <h2 className="text-cta md:text-[36px] text-amarillo font-bold">Login</h2>
+    <div className="bg-gris3 flex flex-col flex-grow justify-center items-center">
+      <h2 className="text-logo md:text-[32px] text-negro ">find;)</h2>
+      <h3 className="bg-gris3 flex flex-col flex-grow justify-center items-center">
+        Bienvenido de nuevo
+      </h3>
       {error && <p className="error">{error}</p>}
       <form
-        className=" p-5 border-solid border-2 rounded-md  text-normal text-negro font-bold text-center bg-amarillo w-full max-w-xs"
+        className=" border-gris1  text-normal text-negro font-bold text-center bg-gris3 w-full max-w-xs gap-6 "
         onSubmit={handleSubmit}
       >
         <ul className=" ">
-          <li className="p-2">
-            <label className="block text-sm font-bold mb-2" htmlFor="email">
+          <li className="p-2  ">
+            {/* <label className="block text-sm font-bold mb-2" htmlFor="email">
               Email:{" "}
-            </label>
+            </label> */}
             <Input
+              placeholder="Email:"
               type="email"
               required
               id="email"
@@ -25,11 +29,13 @@ export default function Login() {
               onChange={handleChange}
             />
           </li>
-          <li className="p-2">
-            <label className="block text-sm font-bold mb-2" htmlFor="password">
-              Contraseña:{" "}
-            </label>
+          <li className="p-2 ">
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="password"
+            ></label>
             <Input
+              placeholder="contraseña"
               type="password"
               required
               id="password"
@@ -38,9 +44,13 @@ export default function Login() {
               onChange={handleChange}
             />
           </li>
+          <li>
+            <link rel="stylesheet" href="www.google.es" />
+            Haz olvidado tu contraseña?
+          </li>
         </ul>
-        <button className="bg-black hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
-          Enviar
+        <button className="border-solid border-1 bg-amarillo hover:bg-white hover:text-black text-negro font-bold py-3 px-6 rounded-lg text-lg transition-colors ">
+          Iniciar sesión
         </button>
       </form>
     </div>
