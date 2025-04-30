@@ -2,66 +2,73 @@ import Input from "../components/Input";
 import useCreateProduct from "../hooks/useCreateProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../index.css";
 
 export default function CreateProduct() {
   const { formState, error, handleSubmit, handleTextChange, handleFileChange } =
     useCreateProduct();
 
   return (
-    <main className="p-5">
-      <h2 className="text-cta md:text-[36px] text-amarillo font-bold text-center">
-        Crear Producto
-      </h2>
+    <div className="w-screen h-screen flex flex-col items-center justify-start">
+      <h2 className="font-bold">Crear Producto</h2>
+      <section className=" flex justify-self-center w-60% md:px-16 lg:px-32 ">
+        {error && <p className="text-red-500 font-bold text-center">{error}</p>}
 
-      {error && <p className="text-red-500 font-bold">{error}</p>}
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-h-screen flex-grow-1 md:w-20% mx-auto flex flex-col justify-self-center gap-6 md:gap-8 items-center max-w-[900px] "
+        >
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="w-full md:w-1/2">
+              <label htmlFor="product_name" className="block mb-2"></label>
+              <Input
+                className="formulario"
+                type="text"
+                placeholder="Nombre del producto"
+                id="product_name"
+                name="product_name"
+                required
+                value={formState.product_name}
+                onChange={handleTextChange}
+              />
+            </div>
 
-      <form
-        className="p-5 border-solid border-2 rounded-md text-normal text-gris1 font-normal text-center"
-        onSubmit={handleSubmit}
-      >
-        <ul className="p-2 flex-col space-y-4">
-          <li className="p-2">
-            <label htmlFor="product_name">Nombre del producto:</label>
-            <Input
-              id="product_name"
-              name="product_name"
-              required
-              value={formState.product_name}
-              onChange={handleTextChange}
-            />
-          </li>
+            <div className="w-full md:w-1/2">
+              <label htmlFor="price" className="block mb-2"></label>
+              <Input
+                className="formulario"
+                type="number"
+                placeholder="Precio"
+                id="price"
+                name="price"
+                required
+                value={formState.price}
+                onChange={handleTextChange}
+              />
+            </div>
+          </div>
 
-          <li className="p-2">
-            <label htmlFor="price">Precio:</label>
-            <Input
-              type="number"
-              id="price"
-              name="price"
-              required
-              value={formState.price}
-              onChange={handleTextChange}
-            />
-          </li>
-
-          <li className="p-2">
-            <label htmlFor="description">Descripción:</label>
+          <div className="w-full">
+            <label htmlFor="description" className="block mb-2"></label>
             <textarea
+              placeholder="Descripción del producto"
               id="description"
               name="description"
               required
-              className="w-full p-2 border rounded"
+              className="formulario w-full"
               value={formState.description}
               onChange={handleTextChange}
             ></textarea>
-          </li>
+          </div>
 
-          <li className="p-2">
-            <label htmlFor="category_id">Categoría:</label>
+          <div className="w-full">
+            <label htmlFor="category_id" className="block mb-2"></label>
             <select
+              placeholder="Selecciona una categoría"
               id="category_id"
               name="category_id"
               required
-              className="w-full p-2 border rounded"
+              className="formulario w-full"
               value={formState.category_id}
               onChange={handleTextChange}
             >
@@ -74,21 +81,18 @@ export default function CreateProduct() {
               <option value="6">Finance</option>
               <option value="7">Business</option>
             </select>
-          </li>
+          </div>
 
-          <li className="p-2">
-            <input
+          <div className="">
+            <Input
               id="photo1"
               type="file"
               name="photo1"
               accept="image/*"
               onChange={handleFileChange}
-              className="hidden"
+              className="formulario hidden"
             />
-            <label
-              htmlFor="photo1"
-              className="block bg-amarillo text-white text-center py-2 px-4 rounded cursor-pointer"
-            >
+            <label htmlFor="photo1" className=" formulario cursor-pointer">
               Subir foto
             </label>
             {formState.photo1 && (
@@ -96,13 +100,15 @@ export default function CreateProduct() {
                 {formState.photo1.name}
               </p>
             )}
-          </li>
-        </ul>
+          </div>
 
-        <button className="bg-gris1 hover:bg-amarillo2 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors mt-4">
-          Crear Producto
-        </button>
-      </form>
-    </main>
+          <button type="submit" className="boton boton-amarillo cursor-pointer">
+            Crear producto
+          </button>
+        </form>
+
+        <ToastContainer position="bottom-right" />
+      </section>
+    </div>
   );
 }
