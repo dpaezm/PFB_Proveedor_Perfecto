@@ -9,6 +9,9 @@ export default function Login() {
       <h3 className="flex flex-col  justify-center items-center">
         Bienvenido de nuevo
       </h3>
+
+    <div className="w-screen h-80 flex flex-col items-center">
+      <h2 className="text-cta md:text-[36px] text-negro font-bold">Login</h2>
       {error && <p className="error">{error}</p>}
       <form
         className=" border-gris1  text-normal text-negro font-bold text-center w-full max-w-xs gap-6 "
@@ -22,6 +25,7 @@ export default function Login() {
             <Input
               className="formulario bg-blanco"
               placeholder="Email:"
+
               type="email"
               required
               id="email"
@@ -30,12 +34,14 @@ export default function Login() {
               onChange={handleChange}
             />
           </li>
+
           <li className="p-2">
             <label className="block text-sm font-bold mb-2" htmlFor="password">
               {" "}
             </label>
             <Input
               className="formulario bg-blanco"
+
               type="password"
               required
               id="password"
@@ -51,7 +57,10 @@ export default function Login() {
           </li>
         </ul>
         <button className="boton bg-amarillo cursor-pointer justify-self-center ">
+
+        <button className="boton bg-amarillo cursor-pointer ">
           Inicia sesión
+
         </button>
       </form>
     </div>
