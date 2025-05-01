@@ -8,26 +8,23 @@ export default function UserData() {
   const user = useUserProfile();
   console.log(VITE_API_URL, VITE_API_MEDIA_PATH, user.avatar);
   return (
-    <main>
-      <h2 className="text-titulo md:text-2xl text-gris1 text-center">
-        {" "}
-        Mi perfil
-      </h2>
+    <main className="flex flex-col flex-grow justify-center  items-center">
+      <h2 className="text-logo md:text-[32px] text-negro"> Mi perfil</h2>
       <h3>{user.username}</h3>
       <h4>{user.name}</h4>
-      <img src={VITE_API_URL + VITE_API_MEDIA_PATH + user.avatar} alt="" />
+      <img
+        src={`${VITE_API_URL}${VITE_API_MEDIA_PATH}${user.avatar}`}
+        alt={user.username}
+      />
       <h4>Ciudad: {user.city}</h4>
       <h4>
         Contacto: {user.email} Teléfono: {user.phone}
       </h4>
-      {user.email && <p>Email: {user.email}</p>}
       <h4>Desde: {user.created_at}</h4>
       <h4>Sobre mi: {user.description}</h4>
-      <img src="" alt="" />
       <button
-        onClick={() => {
-          logOut();
-        }}
+        onClick={() => logOut()}
+        className="boton bg-amarillo cursor-pointer "
       >
         Cerrar sesión
       </button>
