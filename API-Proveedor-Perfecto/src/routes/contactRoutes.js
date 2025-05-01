@@ -3,6 +3,7 @@ import express from 'express';
 import {
   authUserController,
   getRequestsController,
+  getReviewsController,
   newContactRequestController,
   newRatingController,
 } from '../controllers/index.js';
@@ -15,6 +16,8 @@ router.get('/contactrequest/:providerId', getRequestsController);
 
 router.put('/contactrequest/:requestId', newRatingController);
 // En esta app.put("/contactrequest" falta el auth
+
+router.get('/reviews/provider/:id', getReviewsController);
 
 export default router;
 

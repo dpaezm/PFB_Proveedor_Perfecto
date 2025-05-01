@@ -15,6 +15,8 @@ export default function ProductDetail() {
     <section className="product-datail-page">
       <Product product={product} />
       <NavLink to={"/providers"} className="boton boton-contactar">
+        {" "}
+        {/* Pendiente de actualizar ruta */}
         Contactar
       </NavLink>
       <NavLink to={backLink} className="boton boton-atras">

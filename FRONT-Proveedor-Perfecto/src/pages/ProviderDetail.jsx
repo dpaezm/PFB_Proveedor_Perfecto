@@ -7,6 +7,7 @@ import locationIcon from "./../assets/icons/location.png";
 import useProviderDetail from "../hooks/useProviderDetail.js";
 import { NavLink } from "react-router-dom";
 import ProductDetail from "../components/Product/Product.jsx";
+import Review from "../components/Contact/Review.jsx";
 const { VITE_API_URL } = import.meta.env;
 
 export default function ProviderDetail() {
@@ -15,6 +16,7 @@ export default function ProviderDetail() {
   if (!provider) return <p>No se ha encontrado el proveedor. </p>;
 
   const {
+    id,
     username,
     name,
     avatar,
@@ -83,30 +85,8 @@ export default function ProviderDetail() {
       </section>
 
       <section className="provider-comments">
-        <h3>Valoraciones</h3>
-        {comments.length > 0 ? (
-          <ul>
-            {comments.map((comment, index) => (
-              <li key={index}>
-                <p className="txt-destacado">
-                  {comment.client} sobre {comment.product_name}
-                </p>
-                <p>{comment.comment}</p>
-                <p className="comment-rating">
-                  <button
-                    className="star-icon"
-                    style={{
-                      backgroundImage: `url(${starIcon})`,
-                    }}
-                  />
-                  {comment.rating !== null ? comment.rating : "Sin valoración"}
-                </p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No hay valoraciones todavía.</p>
-        )}
+        {/*         <h3>Valoraciones</h3> */}
+        <Review providerId={id} />
 
         <NavLink to={`/providers`} className="boton boton-atras">
           Atrás
