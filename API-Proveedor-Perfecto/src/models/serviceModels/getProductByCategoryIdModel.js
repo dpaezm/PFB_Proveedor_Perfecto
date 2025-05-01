@@ -19,7 +19,7 @@ export default async function getProductByCategoryIdModel(id) {
   );
 
   if (products.length === 0) {
-    throw generateError(`La categoría con id: ${id} no existe`, 404);
+    throw generateError(`No hay productos en la categoría ${id} `, 404);
   }
 
   return products;

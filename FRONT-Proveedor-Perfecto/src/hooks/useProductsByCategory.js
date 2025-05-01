@@ -9,12 +9,23 @@ export default function useProductsByCategory(categoryId) {
   async function loadProducts() {
     try {
       let res = await fetch(`${VITE_API_URL}/categories/${categoryId}`);
+
+      if (!res.ok) {
+        throw new Error(`Categoría ${categoryId} no encontrada`);
+      }
+
       const { data } = await res.json();
+
       setProducts(data);
-      setCategoryName(data[0].categoryname);
+      if (data.length > 0) {
+        setCategoryName(data[0].categoryname);
+      } else {
+        setCategoryName("Sin productos");
+      }
     } catch (error) {
       console.error("Error cargando productos ", error);
       setProducts([]);
+      setCategoryName("No hay productos en esta categoría");
     }
   }
   useEffect(() => {

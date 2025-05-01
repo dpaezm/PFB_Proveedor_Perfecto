@@ -1,0 +1,62 @@
+.filters-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3rem 0 3rem 0;
+}
+
+.filters-section a {
+  justify-self: center;
+}
+
+.filter-banner {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 144px;
+}
+
+.filter-banner button {
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+}
+
+.filter-icon {
+  width: 12px;
+  height: 12px;
+  align-content: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  cursor: pointer;
+}
+
+#dollar-icon {
+  background-size: 30%;
+}
+
+#agreement-icon {
+  background-size: 50%;
+}
+
+@media (min-width: 800px) {
+  .filter-banner {
+    border: 1px solid black;
+    width: 144px;
+    height: 144px;
+  }
+
+  .filter-banner button {
+    border: none;
+  }
+}
+
+@media (min-width: 1200px) {
+}

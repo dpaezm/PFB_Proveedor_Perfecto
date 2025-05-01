@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./PreFooter.css";
+
 import useCategories from "../hooks/useCategories";
 
 export default function PreFooter() {
