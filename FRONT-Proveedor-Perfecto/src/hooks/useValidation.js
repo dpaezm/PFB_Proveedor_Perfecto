@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import { validateUserEmail } from '../services/authService';
+import { useNavigate } from "react-router-dom";
 
-const useUserValidation = () => {
+
+export default function useValidation() {
+
+const useValidation = () => {
+    
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
 
-    const validate = async (email) => {
+    const validate = async () => {
         setLoading(true);
         setMessage(''); 
 
         try {
-           const response = await fetch('/users/validate/:registrationCode', activateUserController);
+           const response = await fetch('/users/validate/:registrationCode');
             if (response.success) {
                 setMessage('¡El usuario ha sido validado correctamente!');
             } else {
@@ -26,4 +30,4 @@ const useUserValidation = () => {
     return { validate, loading, message };
 };
 
-export default useUserValidation;
+}
