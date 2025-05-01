@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { validateUser } from '../services/authService';
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,7 +14,7 @@ const useValidation = () => {
         setMessage(''); 
 
         try {
-           const response = await fetch('/users/validate/:registrationCode', activateUserController);
+           const response = await fetch('/users/validate/:registrationCode');
             if (response.success) {
                 setMessage('¡El usuario ha sido validado correctamente!');
             } else {
