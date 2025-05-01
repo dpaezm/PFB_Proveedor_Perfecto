@@ -1,9 +1,12 @@
+import "./ProductDetail.css";
 import useProductDetail from "../hooks/useProductDetail";
 import Product from "./../components/Product/Product";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function ProductDetail() {
   const { product, error } = useProductDetail();
+  const location = useLocation();
+  const backLink = location.state?.from?.pathname + location.state?.from?.search || "/products";
 
   if (error) return <p>{error}</p>;
   if (!product) return <p>Cargando producto...</p>;
@@ -14,7 +17,7 @@ export default function ProductDetail() {
       <NavLink to={"/providers"} className="boton boton-contactar">
         Contactar
       </NavLink>
-      <NavLink to={`/providers/${product.provider_id}`} className="boton boton-atras">
+      <NavLink to={backLink} className="boton boton-atras">
         Atrás
       </NavLink>
     </section>

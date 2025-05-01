@@ -6,7 +6,7 @@ export default function Encuentra() {
   return (
     <section id="section-encuentra">
       <h1>
-        Encuentra el <br />
+        Encuentra tu <br />
         proveedor perfecto
       </h1>
       <form>

@@ -31,6 +31,7 @@
 }
 
 html {
+  font-family: Poppins, sans-serif;
   --grosor-linea-a: 1.5px;
   --grosor-linea-b: 1px;
   --sombra: 0 2px 5px rgba(0, 0, 0, 0.25);
@@ -42,6 +43,7 @@ html {
 main > * {
   padding: 0 24px 0 24px;
 }
+
 header > * {
   padding: 0 24px 0 24px;
 }

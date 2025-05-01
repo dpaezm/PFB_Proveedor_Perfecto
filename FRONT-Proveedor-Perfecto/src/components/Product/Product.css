@@ -6,10 +6,11 @@
   width: 240px;
   height: 160px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .provider-name-section {
-  margin-top: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
   display: flex;
   gap: 4px;
   align-items: center;
