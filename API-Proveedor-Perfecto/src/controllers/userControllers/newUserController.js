@@ -3,7 +3,7 @@ import crypto from 'crypto';
 import sendMailUtil from './../../utils/sendMailUtil.js';
 import generateError from './../../utils/helpers.js';
 
-import { SMTP_USER } from './../../../envConfig.js';
+import { SMTP_MAIL } from './../../../envConfig.js';
 
 import createNewUserModel from './../../models/userModels/createNewUserModel.js';
 import checkUserExistsModel from './../../models/userModels/checkUserExistsModel.js';
@@ -56,7 +56,7 @@ const newUserController = async (req, res, next) => {
       registrationCode,
     });
 
-    if (!isprovider) {
+    if (isprovider === 0) {
       const emailSubject = 'Activa tu usuario en Find:)';
       const emailBody = `
         ¡Bienvenid@ ${username}!
@@ -70,9 +70,9 @@ const newUserController = async (req, res, next) => {
         El proveedor ${username} acaba de registrarse. 
         Confirma el alta de su usuario como proveedor en el siguiente enlace: 
 
-        <a href="${process.env.FRONT_URL}/provider/validate/${registrationCode}">Confirma la solicitud de proveedor</a>
+        <a href="${process.env.FRONT_URL}/validate/${registrationCode}">Confirma la solicitud de proveedor</a>
       `;
-      await sendMailUtil(SMTP_USER, emailSubject, emailBody);
+      await sendMailUtil(SMTP_MAIL, emailSubject, emailBody);
     }
 
     res.status(201).send({

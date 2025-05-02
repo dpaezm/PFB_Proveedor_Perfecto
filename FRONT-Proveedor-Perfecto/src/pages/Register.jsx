@@ -2,8 +2,14 @@ import Input from "../components/Input";
 import useRegister from "../hooks/useRegister";
 
 export default function Register() {
-  const { error, handleChange, handleImageChange, formState, handleSubmit } =
-    useRegister();
+  const {
+    error,
+    handleChange,
+    handleImageChange,
+    formState,
+    handleSubmit,
+    setFormState,
+  } = useRegister();
 
   /* function check() {
     const checkbox = document.getElementById("isprovider");
@@ -11,12 +17,12 @@ export default function Register() {
     console.log(valor);
   } */
 
-  function check() {
-    const checkbox = document.getElementById("isprovider");
-    const valor = checkbox.checked ? 1 : 0;
-    console.log(valor);
-    return valor;
-  }
+  // function check() {
+  //   const checkbox = document.getElementById("isprovider");
+  //   const valor = checkbox.checked ? 1 : 0;
+  //   console.log(valor);
+  //   return valor;
+  // }
 
   return (
     <div className="w-screen  flex flex-grow flex-col items-center justify-start">
@@ -155,16 +161,21 @@ export default function Register() {
               onChange={handleImageChange}
             />
           </li>
-          <li>
-            <label htmlFor="isprovider">
+          <li className="p-2">
+            <label htmlFor="isprovider" className="flex items-center gap-2">
               <input
                 type="checkbox"
                 id="isprovider"
                 name="isprovider"
-                onChange={check}
-                value={formState.isprovider}
+                checked={formState.isprovider}
+                onChange={(e) =>
+                  setFormState({
+                    ...formState,
+                    isprovider: e.target.checked ? 1 : 0,
+                  })
+                }
               />
-              Registro como proveedor
+              Quiero registrarme como proveedor
             </label>
           </li>
         </ul>
