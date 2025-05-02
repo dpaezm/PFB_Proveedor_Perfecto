@@ -9,14 +9,14 @@ const createNewUserModel = async ({
   phone,
   photoName,
   description,
-  isProvider,
+  isprovider,
   registrationCode,
 }) => {
   const pool = await getPool();
 
   // Insertamos el usuario con el registrationCode incluido
   await pool.query(
-    `INSERT INTO user (username, name, city, email, password, phone, avatar, description, isProvider, registrationCode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO user (username, name, city, email, password, phone, avatar, description, isprovider, registrationCode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       username,
       name,
@@ -26,7 +26,7 @@ const createNewUserModel = async ({
       phone,
       photoName,
       description,
-      isProvider,
+      isprovider,
       registrationCode,
     ],
   );
