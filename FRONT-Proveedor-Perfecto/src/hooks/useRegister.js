@@ -15,6 +15,7 @@ export default function useRegister() {
     name: "",
     description: "",
     phone: "",
+    isprovider: "",
   };
 
   const [formState, setFormState] = useState(initialState);
@@ -53,5 +54,11 @@ export default function useRegister() {
       toast.error(e.message);
     }
   }
-  return { error, handleChange, handleImageChange, formState, handleSubmit };
+  return {
+    error,
+    handleChange,
+    handleImageChange,
+    formState,
+    handleSubmit,
+  };
 }

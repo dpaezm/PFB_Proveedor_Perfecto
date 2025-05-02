@@ -4,6 +4,20 @@ import useRegister from "../hooks/useRegister";
 export default function Register() {
   const { error, handleChange, handleImageChange, formState, handleSubmit } =
     useRegister();
+
+  /* function check() {
+    const checkbox = document.getElementById("isprovider");
+    const valor = checkbox.checked ? 1 : 0;
+    console.log(valor);
+  } */
+
+  function check() {
+    const checkbox = document.getElementById("isprovider");
+    const valor = checkbox.checked ? 1 : 0;
+    console.log(valor);
+    return valor;
+  }
+
   return (
     <div className="w-screen  flex flex-grow flex-col items-center justify-start">
       <h2 className="text-cta md:text-[36px] text-negro font-bold">Registro</h2>
@@ -140,6 +154,18 @@ export default function Register() {
               name="avatar"
               onChange={handleImageChange}
             />
+          </li>
+          <li>
+            <label htmlFor="isprovider">
+              <input
+                type="checkbox"
+                id="isprovider"
+                name="isprovider"
+                onChange={check}
+                value={formState.isprovider}
+              />
+              Registro como proveedor
+            </label>
           </li>
         </ul>
         <button className="boton bg-amarillo cursor-pointer ">Registrar</button>

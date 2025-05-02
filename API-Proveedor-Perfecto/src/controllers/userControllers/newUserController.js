@@ -19,7 +19,7 @@ const newUserController = async (req, res, next) => {
       password,
       phone,
       description,
-      isProvider = false,
+      isprovider,
     } = req.body;
     // pendiente de ver como se envia el isProvider
 
@@ -52,11 +52,11 @@ const newUserController = async (req, res, next) => {
       phone,
       photoName,
       description,
-      isProvider,
+      isprovider,
       registrationCode,
     });
 
-    if (!isProvider) {
+    if (!isprovider) {
       const emailSubject = 'Activa tu usuario en Find:)';
       const emailBody = `
         ¡Bienvenid@ ${username}!
