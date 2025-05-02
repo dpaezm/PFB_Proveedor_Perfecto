@@ -1,5 +1,6 @@
 import Input from "../components/Input";
 import useLogin from "../hooks/useLogin";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { error, formState, handleSubmit, handleChange } = useLogin();
@@ -52,12 +53,9 @@ export default function Login() {
               />
             </li>
             <li>
-              <a
-                href="https://www.google.es"
-                className="text-blue-600 underline"
-              >
+              <Link to="/recover-pass" className="text-blue-600 underline">
                 ¿Has olvidado tu contraseña?
-              </a>
+              </Link>
             </li>
           </ul>
 

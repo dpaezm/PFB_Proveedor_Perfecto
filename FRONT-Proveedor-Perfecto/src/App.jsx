@@ -20,9 +20,11 @@ import CreateProduct from "./pages/CreateProduct";
 import CategoryProducts from "./components/Category/CategoryProducts";
 import Filters from "./components/Filters";
 import ProductList from "./pages/ProductList";
-
+import RecoverPass from "./pages/RecoverPass";
+import ResetPass from "./pages/ResetPass";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Validate from "./pages/Validate";
 
 function App() {
   const location = useLocation();
@@ -46,7 +48,7 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-           <Route path="/validation" element={<Validation />} />
+          <Route path="/validation" element={<Validation />} />
           <Route path="/muestra" element={<Muestra />} />
           <Route path="/user-data" element={<UserData />} />
           <Route path="/create-product" element={<CreateProduct />} />
@@ -57,6 +59,10 @@ function App() {
           <Route path="/providers/:id" element={<ProviderDetail />} />
           <Route path="/categories" element={<CategoryList />} />
           <Route path="/categories/:id" element={<CategoryProducts />} />
+          <Route path="/recover-pass" element={<RecoverPass />} />
+          <Route path="/reset-pass/:recoverPassCode" element={<ResetPass />} />
+          <Route path="/validate/:registrationCode" element={<Validate />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
