@@ -15,7 +15,7 @@ export default function useRegister() {
     name: "",
     description: "",
     phone: "",
-    isprovider: "",
+    isprovider: 0,
   };
 
   const [formState, setFormState] = useState(initialState);
@@ -39,6 +39,8 @@ export default function useRegister() {
 
     const formData = new FormData(e.target);
 
+    formData.set("isprovider", formState.isprovider);
+
     try {
       if (formState.password !== formState.passwordRepeat) {
         throw new Error("Las contraseñas no coinciden");
@@ -60,5 +62,6 @@ export default function useRegister() {
     handleImageChange,
     formState,
     handleSubmit,
+    setFormState,
   };
 }
