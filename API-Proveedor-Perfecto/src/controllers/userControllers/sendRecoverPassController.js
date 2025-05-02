@@ -24,7 +24,7 @@ const sendRecoverPassController = async (req, res, next) => {
         'Recuperación de contraseña - Find ;) Proveedor Perfecto';
       const emailBody = `
         Hemos recibido una solicitud para recuperar tu contraseña en Find ;). Si no has sido tú, ignora este email.
-        <a href="${process.env.CLIENT_URL}/users/password/reset/${recoverPassCode}">¡Cambiar contraseña!</a>
+        <a href="${process.env.FRONT_URL}/reset-pass/${recoverPassCode}">¡Cambiar contraseña!</a>
       `;
 
       await sendMailUtil(email, emailSubject, emailBody);
