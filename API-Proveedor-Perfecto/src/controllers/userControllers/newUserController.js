@@ -56,7 +56,7 @@ const newUserController = async (req, res, next) => {
       registrationCode,
     });
 
-    if (isprovider === 0) {
+    if (isprovider == 0) {
       const emailSubject = 'Activa tu usuario en Find:)';
       const emailBody = `
         ¡Bienvenid@ ${username}!

@@ -1,4 +1,5 @@
 import Input from "../components/Input";
+import PasswordInput from "../components/PasswordInput";
 import useRegister from "../hooks/useRegister";
 
 export default function Register() {
@@ -10,19 +11,6 @@ export default function Register() {
     handleSubmit,
     setFormState,
   } = useRegister();
-
-  /* function check() {
-    const checkbox = document.getElementById("isprovider");
-    const valor = checkbox.checked ? 1 : 0;
-    console.log(valor);
-  } */
-
-  // function check() {
-  //   const checkbox = document.getElementById("isprovider");
-  //   const valor = checkbox.checked ? 1 : 0;
-  //   console.log(valor);
-  //   return valor;
-  // }
 
   return (
     <div className="w-screen  flex flex-grow flex-col items-center justify-start">
@@ -91,11 +79,11 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li className="p-2">
+          <li className=" flex p-2">
             <label className="block" htmlFor="password">
               {" "}
             </label>
-            <Input
+            <PasswordInput
               className="formulario bg-blanco"
               type="password"
               required
@@ -106,11 +94,11 @@ export default function Register() {
               onChange={handleChange}
             />
           </li>
-          <li className="p-2">
+          <li className="flex p-2">
             <label className="block" htmlFor="passwordRepeat">
               {" "}
             </label>
-            <Input
+            <PasswordInput
               className="formulario bg-blanco"
               type="password"
               required
