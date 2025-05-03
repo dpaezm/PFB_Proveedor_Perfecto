@@ -1,4 +1,5 @@
 import Input from "../components/Input";
+import PasswordInput from "../components/PasswordInput";
 import useLogin from "../hooks/useLogin";
 import { Link } from "react-router-dom";
 
@@ -34,14 +35,14 @@ export default function Login() {
               />
             </li>
 
-            <li className="p-2">
+            <li className=" flex p-2">
               <label
                 className="block text-sm font-bold mb-2"
                 htmlFor="password"
               >
                 {" "}
               </label>
-              <Input
+              <PasswordInput
                 className="formulario bg-blanco"
                 type="password"
                 required
