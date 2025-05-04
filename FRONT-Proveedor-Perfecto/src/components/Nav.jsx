@@ -5,9 +5,7 @@ export default function Nav() {
   const { token } = useAuth();
   return (
     <nav className="nav1">
-      <menu className="flex place-content-center gap-3  ">
-        {token ? <UserNav /> : <AnonNav />}
-      </menu>
+      <menu className="flex place-content-center gap-3  ">{token ? <UserNav /> : <AnonNav />}</menu>
     </nav>
   );
 }
@@ -20,9 +18,9 @@ function UserNav() {
         <li className="boton boton-blanco">
           <NavLink to="/user-data">Perfil</NavLink>
         </li>
-        <li className="boton boton-amarillo">
+        {/*         <li className="boton boton-amarillo">
           <button onClick={logOut}>Logout</button>
-        </li>
+        </li> */}
       </>
     </>
   );

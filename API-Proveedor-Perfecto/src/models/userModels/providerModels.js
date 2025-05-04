@@ -140,10 +140,14 @@ export async function getProviderDetail(providerId) {
     p.description,
     p.photo1,
     p.photo2,
-    c.categoryname
+    c.categoryname, 
+    ROUND(AVG(co.rating), 1) AS avg_rating,
+  COUNT(co.rating) AS total_ratings
   FROM product p
   LEFT JOIN category c ON p.category_id = c.id
+  LEFT JOIN contact co ON co.product_id = p.id AND co.rating IS NOT NULL
   WHERE p.owner_id = ?
+  GROUP BY p.id
   `,
     [providerId],
   );

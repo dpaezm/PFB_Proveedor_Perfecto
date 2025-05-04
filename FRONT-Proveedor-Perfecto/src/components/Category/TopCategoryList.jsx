@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import useCategories from "../../hooks/useCategories.js";
 import Category from "./Category.jsx";
+import "./Category.css";
 
 export default function TopCategoryList() {
   const { categories } = useCategories();

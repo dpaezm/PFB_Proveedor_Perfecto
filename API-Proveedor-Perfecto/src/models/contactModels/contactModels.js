@@ -1,12 +1,17 @@
 import getPool from '../../db/getPool.js';
+import generateError from '../../utils/helpers.js';
 
-export async function createContactRequest(
-  user_id,
-  product_id,
-  comment,
-  status,
-) {
+export async function createContactRequest(user_id, product_id, comment) {
   let pool = await getPool();
+
+  const [productCheck] = await pool.query(
+    `SELECT id FROM product WHERE id = ?`,
+    [product_id],
+  );
+
+  if (productCheck.length === 0) {
+    throw generateError('El servicio no existe', 404);
+  }
 
   const [newRequest] = await pool.query(
     `
@@ -15,9 +20,9 @@ export async function createContactRequest(
         product_id, 
         comment, 
         status
-        ) VALUES (?, ?, ?, ?)
+        ) VALUES (?, ?, ?, 'inicio')
         `,
-    [user_id, product_id, comment, status],
+    [user_id, product_id, comment],
   );
 
   return newRequest.insertId;
@@ -28,7 +33,7 @@ export async function manageContactRequest(providerId) {
 
   const [requests] = await pool.query(
     `
-        SELECT c.user_id, c.product_id, c.comment, c.status, u.username AS client, p.product_name
+        SELECT c.id, c.user_id, c.product_id, c.comment, c.answer, c.status, c.created_at, c.modified_at, u.username AS client, p.product_name
         FROM contact c
         JOIN product p ON c.product_id = p.id 
         JOIN user u ON c.user_id = u.id 
@@ -37,4 +42,36 @@ export async function manageContactRequest(providerId) {
     [providerId],
   );
   return requests;
+}
+
+export async function answerContactRequest(requestId, answer, providerId) {
+  let pool = await getPool();
+
+  const [check] = await pool.query(
+    `
+    SELECT c.id
+    FROM contact c
+    JOIN product p ON c.product_id = p.id
+    WHERE c.id = ? AND p.owner_id = ?
+    `,
+    [requestId, providerId],
+  );
+
+  if (check.length === 0) {
+    throw generateError(
+      'No tienes permiso para responder esta solicitud o no existe',
+      403,
+    );
+  }
+
+  const [respuesta] = await pool.query(
+    `
+    UPDATE contact 
+    SET answer = ?, status = 'tramitando', modified_at = NOW()
+    WHERE id = ?
+    `,
+    [answer, requestId],
+  );
+
+  return respuesta;
 }

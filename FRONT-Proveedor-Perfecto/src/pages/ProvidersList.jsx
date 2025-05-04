@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import useProviders from "./../hooks/useProviders.js";
-import Provider from "./../components/User/Provider.jsx";
+import Provider from "../components/User/Provider.jsx";
 import "./../components/User/ProviderList.css";
 import homeIcon from "./../assets/icons/home.png";
 
