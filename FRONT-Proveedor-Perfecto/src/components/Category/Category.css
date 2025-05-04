@@ -5,6 +5,10 @@
   gap: 16px;
 }
 
+.container-topcategory-list {
+  width: 100%;
+}
+
 .li-topcategory {
   border: var(--grosor-linea-a) solid black;
   border-radius: 12px;

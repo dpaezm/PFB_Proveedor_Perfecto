@@ -23,6 +23,6 @@
   }
 
   .product-datail-page .boton-contactar {
-    align-self: flex-end;
+    justify-self: end;
   }
 }

@@ -13,6 +13,7 @@ import editUserInfoController from './userControllers/editUserInfoController.js'
 import {
   getRequestsController,
   newContactRequestController,
+  answerContactRequestController,
 } from './contactControllers/contactControllers.js';
 import newRatingController from './contactControllers/ratingControllers.js';
 import authUserController from '../middlewares/authUserController_.js';
@@ -49,4 +50,5 @@ export {
   productByUserIdController,
   productBySearchController,
   getReviewsController,
+  answerContactRequestController,
 };

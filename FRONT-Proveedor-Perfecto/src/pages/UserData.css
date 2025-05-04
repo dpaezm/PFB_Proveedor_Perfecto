@@ -1,0 +1,42 @@
+.container-user-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-user-data {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.container-user-data img {
+  max-width: 20%;
+}
+
+.section-buttons-user-data {
+  display: flex;
+  padding: 2rem 0 3rem 0;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 800px) {
+  .container-user-page {
+    flex-direction: row;
+  }
+
+  .section-buttons-user-data {
+    flex-direction: column;
+  }
+}
+
+.boton2 {
+  font-size: 14px;
+  border: var(--grosor-linea-a) solid black;
+  width: 144px;
+  height: 40px;
+  border-radius: 12px;
+}
+
+.boton-amarillo2 {
+  background-color: var(--color-amarillo);
+}

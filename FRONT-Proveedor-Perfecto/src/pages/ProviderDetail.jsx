@@ -1,13 +1,14 @@
 import "./../components/Category/Category.css";
 import "./../components/Product/Product.css";
-import starIcon from "./../assets/icons/star.png";
-import locationIcon from "./../assets/icons/location.png";
+
 /* import "./Provider.css"; */
 
 import useProviderDetail from "../hooks/useProviderDetail.js";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ProductDetail from "../components/Product/Product.jsx";
 import Review from "../components/Contact/Review.jsx";
+import ProviderFull from "../components/User/ProviderFull.jsx";
+import ProductDetailLite from "../components/Product/ProductLite.jsx";
 const { VITE_API_URL } = import.meta.env;
 
 export default function ProviderDetail() {
@@ -40,42 +41,17 @@ export default function ProviderDetail() {
   });
 
   return (
-    <section className="provider-detail">
-      <p className="avatar-photo">{avatar && <img src={`${VITE_API_URL}${avatar}`} alt={name} width="12px" />}</p>
-      <h2 className="provider-name-section">
-        <span className="provider-name"> {name}</span>
-        <span className="txt-secundary">@{username}</span>
-      </h2>
-      <p className="fecha-alta">En la plataforma desde el {fechaFormateada}</p>
-      <p>Email: {email}</p>
-      <p>Teléfono: {phone}</p>
-      <p className="provider-rating">
-        <button
-          className="star-icon"
-          style={{
-            backgroundImage: `url(${starIcon})`,
-          }}
-        />
-        {avg_rating ? avg_rating : "Sin valoraciones"}
-        <span className="txt-secundary"> ({total_ratings})</span>
-      </p>
-      <p className="provider-city">
-        <button
-          className="location-icon"
-          style={{
-            backgroundImage: `url(${locationIcon})`,
-          }}
-        />
-        {city}
-      </p>
-      <p className="txt-destacado">{categories}</p>
+    <section className="provider-full-detail">
+      <ProviderFull provider={provider} />
 
       <section className="provider-products">
         {products.length > 0 ? (
           <ul className="section-product-list">
             {products.map((product) => (
               <li key={product.id} className="li-products-provider">
-                <ProductDetail product={product} />
+                <NavLink to={`/product/${product.id}`} state={{ from: location.pathname }}>
+                  <ProductDetailLite product={product} />
+                </NavLink>
               </li>
             ))}
           </ul>
