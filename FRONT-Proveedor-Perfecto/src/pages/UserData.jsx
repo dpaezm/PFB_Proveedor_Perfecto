@@ -32,6 +32,7 @@ export default function UserData() {
           <p>Sobre mi: {user.description}</p>
         </section>
         <section className="section-buttons-user-data gap-2">
+
           {isProvider ? (
             <button onClick={() => navigate(`/contactrequest/${user.id}`)} className="boton boton2 boton-amarillo2">
               Ver solicitudes de contacto
@@ -45,7 +46,7 @@ export default function UserData() {
               Respuestas de los proveedores
             </button>
           ) : null}
-          <button onClick={() => navigate("/changePassword")} className="boton boton2">
+          <button onClick={() => navigate(`/changePassword/${user.id}`)} className="boton boton2">
             Cambiar contraseña
           </button>
           {isProvider ? (

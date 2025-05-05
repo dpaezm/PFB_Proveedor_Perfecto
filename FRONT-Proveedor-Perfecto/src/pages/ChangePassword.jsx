@@ -1,11 +1,11 @@
 import PasswordInput from "../components/PasswordInput";
 
 import useChangePassword from "../hooks/useChangePassword";
-import useUserProfile from "../hooks/UseUserProfile";
+//import useUserProfile from "../hooks/UseUserProfile";
 
 export default function ChangePassword() {
-  const user = useUserProfile();
-  const userId = user.id;
+  /*  const user = useUserProfile();
+  const userId = user.id; */
 
   const { error, formState, handleSubmit, handleChange } = useChangePassword();
   return (
@@ -21,7 +21,7 @@ export default function ChangePassword() {
           onSubmit={handleSubmit}
         >
           <ul className=" ">
-            <li>
+            {/*  <li>
               <label htmlFor="id"></label>
               <input
                 className="formulario bg-blanco"
@@ -33,7 +33,7 @@ export default function ChangePassword() {
                 onChange={handleChange}
                 name="id"
               />
-            </li>
+            </li> */}
             <li>
               <label className="block" htmlFor="email"></label>
               <input

@@ -65,9 +65,12 @@ function App() {
           <Route path="/recover-pass" element={<RecoverPass />} />
           <Route path="/reset-pass/:recoverPassCode" element={<ResetPass />} />
           <Route path="/validate/:registrationCode" element={<Validate />} />
+
+          <Route path="/changePassword/:id" element={<ChangePassword />} />
+
           <Route path="/contactrequest/:id" element={<ManageContactRequests />} />
           <Route path="/contactrequest/user/:id" element={<ManageUserContactRequests />} />
-          <Route path="/changePassword" element={<ChangePassword />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
