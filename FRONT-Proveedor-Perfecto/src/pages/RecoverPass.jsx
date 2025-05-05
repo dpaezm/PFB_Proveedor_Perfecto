@@ -18,7 +18,7 @@ export default function RecoverPass() {
       setTimeout(() => {
         navigate("/");
       }, 2000);
-    } catch (err) {
+    } catch (e) {
       toast.error("Error al enviar el email de recuperación");
     }
   };

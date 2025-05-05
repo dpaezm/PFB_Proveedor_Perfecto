@@ -19,7 +19,12 @@ export default function UserData() {
           <h2 className="text-logo md:text-[32px] text-negro"> Mi perfil</h2>
           <h3>{user.username}</h3>
           <p>{user.name}</p>
-          <img src={`${VITE_API_URL}${VITE_API_MEDIA_PATH}${user.avatar}`} alt={user.username} />
+
+          <img
+            src={`${VITE_API_MEDIA_PATH}${user.avatar}`}
+            alt={user.username}
+          />
+
           <p>Ciudad: {user.city}</p>
           <p>Contacto: {user.email}</p>
           <p>Teléfono: {user.phone}</p>
