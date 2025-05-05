@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import CategoryList from "./components/Category/CategoryList";
 import TopCategoryList from "./components/Category/TopCategoryList";
@@ -28,8 +28,8 @@ import Validate from "./pages/Validate";
 import ManageContactRequests from "./pages/ManageContactRequests";
 
 function App() {
-  const location = useLocation();
-  const noLayoutRoutes = ["/login", "/register"];
+  // const location = useLocation();
+  // const noLayoutRoutes = ["/login", "/register"];
 
   return (
     <>
@@ -63,7 +63,10 @@ function App() {
           <Route path="/recover-pass" element={<RecoverPass />} />
           <Route path="/reset-pass/:recoverPassCode" element={<ResetPass />} />
           <Route path="/validate/:registrationCode" element={<Validate />} />
-          <Route path="/contactrequest/:id" element={<ManageContactRequests />} />
+          <Route
+            path="/contactrequest/:id"
+            element={<ManageContactRequests />}
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
