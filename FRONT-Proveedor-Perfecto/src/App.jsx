@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import CategoryList from "./components/Category/CategoryList";
 import TopCategoryList from "./components/Category/TopCategoryList";
@@ -29,8 +29,8 @@ import ManageContactRequests from "./pages/ManageContactRequests";
 import ChangePassword from "./pages/ChangePassword";
 
 function App() {
-  const location = useLocation();
-  const noLayoutRoutes = ["/login", "/register"];
+  // const location = useLocation();
+  // const noLayoutRoutes = ["/login", "/register"];
 
   return (
     <>

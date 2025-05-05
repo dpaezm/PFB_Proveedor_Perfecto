@@ -24,5 +24,6 @@
 
   .product-datail-page .boton-contactar {
     justify-self: end;
+    cursor: pointer;
   }
 }

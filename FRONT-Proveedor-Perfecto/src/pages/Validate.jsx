@@ -40,13 +40,13 @@ export default function Validate() {
     <main className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
       <div className="text-center">
         {success ? (
-          <p className="text-green-600 font-bold text-lg">
+          <p className="text-green-400 font-bold text-lg">
             Usuario validado correctamente. Redirigiendo al login...
           </p>
         ) : error ? (
-          <p className="text-red-600 font-bold text-lg">{error}</p>
+          <p className="text-red-400 font-bold text-lg">{error}</p>
         ) : (
-          <p className="text-gray-600">Validando usuario...</p>
+          <p className="text-gray-500">Validando usuario...</p>
         )}
       </div>
       <ToastContainer position="bottom-right" />
