@@ -68,7 +68,7 @@ function App() {
             path="/contactrequest/:id"
             element={<ManageContactRequests />}
           />
-          <Route path="/changePassword" element={<ChangePassword />} />
+          <Route path="/changePassword/:id" element={<ChangePassword />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

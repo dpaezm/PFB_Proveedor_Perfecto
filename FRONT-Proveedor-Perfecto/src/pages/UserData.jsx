@@ -37,7 +37,7 @@ export default function UserData() {
             Ver solicitudes de contacto
           </button>
           <button
-            onClick={() => navigate("/changePassword")}
+            onClick={() => navigate(`/changePassword/${user.id}`)}
             className="boton boton2"
           >
             Cambiar contraseña
