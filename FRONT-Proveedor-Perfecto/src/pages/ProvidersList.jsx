@@ -3,6 +3,7 @@ import useProviders from "./../hooks/useProviders.js";
 import Provider from "../components/User/Provider.jsx";
 import "./../components/User/ProviderList.css";
 import homeIcon from "./../assets/icons/home.png";
+import "./../components/User/ProviderList.css";
 
 export default function ProvidersList() {
   const { providers } = useProviders();

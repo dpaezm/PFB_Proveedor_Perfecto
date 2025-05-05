@@ -51,6 +51,10 @@ header #logo-icon {
 .boton-amarillo {
 }
 
+#create-product-button {
+  display: none;
+}
+
 #b-login {
   display: none;
 }
@@ -67,6 +71,10 @@ header #logo-icon {
   }
 
   #b-login {
+    display: flex;
+  }
+
+  #create-product-button {
     display: flex;
   }
 }
