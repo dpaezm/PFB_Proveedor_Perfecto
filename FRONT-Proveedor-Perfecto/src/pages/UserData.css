@@ -18,11 +18,13 @@
   flex-direction: column;
   padding: 2rem 0 3rem 0;
   justify-content: center;
+  align-self: center;
 }
 
 @media (min-width: 800px) {
   .container-user-page {
     flex-direction: row;
+    justify-content: center;
   }
 
   .section-buttons-user-data {

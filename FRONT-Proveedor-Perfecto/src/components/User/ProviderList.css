@@ -3,3 +3,25 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.section-providers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(368px, 1fr));
+  gap: 24px;
+}
+
+.section-providers li {
+  justify-self: center;
+}
+
+@media (min-width: 800px) {
+  .section-providers {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-providers {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  }
+}

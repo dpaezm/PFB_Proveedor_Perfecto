@@ -18,6 +18,7 @@ export default function AnswerForm({ request, onAnswered }) {
       <textarea
         name="answer"
         placeholder="Responde la solicitud de contacto"
+        maxLength={255}
         value={answer}
         onChange={(e) => {
           setAnswer(e.target.value);
