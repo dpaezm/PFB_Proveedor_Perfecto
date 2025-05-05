@@ -23,9 +23,11 @@ const newUserController = async (req, res, next) => {
     } = req.body;
     // pendiente de ver como se envia el isProvider
 
-    const { avatar } = req.files;
-    const photoName = await savePhotoUtil(avatar, 100);
-
+    const avatar = req.files?.avatar || null;
+    let photoName = null;
+    if (avatar) {
+      photoName = await savePhotoUtil(avatar, 100);
+    }
     if (!username || !email || !password) {
       throw generateError('Faltan campos', 400);
     }

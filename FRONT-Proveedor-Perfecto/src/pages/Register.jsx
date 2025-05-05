@@ -4,7 +4,6 @@ import useRegister from "../hooks/useRegister";
 
 export default function Register() {
   const {
-    error,
     handleChange,
     handleImageChange,
     formState,
@@ -15,7 +14,6 @@ export default function Register() {
   return (
     <div className="w-screen  flex flex-grow flex-col items-center justify-start">
       <h2 className="text-cta md:text-[36px] text-negro font-bold">Registro</h2>
-      {error && <p className="error">{error}</p>}
       <form
         className=" w-full max-h-screen flex-grow-1 md:w-20% mx-auto flex flex-col justify-self-center gap-6 md:gap-8 items-center max-w-[900px] "
         onSubmit={handleSubmit}

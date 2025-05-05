@@ -4,16 +4,14 @@ import useLogin from "../hooks/useLogin";
 import { Link } from "react-router-dom";
 
 export default function Login() {
-  const { error, formState, handleSubmit, handleChange } = useLogin();
+  const { formState, handleSubmit, handleChange } = useLogin();
   return (
     <div className=" flex flex-col flex-grow justify-center items-center">
       <h2 className="text-logo md:text-[32px] text-negro ">Login</h2>
       <h3 className="flex flex-col  justify-center items-center">
         Bienvenido de nuevo
       </h3>
-
       <div className="w-screen h-80 flex flex-col items-center">
-        {error && <p className="error">{error}</p>}
         <form
           className=" border-gris1  text-normal text-negro font-bold text-center w-full max-w-xs gap-6 "
           onSubmit={handleSubmit}
@@ -64,7 +62,7 @@ export default function Login() {
             Inicia sesión
           </button>
         </form>
-      </div>
+      </div>{" "}
     </div>
   );
 }

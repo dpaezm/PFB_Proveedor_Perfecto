@@ -35,7 +35,7 @@ export default function useLogin() {
       toast.success("¡Bienvenido de nuevo!");
       navigate("/user-data");
     } catch (e) {
-      setError(e.message);
+      console.error(e);
       toast.error(e.message);
     }
   }

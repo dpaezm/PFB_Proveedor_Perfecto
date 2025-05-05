@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { registerService } from "../services/userServices";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

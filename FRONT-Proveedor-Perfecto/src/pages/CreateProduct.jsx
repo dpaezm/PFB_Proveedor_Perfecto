@@ -11,9 +11,9 @@ export default function CreateProduct() {
 
   return (
     <div className="w-screen h-80 flex flex-col items-center justify-start">
-      <h2 className="font-bold">Crear Producto</h2>
+      <h2 className="font-bold">Crear servicio</h2>
       <section className=" flex justify-self-center w-60% md:px-16 lg:px-32 ">
-        {error && <p className="text-red-500 font-bold text-center">{error}</p>}
+        {/* {error && <p className="text-red-500 font-bold text-center">{error}</p>} */}
 
         <form
           onSubmit={handleSubmit}
