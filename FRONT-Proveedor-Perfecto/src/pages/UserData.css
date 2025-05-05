@@ -23,6 +23,7 @@
 @media (min-width: 800px) {
   .container-user-page {
     flex-direction: row;
+    justify-content: center;
   }
 
   .section-buttons-user-data {
