@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { resetPasswordService } from "../services/userServices";
 
 export default function ResetPass() {
   const { recoverPassCode } = useParams();
@@ -18,22 +19,15 @@ export default function ResetPass() {
     }
 
     try {
-      const res = await fetch(
-        `http://localhost:3000/users/password/reset/${recoverPassCode}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ newPassword, repeatedPassword }),
-        }
+      await resetPasswordService(
+        recoverPassCode,
+        newPassword,
+        repeatedPassword
       );
-
-      const body = await res.json();
-      if (!res.ok) throw new Error(body.message);
-
       toast.success("Contraseña actualizada correctamente");
       setTimeout(() => navigate("/login"), 2000);
-    } catch (err) {
-      toast.error(err.message);
+    } catch (e) {
+      toast.error(e.message);
     }
   };
 

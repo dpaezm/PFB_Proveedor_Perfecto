@@ -2,6 +2,8 @@ import {
   answerContactRequest,
   createContactRequest,
   manageContactRequest,
+  manageUserContactRequest,
+  updateContactRequestStatus,
 } from '../../models/contactModels/contactModels.js';
 import generateError from '../../utils/helpers.js';
 
@@ -40,6 +42,21 @@ export async function getRequestsController(req, res, next) {
   }
 }
 
+export async function getUserRequestsController(req, res, next) {
+  try {
+    const userId = req.user.id;
+
+    const requests = await manageUserContactRequest(userId);
+
+    res.send({
+      status: 'ok',
+      requests,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 export async function answerContactRequestController(req, res, next) {
   try {
     const { requestId } = req.params;
@@ -51,6 +68,23 @@ export async function answerContactRequestController(req, res, next) {
     res.send({
       status: 'ok',
       message: `Respuesta a la solicitud de contacto ${requestId} enviada correctamente`,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function updateContactRequestStatusController(req, res, next) {
+  try {
+    const { requestId } = req.params;
+    const { status } = req.body;
+    const userId = req.user.id;
+
+    await updateContactRequestStatus(requestId, userId, status);
+
+    res.send({
+      status: 'ok',
+      message: `Estado de la solicitud actualizado a ${status}`,
     });
   } catch (error) {
     next(error);

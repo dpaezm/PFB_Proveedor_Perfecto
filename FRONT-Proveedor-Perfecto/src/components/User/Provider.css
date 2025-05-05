@@ -14,6 +14,8 @@ article.provider-card .avatar-photo {
 article.provider-card .avatar-photo img {
   height: 112px;
   width: 112px;
+  height: 80px;
+  width: 80px;
 }
 
 article.provider-card .txt-secundary {
@@ -26,7 +28,33 @@ article.provider-card * {
   display: flex;
   align-items: center;
 }
+h3.provider-name-section {
+  /*   align-items: flex-start; */
+  justify-content: flex-start;
+}
 
 .li-products-provider {
   width: 240px;
+}
+
+@media (min-width: 800px) {
+  article.provider-card {
+    width: 380px;
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    grid-template-rows: repeat(6, 30px);
+  }
+
+  article.provider-card .avatar-photo img {
+    height: 112px;
+    width: 112px;
+  }
+}
+
+@media (min-width: 1200px) {
+  article.provider-card {
+    width: 420px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+  }
 }

@@ -93,6 +93,14 @@ h3 {
   color: var(--color-gris1);
 }
 
+::placeholder {
+  font-weight: 400;
+}
+
+input {
+  font-weight: 400;
+}
+
 .boton {
   display: flex;
   font-size: 12px;

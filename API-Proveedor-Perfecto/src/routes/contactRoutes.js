@@ -5,8 +5,10 @@ import {
   authUserController,
   getRequestsController,
   getReviewsController,
+  getUserRequestsController,
   newContactRequestController,
   newRatingController,
+  updateContactRequestStatusController,
 } from '../controllers/index.js';
 
 const router = express.Router();
@@ -19,13 +21,24 @@ router.get(
   getRequestsController,
 );
 
+router.get(
+  '/contactrequest/user/:userid',
+  authUserController,
+  getUserRequestsController,
+);
+
 router.put(
   '/contactrequest/answer/:requestId',
   authUserController,
   answerContactRequestController,
 );
 
-//Pendiente de implementar en el front
+router.put(
+  '/contactrequest/status/:requestId',
+  authUserController,
+  updateContactRequestStatusController,
+);
+
 router.put(
   '/contactrequest/rating/:requestId',
   authUserController,

@@ -14,7 +14,7 @@ export default function PreFooter() {
           <NavLink to="/providers">Proveedores</NavLink>
         </li>
         <li className="txt-destacado">
-          <NavLink to="/profile">Clientes</NavLink>
+          <NavLink to="/user-data">Clientes</NavLink>
         </li>
         <li className="txt-destacado">
           <NavLink to="/">Company</NavLink>

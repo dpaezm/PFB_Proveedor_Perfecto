@@ -28,6 +28,7 @@ export default function ContactForm() {
           <textarea
             name="comment"
             placeholder="Escribe tu mensaje para el proveedor..."
+            maxLength={255}
             value={comment}
             onChange={(e) => {
               setComment(e.target.value);
