@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
+import { useNavigate } from "react-router-dom";
+import useUserProfile from "../hooks/UseUserProfile";
 
 export default function Nav() {
   const { token } = useAuth();
@@ -11,10 +13,23 @@ export default function Nav() {
 }
 
 function UserNav() {
+  const navigate = useNavigate();
+  const user = useUserProfile();
+  const isProvider = user.isprovider;
+
   const { logOut } = useAuth();
   return (
     <>
       <>
+        {isProvider ? (
+          <button
+            id="create-product-button"
+            className="boton boton-amarillo"
+            onClick={() => navigate("/create-product")}
+          >
+            Crear Producto
+          </button>
+        ) : null}
         <li className="boton boton-blanco">
           <NavLink to="/user-data">Perfil</NavLink>
         </li>

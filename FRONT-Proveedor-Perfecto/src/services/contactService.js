@@ -44,3 +44,47 @@ export async function getContactRequestsService({ providerId, token }) {
   if (!res.ok) throw new Error(json.message);
   return json.requests;
 }
+
+export async function getUserContactRequestService({ userId, token }) {
+  const res = await fetch(`${VITE_API_URL}/contactrequest/user/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const json = await res.json();
+
+  if (!res.ok) throw new Error(json.message);
+  return json.requests;
+}
+
+export async function updateContactRequestStatusService({ requestId, status, token }) {
+  const res = await fetch(`${VITE_API_URL}/contactrequest/status/${requestId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ status }),
+  });
+  const json = await res.json();
+
+  if (!res.ok) throw new Error(json.message);
+  return json.requests;
+}
+
+export async function sendRatingService({ requestId, comment, rating, token }) {
+  const res = await fetch(`${VITE_API_URL}/contactrequest/rating/${requestId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ comment, rating }),
+  });
+  const json = await res.json();
+
+  if (!res.ok) throw new Error(json.message);
+  return json.requests;
+}
