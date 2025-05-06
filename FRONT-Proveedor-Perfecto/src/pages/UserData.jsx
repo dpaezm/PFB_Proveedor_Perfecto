@@ -20,7 +20,7 @@ export default function UserData() {
           <h3>{user.username}</h3>
           <p>{user.name}</p>
           <img
-            src={`${VITE_API_URL}${VITE_API_MEDIA_PATH}${user.avatar}`}
+            src={`${VITE_API_URL}/${user.avatar}`}
             alt={user.username}
           />
           <p>Ciudad: {user.city}</p>

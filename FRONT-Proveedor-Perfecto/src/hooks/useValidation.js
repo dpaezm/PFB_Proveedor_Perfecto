@@ -1,8 +1,8 @@
-import { useState } from "react";
+ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function useValidation() {
-  const useValidation = () => {
+  const useValidate = () => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
