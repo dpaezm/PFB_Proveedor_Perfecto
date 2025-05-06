@@ -9,6 +9,10 @@
   align-self: center;
 }
 
+.container-user-data .txt-destacado {
+  margin-top: 2rem;
+}
+
 .container-user-data img {
   max-width: 20%;
 }

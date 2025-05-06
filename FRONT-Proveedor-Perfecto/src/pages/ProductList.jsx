@@ -72,13 +72,13 @@ export default function ProductList() {
 
   return (
     <section className="product-list">
-      <h2>
+      <h1 className="titulo-cat2">
         <NavLink to={"/"}>
           <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
         </NavLink>
 
         <NavLink to={"/products"}>Servicios</NavLink>
-      </h2>
+      </h1>
       <section className="product-filters-section">
         <FilterCity products={products} selectedCity={selectedCity} onChange={handleCityChange} />
         <FilterPrice selectedMin={minPrice} selectedMax={maxPrice} onChange={handlePriceChange} />

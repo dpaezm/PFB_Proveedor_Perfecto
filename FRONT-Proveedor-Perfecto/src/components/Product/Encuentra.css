@@ -12,6 +12,23 @@
   max-width: 320px;
 }
 
+.search-form {
+  background-color: red;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: var(--grosor-linea-a) solid black;
+  border-radius: 12px;
+  height: 48px;
+  max-width: 320px;
+  width: 100%;
+  padding: 4px;
+  box-shadow: var(--sombra);
+}
+
 #section-encuentra li {
   display: flex;
   text-align: center;

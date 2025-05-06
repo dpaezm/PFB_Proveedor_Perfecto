@@ -16,8 +16,10 @@ export default async function getProductBySearchModel(input) {
         ROUND(AVG(co.rating), 1) AS avg_rating, COUNT(co.rating) AS total_ratings 
         FROM product p
         LEFT JOIN user u ON u.id = p.owner_id
-        LEFT JOIN category c ON p.category_id = c.id
+        LEFT JOIN category c ON p.category_id = c.id 
+        LEFT JOIN contact co ON co.product_id = p.id
         WHERE LOWER(p.product_name) LIKE LOWER(?) OR LOWER(p.description) LIKE LOWER(?)
+        GROUP BY p.id
         `,
     [`%${input}%`, `%${input}%`],
   );

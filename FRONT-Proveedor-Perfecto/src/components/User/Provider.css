@@ -1,7 +1,7 @@
 article.provider-card {
   width: 368px;
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: 104px 1fr;
   grid-template-rows: repeat(6, 26px);
 }
 

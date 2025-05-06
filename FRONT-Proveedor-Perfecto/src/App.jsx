@@ -27,6 +27,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ManageContactRequests from "./pages/ManageContactRequests";
 import ChangePassword from "./pages/ChangePassword";
 import ManageUserContactRequests from "./pages/ManageUserContactRequests";
+import ProductFilteredList from "./pages/ProductFilteredList";
 
 function App() {
   // const location = useLocation();
@@ -56,6 +57,7 @@ function App() {
           <Route path="/create-product" element={<CreateProduct />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/products/search" element={<ProductFilteredList />} />
           <Route path="/contact-requests" element={<ContactRequests />} />
           <Route path="/providers" element={<ProvidersList />} />
           <Route path="/providers/:id" element={<ProviderDetail />} />
