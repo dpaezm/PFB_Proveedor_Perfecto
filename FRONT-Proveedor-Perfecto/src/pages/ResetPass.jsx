@@ -19,11 +19,7 @@ export default function ResetPass() {
     }
 
     try {
-      await resetPasswordService(
-        recoverPassCode,
-        newPassword,
-        repeatedPassword
-      );
+      await resetPasswordService(recoverPassCode, newPassword, repeatedPassword);
       toast.success("Contraseña actualizada correctamente");
       setTimeout(() => navigate("/login"), 2000);
     } catch (e) {
@@ -33,13 +29,8 @@ export default function ResetPass() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white shadow-md rounded-lg p-8"
-      >
-        <h2 className="text-2xl font-bold text-center mb-6 text-amarillo">
-          Cambiar contraseña
-        </h2>
+      <form onSubmit={handleSubmit} className="w-full max-w-md bg-white shadow-md rounded-lg p-8">
+        <h1 className="titulo-cat2 text-2xl font-bold text-center mb-6 text-amarillo">Cambiar contraseña</h1>
 
         <label className="block mb-2">Nueva contraseña</label>
         <input

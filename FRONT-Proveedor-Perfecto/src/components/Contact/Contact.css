@@ -10,7 +10,8 @@
   padding: 0.5rem;
   border: 1px solid var(--color-gris2);
   border-radius: 12px;
-  width: 100%;
+  width: 240px;
+  height: 120px;
   margin: 0.4rem;
   resize: none;
 }
@@ -18,12 +19,13 @@
 .container-formulario-contacto {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  align-self: flex-end;
+  /*  align-items: flex-end; */
 }
 
 @media (min-width: 800px) {
-  .formulario-contacto {
-    align-items: flex-end;
+  .product-detail-page .boton {
+    /*     align-self: center;
+    justify-self: center;
+    background-color: red; */
   }
 }

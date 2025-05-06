@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { getUserContactRequestService } from "../services/contactService";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuth } from "../context/authContext";
 
 export default function useGetUserContactRequests() {
   const { id: userId } = useParams();
-  const token = localStorage.getItem("token");
+  const { token } = useAuth();
 
   const [requests, setRequests] = useState([]);
   const [error, setError] = useState(null);

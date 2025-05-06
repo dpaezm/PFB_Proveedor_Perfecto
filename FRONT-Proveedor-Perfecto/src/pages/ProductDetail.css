@@ -11,19 +11,30 @@
   .product-datail-page {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 
   .product-card {
     grid-area: 1 / 1 / 3 / 2;
   }
+  .container-formulario-contacto {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .container-formulario-contacto form {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  .container-formulario-contacto form {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+  }
 
   .product-datail-page .boton {
-    justify-self: end;
+    /*     justify-self: end; */
   }
 
   .product-datail-page .boton-contactar {
-    justify-self: end;
     cursor: pointer;
   }
 }

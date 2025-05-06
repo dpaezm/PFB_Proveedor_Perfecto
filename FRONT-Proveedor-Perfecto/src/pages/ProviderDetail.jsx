@@ -1,15 +1,13 @@
 import "./../components/Category/Category.css";
 import "./../components/Product/Product.css";
 
-/* import "./Provider.css"; */
+import "./../components/User/Provider.css";
 
 import useProviderDetail from "../hooks/useProviderDetail.js";
-import { NavLink, useLocation } from "react-router-dom";
-import ProductDetail from "../components/Product/Product.jsx";
+import { NavLink } from "react-router-dom";
 import Review from "../components/Contact/Review.jsx";
 import ProviderFull from "../components/User/ProviderFull.jsx";
 import ProductDetailLite from "../components/Product/ProductLite.jsx";
-const { VITE_API_URL } = import.meta.env;
 
 export default function ProviderDetail() {
   const { provider } = useProviderDetail();

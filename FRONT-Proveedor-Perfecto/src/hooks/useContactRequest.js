@@ -2,6 +2,7 @@ import { useState } from "react";
 import { sendContactRequestService } from "../services/contactService";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import { useAuth } from "../context/authContext";
 
 export default function useContactRequest() {
   const { id: product_id } = useParams();
@@ -9,13 +10,12 @@ export default function useContactRequest() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const { token } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setError("");
-
-    const token = localStorage.getItem("token");
 
     try {
       await sendContactRequestService({ product_id, comment, token });

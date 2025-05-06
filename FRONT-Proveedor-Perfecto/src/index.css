@@ -65,6 +65,14 @@ h1 {
   line-height: 24px;
 }
 
+h1.titulo-cat2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: start;
+}
+
 h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -126,9 +134,25 @@ input {
 }
 
 @media (min-width: 800px) {
+  main > * {
+    padding: 0 36px 0 36px;
+  }
+
+  header > * {
+    padding: 0 36px 0 36px;
+  }
+
+  footer > * {
+    padding: 0 36px 0 36px;
+  }
   h1 {
     font-size: 32px;
     line-height: 36px;
+  }
+
+  h1.titulo-cat2 {
+    font-size: 28px;
+    line-height: 32px;
   }
 
   h2 {
@@ -163,6 +187,11 @@ input {
   h1 {
     font-size: 40px;
     line-height: 40px;
+  }
+
+  h1.titulo-cat2 {
+    font-size: 28px;
+    line-height: 32px;
   }
 
   h2 {
