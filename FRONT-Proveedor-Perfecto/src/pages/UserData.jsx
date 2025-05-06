@@ -21,7 +21,9 @@ export default function UserData() {
           <p>{user.name}</p>
 
           <img
-            src={`${VITE_API_MEDIA_PATH}${user.avatar}`}
+
+            src={`${VITE_API_URL}/${user.avatar}`}
+  
             alt={user.username}
           />
 
