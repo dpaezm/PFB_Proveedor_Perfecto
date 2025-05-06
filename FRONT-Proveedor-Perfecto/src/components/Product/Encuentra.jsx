@@ -13,7 +13,7 @@ export default function Encuentra() {
         Encuentra tu <br />
         proveedor perfecto
       </h1>
-      <form>
+      {/*       <form>
         <li>
           <label htmlFor="encuentra"></label>
           <input type="text" id="encuentra" placeholder="Prueba con Agente de IA" />
@@ -26,7 +26,7 @@ export default function Encuentra() {
             buscar
           </button>
         </li>
-      </form>
+      </form> */}
 
       <SearchInput />
     </section>

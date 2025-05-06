@@ -22,6 +22,13 @@
   /*  align-items: flex-end; */
 }
 
+.container-contact-request-list {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
 @media (min-width: 800px) {
   .product-detail-page .boton {
     /*     align-self: center;

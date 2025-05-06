@@ -16,7 +16,7 @@ export default function UserData() {
   if (token)
     return (
       <div className="container-user-data">
-        <h2 className="text-logo md:text-[32px] text-negro"> Mi perfil</h2>
+        <p className="txt-destacado"> Mi perfil</p>
         <ProviderFull provider={user} />
         {/* <section className="container-user-data">
           <h3>{user.username}</h3>
