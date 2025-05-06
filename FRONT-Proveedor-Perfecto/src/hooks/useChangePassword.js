@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { changePasswordService } from "../services/userServices";
 import { useAuth } from "../context/authContext";
 
 export default function useChangePassword() {
   const { logOut } = useAuth();
 
+  const { id: id } = useParams();
+
   let initialState = {
-    id: "",
+    id: `${id}`,
     email: "",
     password: "",
     newPassword: "",

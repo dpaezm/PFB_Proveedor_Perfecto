@@ -26,6 +26,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ManageContactRequests from "./pages/ManageContactRequests";
 import ChangePassword from "./pages/ChangePassword";
+import ManageUserContactRequests from "./pages/ManageUserContactRequests";
 
 function App() {
   // const location = useLocation();
@@ -63,11 +64,12 @@ function App() {
           <Route path="/recover-pass" element={<RecoverPass />} />
           <Route path="/reset-pass/:recoverPassCode" element={<ResetPass />} />
           <Route path="/validate/:registrationCode" element={<Validate />} />
-          <Route
-            path="/contactrequest/:id"
-            element={<ManageContactRequests />}
-          />
-          <Route path="/changePassword" element={<ChangePassword />} />
+
+          <Route path="/changePassword/:id" element={<ChangePassword />} />
+
+          <Route path="/contactrequest/:id" element={<ManageContactRequests />} />
+          <Route path="/contactrequest/user/:id" element={<ManageUserContactRequests />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -14,6 +14,8 @@ import {
   getRequestsController,
   newContactRequestController,
   answerContactRequestController,
+  getUserRequestsController,
+  updateContactRequestStatusController,
 } from './contactControllers/contactControllers.js';
 import newRatingController from './contactControllers/ratingControllers.js';
 import authUserController from '../middlewares/authUserController_.js';
@@ -51,4 +53,6 @@ export {
   productBySearchController,
   getReviewsController,
   answerContactRequestController,
+  getUserRequestsController,
+  updateContactRequestStatusController,
 };

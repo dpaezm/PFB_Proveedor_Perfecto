@@ -33,13 +33,30 @@ export async function manageContactRequest(providerId) {
 
   const [requests] = await pool.query(
     `
-        SELECT c.id, c.user_id, c.product_id, c.comment, c.answer, c.status, c.created_at, c.modified_at, u.username AS client, p.product_name
+        SELECT c.id, c.user_id, c.product_id, c.comment, c.answer, c.status, c.rating, c.comment, c.created_at, c.modified_at, u.username AS client, p.product_name
         FROM contact c
         JOIN product p ON c.product_id = p.id 
         JOIN user u ON c.user_id = u.id 
         WHERE p.owner_id = ?
         `,
     [providerId],
+  );
+  return requests;
+}
+
+export async function manageUserContactRequest(userId) {
+  let pool = await getPool();
+
+  const [requests] = await pool.query(
+    `
+        SELECT c.id, c.user_id, c.product_id, c.comment, c.answer, c.status, c.rating, c.comment, c.created_at, c.modified_at, p.product_name, provider.username AS provider
+        FROM contact c
+        JOIN product p ON c.product_id = p.id 
+        JOIN user u ON c.user_id = u.id 
+        JOIN user provider ON p.owner_id = provider.id
+        WHERE c.user_id = ?
+        `,
+    [userId],
   );
   return requests;
 }
@@ -74,4 +91,35 @@ export async function answerContactRequest(requestId, answer, providerId) {
   );
 
   return respuesta;
+}
+
+export async function updateContactRequestStatus(requestId, userId, status) {
+  const pool = await getPool();
+
+  const [check] = await pool.query(
+    `
+    SELECT id
+    FROM contact 
+    WHERE id = ? AND user_id = ?
+    `,
+    [requestId, userId],
+  );
+
+  if (check.length === 0) {
+    throw generateError(
+      'No tienes permiso para responder esta solicitud o no existe',
+      403,
+    );
+  }
+
+  const [result] = await pool.query(
+    `
+        UPDATE contact 
+        SET status = ?, modified_at = NOW()
+        WHERE id = ?
+        `,
+    [status, requestId],
+  );
+
+  return result;
 }
