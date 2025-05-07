@@ -20,14 +20,19 @@ export default function ContactRequestDetail({ request }) {
     <>
       <section className="request-section">
         <div className="container-data-user">
-          <p>{client}</p>
+          <p>
+            Comprador <strong> {client}</strong>
+          </p>
           <p>Sobre {product_name}</p>
           <p>Ticket abierto el {fechaCreacionFormateada}</p>
           <p>Última modificación {fechaModificacionFormateada}</p>
         </div>
         <div className="container-mensaje">
-          <p>Mensaje</p>
-          <p>{comment}</p>
+          <p>
+            <strong>Mensaje </strong>
+            {comment}
+          </p>
+          <p className="txt-destacado"></p>
         </div>
       </section>
     </>
