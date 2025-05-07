@@ -1,6 +1,4 @@
 import "./Product.css";
-
-const { VITE_API_URL } = import.meta.env;
 import starIcon from "./../../assets/icons/star.png";
 
 export default function ProductDetailLite({ product }) {
@@ -20,9 +18,7 @@ export default function ProductDetailLite({ product }) {
   return (
     <>
       <article className="product-card">
-        <p className="product-photo">
-          {photo1 && <img src={`${VITE_API_URL}${photo1}`} alt={product_name} width="32px" />}
-        </p>
+        <p className="product-photo">{photo1 && <img src={photo1} alt={product_name} width="32px" />}</p>
         <p className="product-description">{description} </p>
         <p id="rating-star">
           <button

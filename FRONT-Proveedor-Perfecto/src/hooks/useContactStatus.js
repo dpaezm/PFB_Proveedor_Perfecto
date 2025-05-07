@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { updateContactRequestStatusService } from "../services/contactService";
 import { toast } from "react-toastify";
+import { useAuth } from "../context/authContext";
 
 export default function useContactStatus(requestId) {
   const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ export default function useContactStatus(requestId) {
   async function handleStatusChange(newStatus) {
     setLoading(true);
     setError(null);
-    const token = localStorage.getItem("token");
+    const { token } = useAuth();
 
     try {
       await updateContactRequestStatusService({ requestId, status: newStatus, token });

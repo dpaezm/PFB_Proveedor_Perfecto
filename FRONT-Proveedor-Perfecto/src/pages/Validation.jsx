@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import useValidation from '../hooks/useValidation'; 
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import useValidation from "../hooks/useValidation";
+import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../index.css";
 
 export default function Validation() {
-
- /*  const Validation = () => {
+  /*  const Validation = () => {
     const [email, setEmail] = useState('');
     const { validate, loading, message } = useValidation();
 
@@ -19,10 +18,8 @@ export default function Validation() {
         event.preventDefault();
         validate('/users/validate/:registrationCode', ); 
     }; */
-return(
-    <h2>Validacion</h2>
-)
-   /* return (
+  return <h1 className="titulo-cat2">Validacion</h1>;
+  /* return (
         <div className="w-screen h-screen flex flex-col items-center justify-start">
             <h1 className="font-bold">
                 Validación de Usuario
@@ -35,7 +32,4 @@ return(
             <Link to="/" className="text-blue-500 hover:underline">Volver a la Página Principal</Link>
         </div>
     );*/
-};
-
-
-
+}

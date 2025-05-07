@@ -20,11 +20,7 @@ export default function ResetPass() {
     }
 
     try {
-      await resetPasswordService(
-        recoverPassCode,
-        newPassword,
-        repeatedPassword
-      );
+      await resetPasswordService(recoverPassCode, newPassword, repeatedPassword);
       toast.success("Contraseña actualizada correctamente");
       setTimeout(() => navigate("/login"), 2000);
     } catch (e) {

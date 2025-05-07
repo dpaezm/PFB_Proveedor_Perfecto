@@ -5,7 +5,7 @@ import TopCategoryList from "./components/Category/TopCategoryList";
 
 import Header from "./components/Header";
 import Login from "./pages/login";
-import Validation from "./pages/Validation";
+import Validate from "./pages/Validate";
 import Encuentra from "./components/Product/Encuentra";
 import Muestra from "./pages/muestra";
 import Register from "./pages/Register";
@@ -24,10 +24,10 @@ import RecoverPass from "./pages/RecoverPass";
 import ResetPass from "./pages/ResetPass";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Validate from "./pages/Validate";
 import ManageContactRequests from "./pages/ManageContactRequests";
 import ChangePassword from "./pages/ChangePassword";
 import ManageUserContactRequests from "./pages/ManageUserContactRequests";
+import ProductFilteredList from "./pages/ProductFilteredList";
 
 function App() {
   // const location = useLocation();
@@ -51,12 +51,13 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/validation" element={<Validation />} />
+          <Route path="/validation" element={<Validate />} />
           <Route path="/muestra" element={<Muestra />} />
           <Route path="/user-data" element={<UserData />} />
           <Route path="/create-product" element={<CreateProduct />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/products/search" element={<ProductFilteredList />} />
           <Route path="/contact-requests" element={<ContactRequests />} />
           <Route path="/providers" element={<ProvidersList />} />
           <Route path="/providers/:id" element={<ProviderDetail />} />

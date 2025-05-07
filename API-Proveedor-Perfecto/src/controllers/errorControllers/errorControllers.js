@@ -6,6 +6,8 @@ export function error404Controller(req, res) {
 }
 
 export function errorController(err, req, res, next) {
+  console.log (err)
+  
   res.status(err.httpCode || 500).send({
     status: 'error',
     message: err.message,
