@@ -7,14 +7,18 @@ export default function useContactStatus(requestId) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
   const [error, setError] = useState(null);
+  const { token } = useAuth();
 
   async function handleStatusChange(newStatus) {
     setLoading(true);
     setError(null);
-    const { token } = useAuth();
 
     try {
-      await updateContactRequestStatusService({ requestId, status: newStatus, token });
+      await updateContactRequestStatusService({
+        requestId,
+        status: newStatus,
+        token,
+      });
       toast.success(`Servicio ${newStatus}`);
       setStatus(newStatus);
     } catch (error) {

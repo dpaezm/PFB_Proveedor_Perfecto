@@ -8,20 +8,22 @@ export default function Login() {
   return (
     <div className=" flex flex-col flex-grow justify-center items-center">
       <h2 className="text-logo md:text-[32px] text-negro ">Login</h2>
-      <h3 className="flex flex-col  justify-center items-center">Bienvenido de nuevo</h3>
+      <h3 className="flex flex-col  justify-center items-center">
+        Bienvenido de nuevo
+      </h3>
       <div className="w-screen h-80 flex flex-col items-center">
         <form
           className=" border-gris1  text-normal text-negro font-bold text-center w-full max-w-xs gap-6 "
           onSubmit={handleSubmit}
         >
-          <ul className=" ">
+          <ul className="gap-2">
             <li className="p-2  ">
               {/* <label className="block text-sm font-bold mb-2" htmlFor="email">
               Email:{" "}
             </label> */}
               <Input
                 className="formulario bg-blanco"
-                placeholder="Email:"
+                placeholder="Email"
                 type="email"
                 required
                 id="email"
@@ -32,7 +34,10 @@ export default function Login() {
             </li>
 
             <li className=" flex p-2">
-              <label className="block text-sm font-bold mb-2" htmlFor="password">
+              <label
+                className="block text-sm font-bold mb-2"
+                htmlFor="password"
+              >
                 {" "}
               </label>
               <PasswordInput
@@ -47,13 +52,20 @@ export default function Login() {
               />
             </li>
             <li>
-              <Link to="/recover-pass" className="text-blue-600 underline">
+              <Link to="/recover-pass" className="hover:text-blue-500">
                 ¿Has olvidado tu contraseña?
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" className="hover:text-blue-500">
+                ¿No tienes cuenta? Regístrate
               </Link>
             </li>
           </ul>
 
-          <button className="boton bg-amarillo cursor-pointer justify-self-center  ">Inicia sesión</button>
+          <button className="boton bg-amarillo cursor-pointer justify-self-center  ">
+            Inicia sesión
+          </button>
         </form>
       </div>{" "}
     </div>
