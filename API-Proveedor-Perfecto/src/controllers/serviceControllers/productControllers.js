@@ -5,8 +5,8 @@ import savePhotoUtil from '../../utils/savePhotoUtil.js';
 export default async function newProductController(req, res, next) {
   console.log('creando producto');
   try {
-    const { owner_id, category_id, product_name, price, description } =
-      req.body;
+    const { category_id, product_name, price, description } = req.body;
+    const ownerId = req.user.id;
 
     // Creamos un array con los valores del objeto "files". Esto nos permitirá crear un array con
     // las fotos recibidas del cliente. Utilizamos el "slice" para evitar que nos puedan llegar más
@@ -30,7 +30,7 @@ export default async function newProductController(req, res, next) {
     }
 
     const productId = await createProductModel(
-      owner_id,
+      ownerId,
       category_id,
       product_name,
       price,

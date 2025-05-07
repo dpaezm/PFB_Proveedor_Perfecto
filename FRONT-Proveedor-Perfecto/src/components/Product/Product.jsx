@@ -24,7 +24,7 @@ export default function ProductDetail({ product }) {
         <p className="product-photo">
           {photo1 && (
             <img
-              src={`${VITE_API_URL}${photo1}`}
+              src={`${VITE_API_URL}/${photo1}`}
               alt={product_name}
               width="32px"
             />
@@ -32,7 +32,13 @@ export default function ProductDetail({ product }) {
         </p>
         <h3 className="provider-name-section">
           <span className="avatar-photo">
-            {avatar && <img src={`${avatar}`} alt={provider} width="12px" />}
+            {avatar && (
+              <img
+                src={`${VITE_API_URL}/${avatar}`}
+                alt={provider}
+                width="12px"
+              />
+            )}
           </span>
           <span className="add-by">By </span>
           <span className="provider-name"> {provider}</span>

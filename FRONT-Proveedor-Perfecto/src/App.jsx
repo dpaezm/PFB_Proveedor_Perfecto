@@ -1,4 +1,4 @@
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import CategoryList from "./components/Category/CategoryList";
 import TopCategoryList from "./components/Category/TopCategoryList";
@@ -30,13 +30,13 @@ import ManageUserContactRequests from "./pages/ManageUserContactRequests";
 import ProductFilteredList from "./pages/ProductFilteredList";
 
 function App() {
-  // const location = useLocation();
-  // const noLayoutRoutes = ["/login", "/register"];
+  const location = useLocation();
+  const noLayoutRoutes = ["/login", "/register"];
 
   return (
     <>
-      {/* {!noLayoutRoutes.includes(location.pathname) && <Header />} */}
-      <Header />
+      {!noLayoutRoutes.includes(location.pathname) && <Header />}
+
       <main className="flex grow flex-col">
         <Routes>
           <Route
@@ -81,8 +81,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {/* {!noLayoutRoutes.includes(location.pathname) && <Footer />} */}
-      <Footer />
+      {!noLayoutRoutes.includes(location.pathname) && <Footer />}
+
       <ToastContainer position="bottom-right" />
     </>
   );
