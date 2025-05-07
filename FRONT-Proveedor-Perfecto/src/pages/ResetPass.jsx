@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { resetPasswordService } from "../services/userServices";
+import "./ResetPass.css";
 
 export default function ResetPass() {
   const { recoverPassCode } = useParams();
@@ -32,42 +33,37 @@ export default function ResetPass() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white shadow-md rounded-lg p-8"
-      >
-        <h2 className="text-2xl font-bold text-center mb-6 text-amarillo">
-          Cambiar contraseña
-        </h2>
+    <div className="reset-container">
+      <form onSubmit={handleSubmit} className="reset-form">
+        <h2 className="">Cambiar contraseña</h2>
 
-        <label className="block mb-2">Nueva contraseña</label>
         <input
           type="password"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
           required
-          className="w-full p-2 border border-gray-300 rounded-md mb-4"
+          placeholder="Nueva contraseña"
+          className="formulario"
         />
 
-        <label className="block mb-2">Repetir contraseña</label>
         <input
           type="password"
           value={repeatedPassword}
           onChange={(e) => setRepeatedPassword(e.target.value)}
           required
-          className="w-full p-2 border border-gray-300 rounded-md mb-6"
+          placeholder="Repetir contraseña"
+          className="formulario"
         />
 
         <button
           type="submit"
-          className="w-full bg-amarillo text-black font-bold py-2 px-4 rounded-full hover:shadow-lg transition"
+          className="boton bg-amarillo cursor-pointer w-full"
         >
-          Guardar nueva contraseña
+          Cambiar
         </button>
 
         <ToastContainer position="bottom-right" />
       </form>
-    </main>
+    </div>
   );
 }
