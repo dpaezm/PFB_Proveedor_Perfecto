@@ -17,7 +17,7 @@ export default function Provider({ provider }) {
 
   return (
     <article className="provider-card">
-      <p className="avatar-photo">{avatar && <img src={`${VITE_API_URL}${avatar}`} alt={name} width="12px" />}</p>
+      <p className="avatar-photo">{avatar && <img src={`${VITE_API_URL}/${avatar}`} alt={name} width="12px" />}</p>
       <h3 className="provider-name-section">
         <span className="provider-name"> {name}</span>
         <span className="txt-secundary">@{username}</span>
