@@ -1,6 +1,5 @@
 import useReviews from "../../hooks/useReviews";
 import starIcon from "./../../assets/icons/star.png";
-import "./../Product/Product.css";
 
 export default function Review() {
   const { reviews, error } = useReviews();
@@ -10,16 +9,16 @@ export default function Review() {
   if (error) return null;
 
   return reviews.length > 0 ? (
-    <ul>
+    <ul className="lista-reseñas">
       {reviews.map((review, index) => (
-        <li key={index}>
-          <p className="txt-destacado">
-            {review.comprador} sobre {review.product_name}
+        <li key={index} className="li-reseña">
+          <p>
+            <strong>{review.comprador}</strong> sobre <strong>{review.product_name}</strong>
           </p>
           <p>{review.comment}</p>
           <p className="comment-rating">
             <button
-              className="star-icon"
+              id="star-icon"
               style={{
                 backgroundImage: `url(${starIcon})`,
               }}

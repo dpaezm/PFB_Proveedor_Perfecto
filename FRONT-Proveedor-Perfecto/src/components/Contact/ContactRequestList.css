@@ -4,3 +4,34 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+ul.lista-reseñas {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+li.li-reseña {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border: 0.5px solid var(--color-gris1);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.comment-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.li-reseña p:last-child {
+  font-size: 10px;
+  color: var(--color-gris1);
+  margin-top: 0.5rem;
+}
