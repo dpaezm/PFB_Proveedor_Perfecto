@@ -28,6 +28,8 @@ import productByCategoryIdController from './serviceControllers/productByCategor
 import productByUserIdController from './serviceControllers/productByUserIdControllers.js';
 import productBySearchController from './serviceControllers/productBySearchController.js';
 import getReviewsController from './contactControllers/getReviewsController.js';
+import updateUserByIdController from './userControllers/updateUserByIdController.js';
+import getAllUsersController from './userControllers/getAllUsersController.js';
 
 export {
   newUserController,
@@ -55,4 +57,6 @@ export {
   answerContactRequestController,
   getUserRequestsController,
   updateContactRequestStatusController,
+  updateUserByIdController,
+  getAllUsersController,
 };

@@ -25,6 +25,7 @@ export default async function getProductByUserIdModel(id) {
     LEFT JOIN contact co ON co.product_id = p.id AND co.rating IS NOT NULL
     WHERE u.id = ?
     GROUP BY p.id
+    ORDER BY p.created_at DESC
     `,
     [id],
   );

@@ -15,6 +15,8 @@ const getPrivateUserInfoModel = async (userId) => {
       u.city,
       u.description,
       u.isprovider,
+      u.isadmin,
+      u.active,
       u.created_at,
 
       (

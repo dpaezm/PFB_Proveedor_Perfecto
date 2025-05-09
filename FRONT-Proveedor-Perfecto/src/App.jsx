@@ -28,6 +28,7 @@ import ManageContactRequests from "./pages/ManageContactRequests";
 import ChangePassword from "./pages/ChangePassword";
 import ManageUserContactRequests from "./pages/ManageUserContactRequests";
 import ProductFilteredList from "./pages/ProductFilteredList";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   const location = useLocation();
@@ -77,6 +78,7 @@ function App() {
             path="/contactrequest/user/:id"
             element={<ManageUserContactRequests />}
           />
+          <Route path="/admin-panel" element={<AdminPanel />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

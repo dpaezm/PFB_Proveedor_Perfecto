@@ -1,0 +1,58 @@
+.admin-panel {
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.admin-panel h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1f2937; /* Gris oscuro */
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.user-item p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.user-actions button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.user-actions .validate {
+  background-color: #10b981; /* verde */
+  color: white;
+}
+
+.user-actions .provider {
+  background-color: #f59e0b; /* amarillo */
+  color: white;
+}
+
+.user-actions .delete {
+  background-color: #ef4444; /* rojo */
+  color: white;
+}
