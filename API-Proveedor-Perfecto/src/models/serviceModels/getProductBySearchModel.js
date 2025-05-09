@@ -20,6 +20,7 @@ export default async function getProductBySearchModel(input) {
         LEFT JOIN contact co ON co.product_id = p.id
         WHERE LOWER(p.product_name) LIKE LOWER(?) OR LOWER(p.description) LIKE LOWER(?)
         GROUP BY p.id
+        ORDER BY p.created_at DESC
         `,
     [`%${input}%`, `%${input}%`],
   );

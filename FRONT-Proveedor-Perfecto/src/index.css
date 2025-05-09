@@ -134,6 +134,12 @@ input {
   border-radius: 12px;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media (min-width: 800px) {
   main > * {
     padding: 0 36px 0 36px;

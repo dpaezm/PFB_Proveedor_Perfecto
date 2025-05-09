@@ -33,7 +33,7 @@ export default function useLogin() {
       login(data.token);
       setFormState(initialState);
       toast.success("¡Bienvenido de nuevo!");
-      navigate("/user-data");
+      navigate("/");
     } catch (e) {
       console.error(e);
       toast.error(e.message);

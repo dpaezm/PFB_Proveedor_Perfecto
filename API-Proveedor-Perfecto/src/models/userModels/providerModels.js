@@ -29,6 +29,7 @@ LEFT JOIN category c ON p.category_id = c.id
 LEFT JOIN contact co ON p.id = co.product_id AND co.rating IS NOT NULL
 WHERE u.isprovider = true
 GROUP BY u.id
+ORDER BY u.created_at DESC
         `,
   );
   return providers;
