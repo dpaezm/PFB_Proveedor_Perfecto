@@ -15,6 +15,15 @@ header > * {
   box-sizing: border-box;
 }
 
+header .search-container {
+  display: none;
+  flex-grow: 1;
+}
+
+.search-container input {
+  flex-grow: 1;
+}
+
 .nav1 {
   justify-self: end;
   padding-left: 0;
@@ -72,6 +81,10 @@ header #logo-icon {
   header {
     display: flex;
     justify-content: flex-start;
+  }
+
+  header .search-container {
+    display: flex;
   }
 
   header #logo-icon {

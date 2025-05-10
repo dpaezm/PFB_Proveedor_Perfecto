@@ -62,6 +62,10 @@ footer #logo-icon {
   color: var(--color-amarillo2);
 }
 
+.footer-category-list {
+  gap: 0;
+}
+
 @media (min-width: 800px) {
   footer {
     flex-direction: column;

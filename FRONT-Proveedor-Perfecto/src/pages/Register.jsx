@@ -1,13 +1,18 @@
+import { NavLink } from "react-router-dom";
 import Input from "../components/Input";
 import PasswordInput from "../components/PasswordInput";
 import useRegister from "../hooks/useRegister";
+import logo from "./../assets/LOGO_find.png";
 
 export default function Register() {
   const { handleChange, handleImageChange, formState, handleSubmit, setFormState } = useRegister();
 
   return (
-    <div className="w-screen  flex flex-grow flex-col items-center justify-start">
-      <h1 className="titulo-cat2 text-cta md:text-[36px] text-negro font-bold">Registro</h1>
+    <div className="container-login">
+      <NavLink to={"/"}>
+        <button id="logo-icon" style={{ backgroundImage: `url(${logo})` }} />
+      </NavLink>
+      <p className="txt-destacado">Regístrate</p>
       <form
         className=" w-full max-h-screen flex-grow-1 md:w-20% mx-auto flex flex-col justify-self-center gap-6 md:gap-8 items-center max-w-[900px] "
         onSubmit={handleSubmit}
@@ -159,6 +164,9 @@ export default function Register() {
             </label>
           </li>
         </ul>
+        <NavLink to="/login" className="">
+          ¿Ya tienes una cuenta?
+        </NavLink>
         <button className="boton boton2 bg-amarillo cursor-pointer ">Registrar</button>
       </form>
     </div>

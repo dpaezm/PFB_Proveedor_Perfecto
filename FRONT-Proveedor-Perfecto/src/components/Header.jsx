@@ -1,24 +1,30 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
 import Nav from "./Nav";
 import Nav2 from "./Nav2";
 import logo from "../assets/LOGO_find.png";
+import SearchInput from "./../components/Product/Components/SearchInput";
 
 import Button from "./Button";
 
 export default function Header() {
+  const home = location.pathname === "/";
+
   return (
     <header>
       <Nav2 />
-      <Link to={"/"}>
+      <NavLink to={"/"}>
         <button
           id="logo-icon"
           style={{
             backgroundImage: `url(${logo})`,
           }}
         />
-      </Link>
+      </NavLink>
+
+      {!home && <SearchInput />}
+
       <Nav />
     </header>
   );

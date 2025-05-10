@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import Review from "../components/Contact/Review.jsx";
 import ProviderFull from "../components/User/ProviderFull.jsx";
 import ProductDetailLite from "../components/Product/ProductLite.jsx";
+import ProductList from "./ProductList.jsx";
 
 export default function ProviderDetail() {
   const { provider } = useProviderDetail();
@@ -43,19 +44,7 @@ export default function ProviderDetail() {
       <ProviderFull provider={provider} />
 
       <section className="provider-products">
-        {products.length > 0 ? (
-          <ul className="section-product-list">
-            {products.map((product) => (
-              <li key={product.id} className="li-products-provider">
-                <NavLink to={`/product/${product.id}`} state={{ from: location.pathname }}>
-                  <ProductDetailLite product={product} />
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Este proveedor aún no ha subido productos.</p>
-        )}
+        {products.length > 0 ? <ProductList products={products} /> : <p>Este proveedor aún no ha subido productos.</p>}
       </section>
 
       <section className="provider-comments">

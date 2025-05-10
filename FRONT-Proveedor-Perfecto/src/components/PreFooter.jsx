@@ -21,12 +21,15 @@ export default function PreFooter() {
         </li>
       </ul>
       <section id="txt-prefooter">
-        <ul>
+        <ul className="footer-category-list">
           {categories.map((category) => (
             <li key={category.id}>
               <NavLink to={`/categories/${category.id}`}>{category.categoryname}</NavLink>
             </li>
           ))}
+          <li>
+            <NavLink to="/products">Todos los productos</NavLink>
+          </li>
         </ul>
         <ul>
           <li>

@@ -55,6 +55,23 @@ h3.provider-name-section {
   width: 240px;
 }
 
+.provider-full-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .provider-comments ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+  margin: 2rem 0 2rem 0;
+} */
+
+.provider-products {
+  width: 100%;
+}
+
 @media (min-width: 800px) {
   article.provider-card {
     width: 380px;

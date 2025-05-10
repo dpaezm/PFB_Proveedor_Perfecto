@@ -19,7 +19,6 @@ import NotFound from "./pages/NotFound";
 import CreateProduct from "./pages/CreateProduct";
 import CategoryProducts from "./components/Category/CategoryProducts";
 import Filters from "./components/Filters";
-import ProductList from "./pages/ProductList";
 import RecoverPass from "./pages/RecoverPass";
 import ResetPass from "./pages/ResetPass";
 import { ToastContainer } from "react-toastify";
@@ -29,16 +28,17 @@ import ChangePassword from "./pages/ChangePassword";
 import ManageUserContactRequests from "./pages/ManageUserContactRequests";
 import ProductFilteredList from "./pages/ProductFilteredList";
 import AdminPanel from "./pages/AdminPanel";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   const location = useLocation();
-  const noLayoutRoutes = ["/login", "/register"];
+  const noLayoutRoutes = ["/login", "/register", "/recover-pass"];
 
   return (
     <>
       {!noLayoutRoutes.includes(location.pathname) && <Header />}
 
-      <main className="flex grow flex-col">
+      <main>
         <Routes>
           <Route
             path="/"
@@ -56,7 +56,7 @@ function App() {
           <Route path="/muestra" element={<Muestra />} />
           <Route path="/user-data" element={<UserData />} />
           <Route path="/create-product" element={<CreateProduct />} />
-          <Route path="/products" element={<ProductList />} />
+          <Route path="/products" element={<AllProducts />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/products/search" element={<ProductFilteredList />} />
           <Route path="/contact-requests" element={<ContactRequests />} />
