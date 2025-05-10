@@ -34,18 +34,12 @@ export default function UserData() {
 
         <section className="section-buttons-user-data gap-2">
           {isAdmin ? (
-            <button
-              onClick={() => navigate(`/admin-panel`)}
-              className="boton boton2 boton-amarillo2 bg-amber-600"
-            >
+            <button onClick={() => navigate(`/admin-panel`)} className="boton boton2 boton-amarillo2 bg-amber-600">
               Panel de administración
             </button>
           ) : null}
           {isProvider ? (
-            <button
-              onClick={() => navigate(`/contactrequest/${user.id}`)}
-              className="boton boton2 boton-amarillo2"
-            >
+            <button onClick={() => navigate(`/contactrequest/${user.id}`)} className="boton boton2 boton-amarillo2">
               Ver solicitudes de contacto
             </button>
           ) : null}
@@ -57,17 +51,11 @@ export default function UserData() {
               Respuestas de los proveedores
             </button>
           ) : null}
-          <button
-            onClick={() => navigate(`/changePassword/${user.id}`)}
-            className="boton boton2"
-          >
+          <button onClick={() => navigate(`/changePassword/${user.id}`)} className="boton boton2">
             Cambiar contraseña
           </button>
           {isProvider ? (
-            <button
-              className="boton boton2 boton-amarillo2"
-              onClick={() => navigate("/create-product")}
-            >
+            <button className="boton boton2 boton-amarillo2" onClick={() => navigate("/create-product")}>
               Crear Producto
             </button>
           ) : null}

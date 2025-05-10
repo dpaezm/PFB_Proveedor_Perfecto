@@ -1,4 +1,4 @@
-import "./ContactRequestList.css";
+import "./Contact.css";
 import ContactRequestDetail from "./ContactRequestDetail";
 import AnswerForm from "./AnswerForm";
 import { useEffect, useState } from "react";
@@ -22,10 +22,8 @@ export default function UserContactRequestList() {
     <ul className="request-contact-list">
       {requests.map((request) => (
         <li key={request.id} className="li-request">
-          {/*           <ContactRequestDetail request={request} /> */}
           <UserContactRequestDetail request={request} />
           <UserContactStatusForm request={request} />
-          {/*           <AnswerForm request={request} onAnswered={handleAnswered} /> */}
         </li>
       ))}
     </ul>

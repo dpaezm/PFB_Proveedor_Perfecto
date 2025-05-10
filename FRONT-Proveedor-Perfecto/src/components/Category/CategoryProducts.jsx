@@ -3,6 +3,7 @@ import useProductsByCategory from "../../hooks/useProductsByCategory";
 import Product from "./../Product/Product.jsx";
 import "./CategoryProducts.css";
 import homeIcon from "./../../assets/icons/home.png";
+import ProductList from "../../pages/ProductList.jsx";
 
 export default function CategoryProducts() {
   const { id } = useParams();
@@ -11,21 +12,14 @@ export default function CategoryProducts() {
 
   return (
     <section className="container-products-category">
-      <h2>
+      <h1 className="titulo-cat2">
         <NavLink to={"/"}>
           <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
         </NavLink>
+        <NavLink to={"/categories"}>Categorías / </NavLink>
         {categoryName}
-      </h2>
-      <ul className="list-products-category">
-        {products.map((product) => (
-          <li key={product.id} className="li-product-category">
-            <NavLink to={`/product/${product.id}`} state={{ from: location }}>
-              <Product product={product} />
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+      </h1>
+      <ProductList products={products} />
     </section>
   );
 }

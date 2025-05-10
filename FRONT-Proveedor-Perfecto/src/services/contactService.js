@@ -71,7 +71,7 @@ export async function updateContactRequestStatusService({ requestId, status, tok
   const json = await res.json();
 
   if (!res.ok) throw new Error(json.message);
-  return json.requests;
+  return json;
 }
 
 export async function sendRatingService({ requestId, comment, rating, token }) {

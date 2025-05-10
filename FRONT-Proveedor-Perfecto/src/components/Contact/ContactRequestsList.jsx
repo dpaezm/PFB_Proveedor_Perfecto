@@ -1,4 +1,4 @@
-import "./ContactRequestList.css";
+import "./Contact.css";
 import useGetContactRequests from "../../hooks/useGetContactRequests";
 import ContactRequestDetail from "./ContactRequestDetail";
 import AnswerForm from "./AnswerForm";

@@ -7,7 +7,7 @@ export default function Filters() {
   return (
     <section className="filters-section">
       <FilterByLocation />
-      <FilterByPrice />
+      {/*       <FilterByPrice /> */}
       <FilterByType />
     </section>
   );

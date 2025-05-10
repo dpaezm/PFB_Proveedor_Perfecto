@@ -7,7 +7,7 @@ export default function ManageContactRequests() {
       <h1 className="titulo-cat2">Gestiona tus solicitudes de contacto</h1>
       <ContactRequestList />
       <NavLink to={"/user-data"}>
-        <button className="boton boton2 ">Atrás</button>
+        <button className="boton boton-atras ">Atrás</button>
       </NavLink>
     </section>
   );

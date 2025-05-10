@@ -1,9 +1,7 @@
 import useAnswerContactRequest from "../../hooks/useAnswerContactRequest";
 
 export default function AnswerForm({ request, onAnswered }) {
-  const { answer, setAnswer, loading, handleSubmit } = useAnswerContactRequest(request.id, () => {
-    onAnswered(request.id, answer);
-  });
+  const { answer, setAnswer, loading, handleSubmit } = useAnswerContactRequest();
 
   if (request.answer) {
     return (
@@ -14,7 +12,10 @@ export default function AnswerForm({ request, onAnswered }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="formulario-contacto">
+    <form
+      onSubmit={(e) => handleSubmit(e, request.id, () => onAnswered(request.id, answer))}
+      className="formulario-contacto"
+    >
       <textarea
         name="answer"
         placeholder="Responde la solicitud de contacto"

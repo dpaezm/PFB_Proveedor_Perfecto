@@ -13,7 +13,6 @@
 }
 
 .search-form {
-  background-color: red;
   width: 100%;
   max-width: 320px;
   display: flex;
@@ -29,18 +28,27 @@
   box-shadow: var(--sombra);
 }
 
-#section-encuentra li {
+#section-encuentra ul {
+  z-index: 1;
   display: flex;
-  text-align: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
   background-color: #ffffff;
   border: var(--grosor-linea-a) solid black;
   border-radius: 12px;
-  height: 48px;
   max-width: 320px;
   width: 100%;
-  padding: 4px;
+  padding: 8px;
   box-shadow: var(--sombra);
+  position: absolute;
+}
+
+#section-encuentra li {
+  border-bottom: 0.5px solid var(--color--gris1);
+  cursor: pointer;
+  height: max-content;
+  width: max-content;
 }
 
 #section-encuentra input {

@@ -159,7 +159,7 @@ export default function Register() {
             </label>
           </li>
         </ul>
-        <button className="boton bg-amarillo cursor-pointer ">Registrar</button>
+        <button className="boton boton2 bg-amarillo cursor-pointer ">Registrar</button>
       </form>
     </div>
   );

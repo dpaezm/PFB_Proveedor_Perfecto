@@ -10,8 +10,7 @@ import FilterCity from "../components/Product/Components/FilterCity.jsx";
 import FilterPrice from "../components/Product/Components/FilterPrice.jsx";
 import FilterSort from "../components/Product/Components/FilterSort.jsx";
 
-export default function ProductList() {
-  const { products, error } = useAllProducts();
+export default function ProductList({ products = [], error }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortBy = searchParams.get("sort") || "";
   const location = useLocation();
@@ -72,13 +71,13 @@ export default function ProductList() {
 
   return (
     <section className="product-list">
-      <h1 className="titulo-cat2">
+      {/*       <h1 className="titulo-cat2">
         <NavLink to={"/"}>
           <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
         </NavLink>
 
         <NavLink to={"/products"}>Servicios</NavLink>
-      </h1>
+      </h1> */}
       <section className="product-filters-section">
         <FilterCity products={products} selectedCity={selectedCity} onChange={handleCityChange} />
         <FilterPrice selectedMin={minPrice} selectedMax={maxPrice} onChange={handlePriceChange} />

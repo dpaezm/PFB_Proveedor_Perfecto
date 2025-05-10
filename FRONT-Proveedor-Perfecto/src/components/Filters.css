@@ -1,6 +1,6 @@
 .filters-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-evenly;
   margin: 3rem 0 3rem 0;
 }
 
