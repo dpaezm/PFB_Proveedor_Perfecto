@@ -38,12 +38,12 @@ export default function UserData() {
               Panel de administración
             </button>
           ) : null}
-          {isProvider ? (
+          {isProvider && !isAdmin ? (
             <button onClick={() => navigate(`/contactrequest/${user.id}`)} className="boton boton2 boton-amarillo2">
               Ver solicitudes de contacto
             </button>
           ) : null}
-          {!isProvider ? (
+          {!isProvider && !isAdmin ? (
             <button
               onClick={() => navigate(`/contactrequest/user/${user.id}`)}
               className="boton boton2 boton-amarillo2"

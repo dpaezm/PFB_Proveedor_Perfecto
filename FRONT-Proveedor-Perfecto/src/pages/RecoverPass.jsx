@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { sendRecoverPassService } from "../services/SendRecoverPassEmail";
 import "./RecoverPass.css";
 import "react-toastify/dist/ReactToastify.css";
+import logo from "./../assets/LOGO_find.png";
 
 export default function RecoverPass() {
   const [email, setEmail] = useState("");
@@ -25,10 +26,12 @@ export default function RecoverPass() {
   };
 
   return (
-    <div className="recover-container">
+    <div className="container-login">
+      <NavLink to={"/"}>
+        <button id="logo-icon" style={{ backgroundImage: `url(${logo})` }} />
+      </NavLink>
+      <p className="txt-destacado">Recupera tu contraseña</p>
       <form onSubmit={handleSubmit} className="recover-form">
-        <h2>Recuperar contraseña</h2>
-
         <label htmlFor="email">Introduce tu correo electrónico:</label>
         <input
           className="formulario"
@@ -40,8 +43,10 @@ export default function RecoverPass() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-
-        <button type="submit" className="boton bg-amarillo cursor-pointer">
+        <NavLink to="/login" className="">
+          Volver al login
+        </NavLink>
+        <button type="submit" className="boton2 boton-amarillo2">
           Enviar enlace
         </button>
       </form>

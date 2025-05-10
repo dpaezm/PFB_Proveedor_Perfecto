@@ -14,6 +14,7 @@ export default function ProductList({ products = [], error }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortBy = searchParams.get("sort") || "";
   const location = useLocation();
+  const providerPage = location.pathname.startsWith("/providers/");
 
   const selectedCity = searchParams.get("city") || "Todas";
   const minPrice = parseFloat(searchParams.get("min")) || 0;
@@ -79,8 +80,12 @@ export default function ProductList({ products = [], error }) {
         <NavLink to={"/products"}>Servicios</NavLink>
       </h1> */}
       <section className="product-filters-section">
-        <FilterCity products={products} selectedCity={selectedCity} onChange={handleCityChange} />
-        <FilterPrice selectedMin={minPrice} selectedMax={maxPrice} onChange={handlePriceChange} />
+        {!providerPage && (
+          <>
+            <FilterCity products={products} selectedCity={selectedCity} onChange={handleCityChange} />
+            <FilterPrice selectedMin={minPrice} selectedMax={maxPrice} onChange={handlePriceChange} />
+          </>
+        )}
         <FilterSort selectedSort={sortBy} onChange={handleSortChange} />
       </section>
       <section className="container-products">

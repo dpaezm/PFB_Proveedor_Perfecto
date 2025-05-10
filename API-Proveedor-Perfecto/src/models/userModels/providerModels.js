@@ -84,6 +84,7 @@ export async function getProviderDetail(providerId) {
       u.phone,
       u.avatar,
       u.created_at,
+      u.city, 
 
 
 
