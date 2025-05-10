@@ -70,14 +70,8 @@ function App() {
 
           <Route path="/changePassword/:id" element={<ChangePassword />} />
 
-          <Route
-            path="/contactrequest/:id"
-            element={<ManageContactRequests />}
-          />
-          <Route
-            path="/contactrequest/user/:id"
-            element={<ManageUserContactRequests />}
-          />
+          <Route path="/contactrequest/:id" element={<ManageContactRequests />} />
+          <Route path="/contactrequest/user/:id" element={<ManageUserContactRequests />} />
           <Route path="/admin-panel" element={<AdminPanel />} />
 
           <Route path="*" element={<NotFound />} />

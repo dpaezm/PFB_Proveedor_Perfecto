@@ -28,6 +28,24 @@ article.provider-card * {
   display: flex;
   align-items: center;
 }
+
+.provider-full-card {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.provider-rating {
+  display: flex;
+  align-items: center;
+}
+
+.provider-city {
+  display: flex;
+  align-items: center;
+}
+
 h3.provider-name-section {
   /*   align-items: flex-start; */
   justify-content: flex-start;

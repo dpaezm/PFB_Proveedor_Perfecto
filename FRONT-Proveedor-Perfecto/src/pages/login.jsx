@@ -2,72 +2,55 @@ import Input from "../components/Input";
 import PasswordInput from "../components/PasswordInput";
 import useLogin from "../hooks/useLogin";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 export default function Login() {
   const { formState, handleSubmit, handleChange } = useLogin();
   return (
-    <div className=" flex flex-col flex-grow justify-center items-center">
-      <h2 className="text-logo md:text-[32px] text-negro ">Login</h2>
-      <h3 className="flex flex-col  justify-center items-center">
-        Bienvenido de nuevo
-      </h3>
-      <div className="w-screen h-80 flex flex-col items-center">
-        <form
-          className=" border-gris1  text-normal text-negro font-bold text-center w-full max-w-xs gap-6 "
-          onSubmit={handleSubmit}
-        >
-          <ul className="gap-2">
-            <li className="p-2  ">
-              {/* <label className="block text-sm font-bold mb-2" htmlFor="email">
+    <div className="container-login">
+      <h1 className="titulo-cat2">Login</h1>
+      <p className="txt-destacado">Bienvenido de nuevo</p>
+
+      <form className="" onSubmit={handleSubmit}>
+        <ul className="form-login  ">
+          <li className="p-2">
+            {/* <label className="block text-sm font-bold mb-2" htmlFor="email">
               Email:{" "}
             </label> */}
-              <Input
-                className="formulario bg-blanco"
-                placeholder="Email"
-                type="email"
-                required
-                id="email"
-                name="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-            </li>
+            <Input
+              /*               className="formulario" */
+              placeholder="Email:"
+              type="email"
+              required
+              id="email"
+              name="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+          </li>
 
-            <li className=" flex p-2">
-              <label
-                className="block text-sm font-bold mb-2"
-                htmlFor="password"
-              >
-                {" "}
-              </label>
-              <PasswordInput
-                className="formulario bg-blanco"
-                type="password"
-                required
-                id="password"
-                name="password"
-                placeholder="Contraseña"
-                value={formState.password}
-                onChange={handleChange}
-              />
-            </li>
-            <li>
-              <Link to="/recover-pass" className="hover:text-blue-500">
-                ¿Has olvidado tu contraseña?
-              </Link>
-            </li>
-            <li>
-              <Link to="/register" className="hover:text-blue-500">
-                ¿No tienes cuenta? Regístrate
-              </Link>
-            </li>
-          </ul>
+          <li className=" flex p-2">
+            <label className="" htmlFor="password">
+              {" "}
+            </label>
+            <PasswordInput
+              className=""
+              type="password"
+              required
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </li>
+        </ul>
+        <Link to="/recover-pass" className="">
+          ¿Has olvidado tu contraseña?
+        </Link>
 
-          <button className="boton bg-amarillo cursor-pointer justify-self-center  ">
-            Inicia sesión
-          </button>
-        </form>
-      </div>{" "}
+        <button className="boton boton2 boton-amarillo2">Inicia sesión</button>
+      </form>
     </div>
   );
 }

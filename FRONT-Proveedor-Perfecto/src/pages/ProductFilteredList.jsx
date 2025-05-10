@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { searchProductService } from "../services/productService";
 import ProductDetail from "../components/Product/Product";
+import ProductList from "./ProductList";
+import homeIcon from "./../assets/icons/home.png";
 
 export default function ProductFilteredList() {
   const [products, setProducts] = useState([]);
@@ -21,16 +23,15 @@ export default function ProductFilteredList() {
   }, [query]);
 
   return (
-    <section className="product-list">
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            <NavLink to={`/product/${product.id}`} state={{ from: location }}>
-              <ProductDetail product={product} />
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+    <section className="container-products-category">
+      <h1 className="titulo-cat2">
+        <NavLink to={"/"}>
+          <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
+        </NavLink>
+        Resultados de búsqueda
+      </h1>
+
+      <ProductList products={products} />
     </section>
   );
 }

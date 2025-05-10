@@ -1,3 +1,5 @@
+import "./Contact.css";
+
 export default function ContactRequestDetail({ request }) {
   const { product_name, client, created_at, modified_at, comment } = request;
 

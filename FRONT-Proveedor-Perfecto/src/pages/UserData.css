@@ -18,11 +18,13 @@
 }
 
 .section-buttons-user-data {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
   justify-content: center;
   align-self: center;
+  gap: 1rem;
 }
 
 @media (min-width: 800px) {

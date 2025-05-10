@@ -21,7 +21,7 @@ export default function ProductDetail() {
         <NavLink to={backLink} className="boton boton-atras">
           Atrás
         </NavLink>
-        <button onClick={() => setShowForm((prev) => !prev)} className={showForm ? "boton" : "boton-contactar"}>
+        <button onClick={() => setShowForm((prev) => !prev)} className={showForm ? "boton " : "boton-contactar boton "}>
           {showForm ? "Cerrar formulario" : "Contactar"}
         </button>
       </section>

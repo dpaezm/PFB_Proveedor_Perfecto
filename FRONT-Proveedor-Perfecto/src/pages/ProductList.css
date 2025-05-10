@@ -56,8 +56,8 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  /*   height: 100%; */
-  padding-bottom: 3rem;
+  height: 100%;
+  /*   padding-bottom: 1rem; */
 }
 
 .product-card .txt-destacado {

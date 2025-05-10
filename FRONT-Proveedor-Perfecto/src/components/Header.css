@@ -11,17 +11,23 @@ header {
   background-color: var(--color-blanco);
 }
 
-header h1 {
+header > * {
+  box-sizing: border-box;
 }
 
 .nav1 {
   justify-self: end;
-  margin-left: auto;
-  margin-right: 2rem;
+  padding-left: 0;
 }
 
 .nav2 {
   justify-self: start;
+  padding-right: 0;
+}
+
+header > a {
+  padding: 0;
+  flex-grow: 1;
 }
 
 #burger-icon {
@@ -32,6 +38,7 @@ header h1 {
   height: 48px;
   cursor: pointer;
 }
+
 #logo-icon {
   align-content: center;
   background-size: 100%;
@@ -39,6 +46,7 @@ header h1 {
   background-position: center;
   color: transparent;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 header #logo-icon {

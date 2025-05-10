@@ -11,13 +11,13 @@ export default function CategoryList() {
 
   return (
     <section className="container-category-list">
-      <h2>
+      <h1 className="titulo-cat2">
         <NavLink to={"/"}>
           <button id="home-icon" style={{ backgroundImage: `url(${homeIcon})` }} />
         </NavLink>
 
         <NavLink to={"/categories"}>Categorías</NavLink>
-      </h2>
+      </h1>
       <section className="container-categories">
         <ul className="section-category-list">
           {categories.map((category) => (
