@@ -60,6 +60,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/products/search" element={<ProductFilteredList />} />
           <Route path="/contact-requests" element={<ContactRequests />} />
+          <Route path="/incomingProviders" element={<IncomingProviders />} />
           <Route path="/providers" element={<ProvidersList />} />
           <Route path="/providers/:id" element={<ProviderDetail />} />
           <Route path="/categories" element={<CategoryList />} />
@@ -70,8 +71,14 @@ function App() {
 
           <Route path="/changePassword/:id" element={<ChangePassword />} />
 
-          <Route path="/contactrequest/:id" element={<ManageContactRequests />} />
-          <Route path="/contactrequest/user/:id" element={<ManageUserContactRequests />} />
+          <Route
+            path="/contactrequest/:id"
+            element={<ManageContactRequests />}
+          />
+          <Route
+            path="/contactrequest/user/:id"
+            element={<ManageUserContactRequests />}
+          />
           <Route path="/admin-panel" element={<AdminPanel />} />
 
           <Route path="*" element={<NotFound />} />

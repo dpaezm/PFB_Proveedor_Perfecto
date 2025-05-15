@@ -12,6 +12,8 @@ import servicesRoutes from './src/routes/servicesRoutes.js';
 import contactRoutes from './src/routes/contactRoutes.js';
 import usersRoutes from './src/routes/usersRoutes.js';
 
+import adminRoutes from './src/routes/adminRoutes.js';
+
 //Importo funciones de error
 import {
   error404Controller,
@@ -34,6 +36,7 @@ app.use(cors(/* { origin: FRONT_URL } */));
 app.use(servicesRoutes);
 app.use(contactRoutes);
 app.use(usersRoutes);
+app.use(adminRoutes);
 
 //Middlewares de error
 app.use(error404Controller);
